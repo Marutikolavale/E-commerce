@@ -22,14 +22,12 @@ public class Baseclass implements IAutoConstant{
 
 	public static WebDriver driver;
 	public static Logger log;
-
 	@BeforeClass
 	public void setUp() throws IOException 
 	{
 		ReadConfig R= new ReadConfig();
 		String BrowserValue = R.readPropertyFile(PROP_PATH,"Browser");
 		String Url = R.readPropertyFile(PROP_PATH,"url");
-
 		if(BrowserValue.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
@@ -58,7 +56,7 @@ public class Baseclass implements IAutoConstant{
 		driver.get(Url);
 		log.info("url opened");
 	}
-	@AfterClass
+
 	public void tearDown()
 	{
 		driver.quit();
