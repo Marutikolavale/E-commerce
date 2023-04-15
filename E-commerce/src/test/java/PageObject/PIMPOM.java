@@ -9,7 +9,7 @@ public class PIMPOM {
 
 	public PIMPOM(WebDriver driver)
 	{
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver,this);
 	}
 	@FindBy(linkText ="Configuration ") public WebElement Configuration;
 	@FindBy(linkText ="Employee List") public WebElement EmployeeList;

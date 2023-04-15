@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
@@ -22,7 +23,7 @@ public class Baseclass implements IAutoConstant{
 
 	public static WebDriver driver;
 	public static Logger log;
-	@BeforeClass
+	@BeforeTest
 	public void setUp() throws IOException 
 	{
 		ReadConfig R= new ReadConfig();
@@ -30,8 +31,10 @@ public class Baseclass implements IAutoConstant{
 		String Url = R.readPropertyFile(PROP_PATH,"url");
 		if(BrowserValue.equalsIgnoreCase("chrome"))
 		{
+			ChromeOptions op= new ChromeOptions();
+			op.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(op);
 			driver.manage().window().maximize();
 		}
 		else if(BrowserValue.equalsIgnoreCase("Edge"))

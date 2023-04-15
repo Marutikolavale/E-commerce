@@ -28,8 +28,8 @@ public class ReadConfig {
 		FileInputStream fis =new FileInputStream(excelPath);
 		XSSFWorkbook  wb = new XSSFWorkbook(fis);
 		XSSFSheet sh = wb.getSheet(sheetName);
-		Row row = sh.getRow(0);
-		Cell cell = row.getCell(0);
+		Row row = sh.getRow(rowCount);
+		Cell cell = row.getCell(cellCount);
 		String data = cell.getStringCellValue();
 		return data;
 	}

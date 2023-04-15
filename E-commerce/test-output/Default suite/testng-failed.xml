@@ -6,8 +6,10 @@
       <class name="Testcases.Loginpage">
         <methods>
           <include name="loginoperation"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="clickDashBord"/>
+          <include name="invaild_login"/>
+          <include name="faillogin"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
     </classes>

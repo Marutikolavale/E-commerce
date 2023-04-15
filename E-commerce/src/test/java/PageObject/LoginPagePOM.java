@@ -10,13 +10,13 @@ public class LoginPagePOM{
 
 	public LoginPagePOM(WebDriver driver)
 	{
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver,this);
 	}
 
 	//locate Element 
-	@FindBy(xpath ="//input[@name='username']")public WebElement  username;
+	@FindBy(xpath ="//input[@name='username']") public WebElement  username;
 	@FindBy(xpath ="//input[@name='password']") public WebElement passwored;
-	@FindBy(xpath ="//button[@type='submit']")public WebElement loginbutton;
+	@FindBy(xpath ="//button[@type='submit']") public WebElement loginbutton;
 	@FindBy(linkText ="Forgot your password?")  public WebElement forgotpasswordElement;
 
 
@@ -25,14 +25,23 @@ public class LoginPagePOM{
 		forgotpasswordElement.click();
 	}
 
-	public void Loginoperation()
+	public void Loginoperation(String Username,String Password)
 	{
-		username.sendKeys("Admin");
-		passwored.sendKeys("admin123");
+		username.sendKeys(Username);
+		passwored.sendKeys(Password);
 		loginbutton.click();
 	}
 
+	//invalid Condition
+	public void actiTimeInvalidLogin(String invalidUsername,String invalidPassword) throws InterruptedException
+	{
+		username.sendKeys(invalidUsername);
+		passwored.sendKeys(invalidPassword);
+		loginbutton.click();
+		Thread.sleep(3000);
+		username.clear();
 
+	}
 
 
 
