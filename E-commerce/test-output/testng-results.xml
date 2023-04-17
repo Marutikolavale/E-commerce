@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-15T14:56:44 IST" name="Default suite" finished-at="2023-04-15T14:57:03 IST" duration-ms="19191">
+  <suite started-at="2023-04-17T10:59:55 IST" name="Default suite" finished-at="2023-04-17T11:00:37 IST" duration-ms="41721">
     <groups>
     </groups>
-    <test started-at="2023-04-15T14:56:44 IST" name="Default test" finished-at="2023-04-15T14:57:03 IST" duration-ms="19191">
+    <test started-at="2023-04-17T10:59:55 IST" name="Default test" finished-at="2023-04-17T11:00:37 IST" duration-ms="41721">
       <class name="Testcases.class3">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Testcases.class3@5884a914]" started-at="2023-04-15T14:56:44 IST" name="setUp" finished-at="2023-04-15T14:56:56 IST" duration-ms="11547" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Testcases.class3@491b9b8]" started-at="2023-04-17T10:59:55 IST" name="setUp" finished-at="2023-04-17T11:00:24 IST" duration-ms="28570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="add_photo()[pri:0, instance:Testcases.class3@5884a914]" started-at="2023-04-15T14:56:56 IST" name="add_photo" finished-at="2023-04-15T14:57:03 IST" duration-ms="7540" status="PASS">
+        <test-method signature="add_photo5()[pri:5, instance:Testcases.class3@491b9b8]" started-at="2023-04-17T11:00:24 IST" name="add_photo5" finished-at="2023-04-17T11:00:37 IST" duration-ms="13040" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add_photo -->
+        </test-method> <!-- add_photo5 -->
       </class> <!-- Testcases.class3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
