@@ -25,7 +25,7 @@ public class class2 extends Baseclass {
 		dh.MyInfoclick();
 	}
 	@Test(priority =2)
-	public  void addimnfromation()
+	public  void adimninfromation()
 	{
 		Myinfo mi= new Myinfo(driver);
 		mi.add_infor();

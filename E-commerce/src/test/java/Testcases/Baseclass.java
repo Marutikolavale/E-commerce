@@ -23,7 +23,7 @@ public class Baseclass implements IAutoConstant{
 
 	public static WebDriver driver;
 	public static Logger log;
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() throws IOException 
 	{
 		ReadConfig R= new ReadConfig();
@@ -35,25 +35,23 @@ public class Baseclass implements IAutoConstant{
 			op.addArguments("--remote-allow-origins=*");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(op);
-			driver.manage().window().maximize();
 		}
 		else if(BrowserValue.equalsIgnoreCase("Edge"))
 		{ 
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			driver.manage().window().maximize();
 		}
 		else if(BrowserValue.equalsIgnoreCase("Firefox"))
 		{
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
 		}
 		else
 		{
 			System.out.println("Enter correct Choice");
 		}
 		// Implicit wait of 30 sec
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		log=LogManager.getLogger("E-commers");
 		driver.get(Url);
@@ -72,12 +70,13 @@ public class Baseclass implements IAutoConstant{
 
 		TakesScreenshot screenshot=((TakesScreenshot)driver);
 
-		// step 2:call getScreenshtas method to create image file
+		// step 2:call getScreenshota method to create image file
 		File scr=screenshot.getScreenshotAs(OutputType.FILE);
 
-		File dest= new File(System.getProperty("user.dir") +"\\ScreenShot\\" +TestName+".png");
 		// step 3 :copy  Img file to destination
-
+		File dest= new File(System.getProperty("user.dir") +"\\ScreenShot\\" +TestName+".png");
+		
+        // Step 4: perform operation  using FileUtils methods
 		FileUtils.copyFile(scr, dest);
 	}
 

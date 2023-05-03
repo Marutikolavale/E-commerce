@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-17T10:59:55 IST" name="Default suite" finished-at="2023-04-17T11:00:37 IST" duration-ms="41721">
+  <suite started-at="2023-05-03T17:45:32 IST" name="Suite" finished-at="2023-05-03T17:46:49 IST" duration-ms="76886">
     <groups>
     </groups>
-    <test started-at="2023-04-17T10:59:55 IST" name="Default test" finished-at="2023-04-17T11:00:37 IST" duration-ms="41721">
-      <class name="Testcases.class3">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Testcases.class3@491b9b8]" started-at="2023-04-17T10:59:55 IST" name="setUp" finished-at="2023-04-17T11:00:24 IST" duration-ms="28570" status="PASS">
+    <test started-at="2023-05-03T17:45:32 IST" name="Test" finished-at="2023-05-03T17:46:49 IST" duration-ms="76886">
+      <class name="Testcases.PIMPage">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Testcases.PIMPage@4e5ed836]" started-at="2023-05-03T17:45:33 IST" name="setUp" finished-at="2023-05-03T17:45:40 IST" duration-ms="7400" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="add_photo5()[pri:5, instance:Testcases.class3@491b9b8]" started-at="2023-04-17T11:00:24 IST" name="add_photo5" finished-at="2023-04-17T11:00:37 IST" duration-ms="13040" status="PASS">
+        <test-method signature="Add_Employee1()[pri:0, instance:Testcases.PIMPage@4e5ed836]" started-at="2023-05-03T17:45:40 IST" name="Add_Employee1" finished-at="2023-05-03T17:46:49 IST" duration-ms="68953" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add_photo5 -->
-      </class> <!-- Testcases.class3 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- Add_Employee1 -->
+      </class> <!-- Testcases.PIMPage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

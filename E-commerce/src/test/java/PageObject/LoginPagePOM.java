@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPagePOM{
-
+	//public static Logger log=log=LogManager.getLogger("E-commers");
 
 	public LoginPagePOM(WebDriver driver)
 	{
@@ -18,6 +18,9 @@ public class LoginPagePOM{
 	@FindBy(xpath ="//input[@name='password']") public WebElement passwored;
 	@FindBy(xpath ="//button[@type='submit']") public WebElement loginbutton;
 	@FindBy(linkText ="Forgot your password?")  public WebElement forgotpasswordElement;
+	@FindBy(xpath ="//*[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
+	public WebElement  dashboard;
+
 
 
 	public void clickForgotyourpassword()
@@ -25,11 +28,12 @@ public class LoginPagePOM{
 		forgotpasswordElement.click();
 	}
 
-	public void Loginoperation(String Username,String Password)
+	public void Loginoperation(String Username,String Password) throws InterruptedException
 	{
 		username.sendKeys(Username);
 		passwored.sendKeys(Password);
 		loginbutton.click();
+		//log.info("user login sucessfull");
 	}
 
 	//invalid Condition

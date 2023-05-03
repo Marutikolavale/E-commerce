@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class adminPMO {
+public class AdminPOM {
 
-	 public adminPMO(WebDriver driver)
+	 public AdminPOM(WebDriver driver)
 	 {
 		 PageFactory.initElements(driver,this);
 	 }
@@ -18,6 +18,8 @@ public class adminPMO {
 	 @FindBy(linkText ="Nationalities") public WebElement Nationalities;
 	 @FindBy(linkText ="Corporate Branding") public WebElement CorporateBranding;
 	 @FindBy(linkText ="Configuration") public WebElement Configuration;
+	 //
+	 @FindBy(linkText="Users") public WebElement users;
 	
 	 public void clickUserManagement()
 	 {
@@ -51,4 +53,8 @@ public class adminPMO {
 	 {
 		 Configuration.click();
 	 }	
+	  public void clickusers()
+	  {
+		  users.click();
+	  }
 }

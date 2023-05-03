@@ -1,0 +1,53 @@
+package PageObject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LeavePOM {
+
+	public LeavePOM(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(linkText ="Apply") public WebElement Apply;
+	@FindBy(linkText ="My Leave") public WebElement My_Leave;
+	@FindBy(linkText ="Entitlements ") public WebElement Entitlements ;
+	@FindBy(linkText ="Reports ") public WebElement Reports ;
+	@FindBy(linkText ="Configure ") public WebElement Configure ;
+	@FindBy(linkText ="Leave List") public WebElement Leave_List;
+	@FindBy(linkText ="Assign Leave") public WebElement Assign_Leave;
+
+
+	//
+	public void clickApply()
+	{
+		Apply.click(); 
+	}
+	public void clickMy_Leave()
+	{
+		My_Leave.click();
+	}
+	public void clickEntitlements()
+	{
+		Entitlements.click(); 
+	}
+	public void clickReports()
+	{
+		Reports.click(); 
+	}
+	public void clickConfigure()
+	{
+		Configure.click();	 
+	}
+	public void clickLeave_List()
+	{
+		Leave_List.click(); 
+	}
+	public void clickAssign_Leave()
+	{
+		Assign_Leave.click(); 
+	}
+}
