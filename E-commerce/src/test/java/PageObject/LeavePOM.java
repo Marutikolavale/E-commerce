@@ -19,6 +19,10 @@ public class LeavePOM {
 	@FindBy(linkText ="Configure ") public WebElement Configure ;
 	@FindBy(linkText ="Leave List") public WebElement Leave_List;
 	@FindBy(linkText ="Assign Leave") public WebElement Assign_Leave;
+	
+	// my Leave
+	@FindBy(xpath ="//i[@ class='oxd-icon bi-x oxd-sidepanel-header-close']") public WebElement MyLeave_fromDate;
+	@FindBy(xpath="//input[@class='oxd-input oxd-input--active' and  @placeholder='Search']") public WebElement MyLeave_fromDate_Year;
 
 
 	//

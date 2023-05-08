@@ -21,8 +21,7 @@ public class LoginPagePOM{
 	@FindBy(xpath ="//*[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
 	public WebElement  dashboard;
 
-
-
+	@FindBy(xpath="//img[@alt='client brand banner']") public WebElement logo;
 	public void clickForgotyourpassword()
 	{
 		forgotpasswordElement.click();
@@ -32,6 +31,7 @@ public class LoginPagePOM{
 	{
 		username.sendKeys(Username);
 		passwored.sendKeys(Password);
+		Thread.sleep(2000);
 		loginbutton.click();
 		//log.info("user login sucessfull");
 	}
@@ -42,9 +42,6 @@ public class LoginPagePOM{
 		username.sendKeys(invalidUsername);
 		passwored.sendKeys(invalidPassword);
 		loginbutton.click();
-		Thread.sleep(3000);
-		username.clear();
-
 	}
 
 

@@ -22,7 +22,15 @@ public class PIMPOM {
 	@FindBy(xpath ="//input[@name='lastName']") public WebElement LastName;
 	@FindBy(xpath ="//input[@class='oxd-input oxd-input--active' and @placeholder='Search']") public WebElement Employee_Id;
 	@FindBy(xpath ="//button[@type='submit']") public WebElement  SaveBtn;
-	
+	@FindBy(xpath="//input[@placeholder='Type for hints...']") public WebElement employeeReport;
+	@FindBy(xpath ="//button[@class='oxd-button oxd-button--medium oxd-button--ghost' ]") public WebElement reportReset;
+	@FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']") public WebElement ReprotSearch;
+	@FindBy(xpath="//a[text()='Optional Fields']") public WebElement  Optional_Fields;
+	@FindBy(xpath="//a[text()='Custom Fields']") public WebElement  Custom_Fields;
+	@FindBy(xpath="//a[text()='Data Import']") public WebElement  Data_Import;
+	@FindBy(xpath="//a[text()='Reporting Methods']") public WebElement  Reporting_Methods;
+	@FindBy(xpath="//a[text()='Termination Reasons']") public WebElement  Termination_Reasons;
+@FindBy(xpath="//button[@type='button' and @class='oxd-icon-button oxd-main-menu-button']")  public WebElement employeeList_Add;
 
 	////div[@class='oxd-input-group oxd-input-field-bottom-space']//d
 	public void  clickConfiguration()

@@ -48,19 +48,19 @@ public class ExtentReport implements  ITestListener{
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
 		test.log(Status.FAIL, MarkupHelper.createLabel("name of fail test case is : " +result.getName(),ExtentColor.RED));
-		//test.fail(result.getThrowable());
-		String screenShotPath= System.getProperty("user.dir") + "\\ScreenShot\\" + result.getName()+".png";
-		File screenShotFile= new File(screenShotPath);
-		if(screenShotFile.exists())
+		test.fail(result.getThrowable());
+		String ScreenShotPath= System.getProperty("user.dir") + "\\ScreenShot\\" + result.getName()+".png";
+		File Sh= new File(ScreenShotPath);
+		if(Sh.exists())
 		{
-			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(screenShotPath));
+			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(ScreenShotPath));
 		}
 	}
 
 	public void onTestSkipped(ITestResult result) {
 		test =rop.createTest(result.getName());
 		test.log(Status.SKIP, MarkupHelper.createLabel("name of Skipped test case is : " +result.getName(),ExtentColor.YELLOW));
-		//test.skip(result.getThrowable());
+		test.skip(result.getThrowable());
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {

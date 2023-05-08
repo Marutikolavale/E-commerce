@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadConfig {
 	//generic reusable method to read the property file
-	public String readPropertyFile(String propPath,String key) throws IOException
+	public String ReadPropertyFile(String propPath,String key) throws IOException
 	{
 		FileInputStream fis=new FileInputStream(propPath);
 		Properties prop = new Properties();
@@ -23,7 +23,7 @@ public class ReadConfig {
 	}
 	//read the Data from excel
 
-	public String readExcelData(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
+	public String ReadExcelData(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis =new FileInputStream(excelPath);
 		XSSFWorkbook  wb = new XSSFWorkbook(fis);
@@ -35,7 +35,7 @@ public class ReadConfig {
 	}
 	//how get Row count
 
-	public int getRowCount(String execlPath,String sheetName) throws EncryptedDocumentException, IOException
+	public int GetRowCount(String execlPath,String sheetName) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis=new FileInputStream(execlPath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -69,15 +69,15 @@ public class ReadConfig {
 	// data provider method in testNG
 	public  String[][]Daataprovider() throws EncryptedDocumentException, IOException
 	{
-		String pathName=System.getProperty("user.dir")+"\\Testdata\\demo.xlsx";
-		int totlerow=getRowCount(pathName,"pathName");
-		int totalcell=getcellCount(pathName,"pathName");
-		String data[][]= new String[totlerow-1][totalcell];
+		String pathName = System.getProperty("user.dir")+"\\Testdata\\demo.xlsx";
+		int TotalRow = GetRowCount(pathName,"pathName");
+		int TotalCell = getcellCount(pathName,"pathName");
+		String data[][]= new String[TotalRow-1][TotalCell];
 		{
-			for(int i=1;i<=totlerow;i++)
+			for(int i=1;i<=TotalRow;i++)
 			{
-				for (int j=0;j<=totalcell;j++) {
-					data[1-1][j]=readExcelData(pathName, "pat", i, j);
+				for (int j=0;j<=TotalCell;j++) {
+					data[1-1][j]=ReadExcelData(pathName, "path", i, j);
 				}
 			}
 		}

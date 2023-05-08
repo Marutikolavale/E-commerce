@@ -12,19 +12,19 @@ import Utilities.ReadConfig;
 
 public class class2 extends Baseclass {
 	ReadConfig Rc= new ReadConfig();
-	@Test(priority = 1)
-	public  void  login_imformation_disply() throws EncryptedDocumentException, IOException
+	@Test(enabled = true)
+	public  void  login_imformation_disply() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
 	}
-	@Test(priority =2)
+	@Test(enabled = true)
 	public  void adimninfromation()
 	{
 		Myinfo mi= new Myinfo(driver);

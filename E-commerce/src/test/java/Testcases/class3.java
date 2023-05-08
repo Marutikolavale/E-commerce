@@ -19,14 +19,14 @@ public class class3  extends Baseclass{
 
 	ReadConfig Rc= new ReadConfig();
 	// add photo for jpg format
-	@Test(priority = 1,enabled =  false)
+	@Test(enabled = true)
 	public void add_photo() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
@@ -37,7 +37,7 @@ public class class3  extends Baseclass{
 		// copy file to clipbord
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\Testing\\Maruti\\Photo -11.jpg");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// cont + v action perfrom 
+		// control + v action perform 
 
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_V);
@@ -51,15 +51,15 @@ public class class3  extends Baseclass{
 		mi.savebtn.click();
 
 	}
-	// add pic in PNG  format
-	@Test(priority = 2,enabled =  false)
+	// add Pic in PNG  format
+	@Test(enabled = true)
 	public void add_photo1() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
@@ -71,7 +71,7 @@ public class class3  extends Baseclass{
 		// copy file to clipbord
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\Screenshot_20221222_111736.png");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// cont + v action perfrom 
+		// control + v action perform 
 
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_V);
@@ -84,14 +84,14 @@ public class class3  extends Baseclass{
 		Thread.sleep(2000);
 		mi.savebtn.click();
 	}
-	@Test(priority = 3,enabled = false)
+	@Test(enabled = true)
 	public void add_photo2() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
@@ -102,7 +102,7 @@ public class class3  extends Baseclass{
 		// copy file to clipbord
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\2.png");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// cont + v action perfrom 
+		// control + v action perform 
 
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_V);
@@ -116,15 +116,15 @@ public class class3  extends Baseclass{
 		mi.savebtn.click();
 
 	}
-	// puload Doc error massge  is display
-	@Test(priority = 4,enabled = false)
+	// puload Doc error massage  is display
+	@Test(enabled = true)
 	public void add_photo4() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
@@ -135,7 +135,7 @@ public class class3  extends Baseclass{
 		// copy file to clipbord
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\a.doc");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// cont + v action perfrom 
+		// control + v action perform 
 
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_V);
@@ -148,14 +148,14 @@ public class class3  extends Baseclass{
 		Thread.sleep(2000);
 		mi.savebtn.click();
 	}
-	@Test(priority = 5,enabled = true)
+	@Test(enabled = true)
 	public void add_photo5() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		DashBord dh= new DashBord(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String Username1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.readExcelData(EXCEL_PATH,"Validcreads",1,1);
+		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
@@ -163,10 +163,10 @@ public class class3  extends Baseclass{
 		mi.add_photoclick();
 		Robot r= new Robot();
 		r.delay(2000);
-		// copy file to clipbord
+		// copy file to Clipborad
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\pan.jpg");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// cont + v action perfrom 
+		// control + v action Perform 
 
 		r.keyPress(KeyEvent.VK_CONTROL);
 		r.keyPress(KeyEvent.VK_V);
