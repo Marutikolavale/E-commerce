@@ -52,9 +52,10 @@ public class Baseclass implements IAutoConstant{
 			System.out.println("Enter correct Choice");
 		}
 		//Implicit wait of 30 Second
+		
 		driver.manage().window().maximize();
 		driver.get(Url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 
 		log.info("url opened");
 	}

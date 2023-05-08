@@ -20,7 +20,6 @@ public class Loginpage extends Baseclass {
 		Loginpage l= new Loginpage();
 		String user = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
 		String pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		System.out.println(user+ "  "+pass);
 		lp.Loginoperation(user,pass);
 		if(lp.logo.isDisplayed())
 		{
@@ -35,8 +34,6 @@ public class Loginpage extends Baseclass {
 	@Test(enabled =true)
 	public void FailLogin() throws EncryptedDocumentException, IOException, InterruptedException
 	{
-		Thread.sleep(2000);
-
 		log.info("FailLogin test case");
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
@@ -72,7 +69,7 @@ public class Loginpage extends Baseclass {
 			lp.actiTimeInvalidLogin(invalidUser, invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
-			/*if(lp.logo.isDisplayed())
+			if(lp.logo.isDisplayed())
 			{
 				l.captureScreenShot(driver,"invaild_login");
 				log.info("Invaild_Login test case is Fail");
@@ -80,9 +77,8 @@ public class Loginpage extends Baseclass {
 			else
 			{
 				log.info("Invaild_Login test case is pass");
-			}*/
+			}
 		}
-		Thread.sleep(2000);
 
 	}
 }

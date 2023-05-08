@@ -10,6 +10,7 @@
         <methods>
           <include name="SetUp"/>
           <include name="Invaild_Login"/>
+          <include name="FailLogin"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
     </classes>

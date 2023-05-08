@@ -29,9 +29,9 @@ public class LoginPagePOM{
 
 	public void Loginoperation(String Username,String Password) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		username.sendKeys(Username);
 		passwored.sendKeys(Password);
-		Thread.sleep(2000);
 		loginbutton.click();
 		//log.info("user login sucessfull");
 	}
@@ -39,6 +39,7 @@ public class LoginPagePOM{
 	//invalid Condition
 	public void actiTimeInvalidLogin(String invalidUsername,String invalidPassword) throws InterruptedException
 	{
+		Thread.sleep(2000);
 		username.sendKeys(invalidUsername);
 		passwored.sendKeys(invalidPassword);
 		loginbutton.click();
