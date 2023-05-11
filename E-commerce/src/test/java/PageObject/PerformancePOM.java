@@ -12,14 +12,9 @@ public class PerformancePOM {
 		PageFactory.initElements(driver, this);
 	}
 	//
-
-
-
 	@FindBy(linkText ="Configure ") public WebElement Configure ;
 	@FindBy(linkText ="Manage Reviews  ") public WebElement Manage_Reviews  ;
-
 	@FindBy(linkText ="My Trackers") public WebElement My_Trackers ;
-
 	@FindBy(linkText ="Employee Trackers ") public WebElement Employee_Trackers ;
 
 	public void clickConfigure()

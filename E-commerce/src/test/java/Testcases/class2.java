@@ -5,9 +5,9 @@ import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
 import org.testng.annotations.Test;
 
-import PageObject.DashBord;
+import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
-import PageObject.Myinfo;
+import PageObject.MyinfoPOM;
 import Utilities.ReadConfig;
 
 public class class2 extends Baseclass {
@@ -15,7 +15,7 @@ public class class2 extends Baseclass {
 	@Test(enabled = true)
 	public  void  login_imformation_disply() throws EncryptedDocumentException, IOException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -25,9 +25,10 @@ public class class2 extends Baseclass {
 		dh.MyInfoclick();
 	}
 	@Test(enabled = true)
-	public  void adimninfromation()
+	public  void adimninfromation() throws InterruptedException
 	{
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
+		Thread.sleep(2000);
 		mi.add_infor();
 	}
 }

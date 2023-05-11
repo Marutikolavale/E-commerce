@@ -10,9 +10,9 @@ import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
 import org.testng.annotations.Test;
 
-import PageObject.DashBord;
+import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
-import PageObject.Myinfo;
+import PageObject.MyinfoPOM;
 import Utilities.ReadConfig;
 
 public class class3  extends Baseclass{
@@ -22,7 +22,7 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -30,7 +30,7 @@ public class class3  extends Baseclass{
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
 		mi.add_photoclick();
 		Robot r= new Robot();
 		r.delay(2000);
@@ -55,7 +55,7 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo1() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -63,7 +63,7 @@ public class class3  extends Baseclass{
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
 		mi.add_photoclick();
 
 		Robot r= new Robot();
@@ -87,7 +87,7 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo2() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -95,7 +95,7 @@ public class class3  extends Baseclass{
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
 		mi.add_photoclick();
 		Robot r= new Robot();
 		r.delay(2000);
@@ -120,7 +120,7 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo4() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -128,7 +128,7 @@ public class class3  extends Baseclass{
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
 		mi.add_photoclick();
 		Robot r= new Robot();
 		r.delay(2000);
@@ -151,7 +151,7 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo5() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
-		DashBord dh= new DashBord(driver);
+		DashBordPOM dh= new DashBordPOM(driver);
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
@@ -159,7 +159,7 @@ public class class3  extends Baseclass{
 		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
-		Myinfo mi= new Myinfo(driver);
+		MyinfoPOM mi= new MyinfoPOM(driver);
 		mi.add_photoclick();
 		Robot r= new Robot();
 		r.delay(2000);

@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Myinfo {
+public class MyinfoPOM {
 
-	public Myinfo(WebDriver driver)
+	public MyinfoPOM(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

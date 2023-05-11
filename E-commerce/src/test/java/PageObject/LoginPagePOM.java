@@ -20,8 +20,9 @@ public class LoginPagePOM{
 	@FindBy(linkText ="Forgot your password?")  public WebElement forgotpasswordElement;
 	@FindBy(xpath ="//*[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
 	public WebElement  dashboard;
-
-	@FindBy(xpath="//img[@alt='client brand banner']") public WebElement logo;
+@FindBy(xpath ="//img[@alt='profile picture' and  @class='oxd-userdropdown-img']") public  WebElement loginLogo;
+	@FindBy(xpath="//p[text()='Invalid credentials']")public WebElement logo;
+	
 	public void clickForgotyourpassword()
 	{
 		forgotpasswordElement.click();

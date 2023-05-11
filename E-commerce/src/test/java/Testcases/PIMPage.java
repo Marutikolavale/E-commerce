@@ -6,7 +6,7 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.formula.functions.PPMT;
 import org.testng.annotations.*;
 
-import PageObject.DashBord;
+import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
 import PageObject.PIMPOM;
 import Utilities.ReadConfig;
@@ -20,7 +20,7 @@ public class PIMPage extends Baseclass{
 		String User = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
 		String Pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(User,Pass);
-		DashBord db= new  DashBord(driver);
+		DashBordPOM db= new  DashBordPOM(driver);
 		db.PIMclick();
 
 		int rc = Rc.GetRowCount(EXCEL_PATH,"UserImfromations");

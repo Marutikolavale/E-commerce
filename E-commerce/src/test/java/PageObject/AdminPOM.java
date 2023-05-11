@@ -5,13 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AdminPOM {
+public class AdminPOM  extends User_Management implements AdminJobPOM {
 
 	 public AdminPOM(WebDriver driver)
 	 {
 		 PageFactory.initElements(driver,this);
 	 }
-	 @FindBy(linkText ="User Management") public WebElement UserManagement;
+	 @FindBy(linkText ="//span[ text()='User Management ' and @class='oxd-topbar-body-nav-tab-item']") public WebElement UserManagement;
 	 @FindBy(xpath ="//span[text()='Job ']") public WebElement Job;
 	 @FindBy(linkText ="Organization") public WebElement Organization;
 	 @FindBy(linkText ="Qualifications") public WebElement Qualifications  ;
@@ -20,6 +20,8 @@ public class AdminPOM {
 	 @FindBy(linkText ="Configuration") public WebElement Configuration;
 	 //
 	 @FindBy(linkText="Users") public WebElement users;
+	 @FindBy(xpath ="//div[@class='oxd-select-text-input']") public WebElement SSS;
+	 @FindBy(xpath ="//div[text()='Disabled' and @class='oxd-select-text-input']") public WebElement aaa;
 	
 	 public void clickUserManagement()
 	 {

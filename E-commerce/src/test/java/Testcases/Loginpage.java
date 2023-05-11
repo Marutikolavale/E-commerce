@@ -5,6 +5,7 @@ import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import PageObject.AdminPOM;
 import PageObject.LoginPagePOM;
 import Utilities.ReadConfig;
 import groovyjarjarantlr4.v4.codegen.model.LL1AltBlock;
@@ -21,7 +22,8 @@ public class Loginpage extends Baseclass {
 		String user = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
 		String pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		lp.Loginoperation(user,pass);
-		if(lp.logo.isDisplayed())
+		Thread.sleep(10000);
+		if(lp.loginLogo.isDisplayed())
 		{
 			log.info("LoginOperation test case is pass");
 		}
@@ -39,17 +41,17 @@ public class Loginpage extends Baseclass {
 		Loginpage l= new Loginpage();
 		String failUsername = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",1,0);
 		String failPassword = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",1,1);
-		Thread.sleep(2000);
 		lp.Loginoperation(failUsername,failPassword);
-
+		Thread.sleep(10000);
 		if(lp.logo.isDisplayed())
 		{
-			l.captureScreenShot(driver,"FailLogin");
-			log.info("FailLogin test case is Fail");
+			log.info("FailLogin test case is pass");
 		}
 		else
 		{
-			log.info("FailLogin test case is pass");
+			l.captureScreenShot(driver,"FailLogin");
+			log.info("FailLogin test case is Fail");
+
 		}
 	}
 	@Test(enabled =true)
@@ -58,7 +60,6 @@ public class Loginpage extends Baseclass {
 		log.info("check Diff way Enter Password login  Operantion");
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		Thread.sleep(2000);
 		int rc = Rc.GetRowCount(EXCEL_PATH,"Invalidcreads");
 		for(int i=1;i<=rc;i++)
 		{
@@ -69,15 +70,19 @@ public class Loginpage extends Baseclass {
 			lp.actiTimeInvalidLogin(invalidUser, invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
+			Thread.sleep(10000);
+
 			if(lp.logo.isDisplayed())
-			{
-				l.captureScreenShot(driver,"invaild_login");
-				log.info("Invaild_Login test case is Fail");
-			}
-			else
 			{
 				log.info("Invaild_Login test case is pass");
 			}
+			else
+			{
+				l.captureScreenShot(driver,"FailLogin");
+				log.info("FailLogin test case is Fail");
+
+			}
+
 		}
 
 	}
