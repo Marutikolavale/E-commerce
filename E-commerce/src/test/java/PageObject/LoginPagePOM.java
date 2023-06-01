@@ -1,17 +1,25 @@
 package PageObject;
 
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPagePOM{
-	//public static Logger log=log=LogManager.getLogger("E-commers");
+import Testcases.Loginpage;
+import Utilities.IAutoConstant;
+import Utilities.ReadConfig;
 
+public class LoginPagePOM implements  IAutoConstant{
+	//public static Logger log=log=LogManager.getLogger("E-commers");
+	ReadConfig Rc = new ReadConfig();
 	public LoginPagePOM(WebDriver driver)
 	{
 		PageFactory.initElements(driver,this);
 	}
+
 
 	//locate Element 
 	@FindBy(xpath ="//input[@name='username']") public WebElement  username;
@@ -20,32 +28,30 @@ public class LoginPagePOM{
 	@FindBy(linkText ="Forgot your password?")  public WebElement forgotpasswordElement;
 	@FindBy(xpath ="//*[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
 	public WebElement  dashboard;
-@FindBy(xpath ="//img[@alt='profile picture' and  @class='oxd-userdropdown-img']") public  WebElement loginLogo;
+	@FindBy(xpath ="//img[@alt='profile picture' and  @class='oxd-userdropdown-img']") public  WebElement loginLogo;
 	@FindBy(xpath="//p[text()='Invalid credentials']")public WebElement logo;
-	
+
 	public void clickForgotyourpassword()
 	{
 		forgotpasswordElement.click();
 	}
 
-	public void Loginoperation(String Username,String Password) throws InterruptedException
+	public void LoginOperation() throws InterruptedException, EncryptedDocumentException, IOException
 	{
-		Thread.sleep(2000);
-		username.sendKeys(Username);
-		passwored.sendKeys(Password);
+		String user = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
+		String pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
+		username. sendKeys(user);
+		passwored.sendKeys(pass);
+		Thread.sleep(10000);
 		loginbutton.click();
 		//log.info("user login sucessfull");
 	}
-
 	//invalid Condition
-	public void actiTimeInvalidLogin(String invalidUsername,String invalidPassword) throws InterruptedException
+	public void  multipelLogin(String Username, String password ) throws InterruptedException
 	{
-		Thread.sleep(2000);
-		username.sendKeys(invalidUsername);
-		passwored.sendKeys(invalidPassword);
+		username. sendKeys(Username);
+		passwored.sendKeys(password);
+		Thread.sleep(10000);
 		loginbutton.click();
 	}
-
-
-
 }

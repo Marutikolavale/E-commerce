@@ -19,9 +19,7 @@ public class Loginpage extends Baseclass {
 		log.info("loginoperation test start");
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
-		String user = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(user,pass);
+		lp.LoginOperation();
 		Thread.sleep(10000);
 		if(lp.loginLogo.isDisplayed())
 		{
@@ -31,27 +29,6 @@ public class Loginpage extends Baseclass {
 		{
 			l.captureScreenShot(driver,"LoginOperation");
 			log.info("LoginOperation test case is Fail");
-		}
-	}
-	@Test(enabled =true)
-	public void FailLogin() throws EncryptedDocumentException, IOException, InterruptedException
-	{
-		log.info("FailLogin test case");
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String failUsername = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",1,0);
-		String failPassword = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",1,1);
-		lp.Loginoperation(failUsername,failPassword);
-		Thread.sleep(10000);
-		if(lp.logo.isDisplayed())
-		{
-			log.info("FailLogin test case is pass");
-		}
-		else
-		{
-			l.captureScreenShot(driver,"FailLogin");
-			log.info("FailLogin test case is Fail");
-
 		}
 	}
 	@Test(enabled =true)
@@ -67,7 +44,7 @@ public class Loginpage extends Baseclass {
 			String invalidPass = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",i,1);
 			//Perform invalid login
 			Thread.sleep(2000);
-			lp.actiTimeInvalidLogin(invalidUser, invalidPass);
+			lp.multipelLogin(invalidUser,invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
 			Thread.sleep(10000);

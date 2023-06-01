@@ -15,14 +15,17 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
+import PageObject.LoginPagePOM;
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass implements IAutoConstant{
 
-	public static WebDriver driver;
-	public static Logger log=LogManager.getLogger("E-commers");
+	public WebDriver driver;
+	public Logger log=LogManager.getLogger("E-commers");
+	ReadConfig Rc= new ReadConfig();
+
 
 	@BeforeMethod
 	public void SetUp() throws IOException 
@@ -53,15 +56,16 @@ public class Baseclass implements IAutoConstant{
 		}
 		//Implicit wait of 30 Second
 
-		driver.manage().window().maximize();
 		driver.get(Url);
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
 		log.info("url opened");
 	}
 	@AfterMethod
-	public void tearDown()
+	public void tearDown() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		driver.quit();
 		log.info("closed browser");
 	}
@@ -81,7 +85,7 @@ public class Baseclass implements IAutoConstant{
 		// Step 4: perform operation  using FileUtils methods
 		FileUtils.copyFile(Scr, Dest);
 	}
-
+	
 }
 
 

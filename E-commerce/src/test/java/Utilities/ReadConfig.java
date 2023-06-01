@@ -5,13 +5,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import javax.swing.plaf.basic.BasicArrowButton;
+
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadConfig {
+public class ReadConfig implements IAutoConstant {
 	//generic reusable method to read the property file
 	public String ReadPropertyFile(String propPath,String key) throws IOException
 	{
@@ -26,7 +28,7 @@ public class ReadConfig {
 	public String ReadExcelData(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis =new FileInputStream(excelPath);
-		XSSFWorkbook  wb = new XSSFWorkbook(fis);
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sh = wb.getSheet(sheetName);
 		Row row = sh.getRow(rowCount);
 		Cell cell = row.getCell(cellCount);
@@ -41,7 +43,8 @@ public class ReadConfig {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sh = wb.getSheet(sheetName);
 		int getrowvalues = sh.getLastRowNum();
-		return getrowvalues;		
+		return getrowvalues;
+
 	}
 	public int getcellCount(String execlPath,String sheetName) throws EncryptedDocumentException, IOException
 	{
@@ -84,5 +87,3 @@ public class ReadConfig {
 		return data;
 	}
 }
-
-// 9359133940

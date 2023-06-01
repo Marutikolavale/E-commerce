@@ -1,125 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-11T10:16:31 IST" name="Suite" finished-at="2023-05-11T10:21:36 IST" duration-ms="304948">
+  <suite started-at="2023-06-01T16:40:35 IST" name="Default suite" finished-at="2023-06-01T16:41:36 IST" duration-ms="60895">
     <groups>
     </groups>
-    <test started-at="2023-05-11T10:16:31 IST" name="Test" finished-at="2023-05-11T10:21:36 IST" duration-ms="304948">
+    <test started-at="2023-06-01T16:40:35 IST" name="Default test" finished-at="2023-06-01T16:41:36 IST" duration-ms="60895">
       <class name="Testcases.PIMPage">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.PIMPage@62f87c44]" started-at="2023-05-11T10:18:05 IST" name="SetUp" finished-at="2023-05-11T10:18:09 IST" duration-ms="3624" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.PIMPage@63f34b70]" started-at="2023-06-01T16:40:35 IST" name="SetUp" finished-at="2023-06-01T16:40:46 IST" duration-ms="11673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="Add_Employee1()[pri:0, instance:Testcases.PIMPage@62f87c44]" started-at="2023-05-11T10:18:09 IST" name="Add_Employee1" finished-at="2023-05-11T10:18:47 IST" duration-ms="38016" status="PASS">
+        <test-method signature="Add_Employee1()[pri:0, instance:Testcases.PIMPage@63f34b70]" started-at="2023-06-01T16:40:46 IST" name="Add_Employee1" finished-at="2023-06-01T16:41:30 IST" duration-ms="43401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Employee1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.PIMPage@62f87c44]" started-at="2023-05-11T10:18:47 IST" name="tearDown" finished-at="2023-05-11T10:18:47 IST" duration-ms="354" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.PIMPage@63f34b70]" started-at="2023-06-01T16:41:30 IST" name="tearDown" finished-at="2023-06-01T16:41:36 IST" duration-ms="5774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Testcases.PIMPage -->
-      <class name="Testcases.class3">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:16:32 IST" name="SetUp" finished-at="2023-05-11T10:16:41 IST" duration-ms="9283" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:16:41 IST" name="add_photo" finished-at="2023-05-11T10:16:56 IST" duration-ms="15219" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:16:56 IST" name="tearDown" finished-at="2023-05-11T10:16:56 IST" duration-ms="307" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:16:56 IST" name="SetUp" finished-at="2023-05-11T10:17:01 IST" duration-ms="4609" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo1()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:01 IST" name="add_photo1" finished-at="2023-05-11T10:17:14 IST" duration-ms="12742" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:14 IST" name="tearDown" finished-at="2023-05-11T10:17:14 IST" duration-ms="296" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:14 IST" name="SetUp" finished-at="2023-05-11T10:17:19 IST" duration-ms="4894" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo2()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:19 IST" name="add_photo2" finished-at="2023-05-11T10:17:30 IST" duration-ms="11574" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:31 IST" name="tearDown" finished-at="2023-05-11T10:17:31 IST" duration-ms="317" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:31 IST" name="SetUp" finished-at="2023-05-11T10:17:35 IST" duration-ms="4030" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo4()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:35 IST" name="add_photo4" finished-at="2023-05-11T10:17:47 IST" duration-ms="12612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:47 IST" name="tearDown" finished-at="2023-05-11T10:17:48 IST" duration-ms="345" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:48 IST" name="SetUp" finished-at="2023-05-11T10:17:52 IST" duration-ms="4021" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo5()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:17:52 IST" name="add_photo5" finished-at="2023-05-11T10:18:05 IST" duration-ms="12850" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo5 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@2a492f2a]" started-at="2023-05-11T10:18:05 IST" name="tearDown" finished-at="2023-05-11T10:18:05 IST" duration-ms="265" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Testcases.class3 -->
-      <class name="Testcases.Loginpage">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:18:47 IST" name="SetUp" finished-at="2023-05-11T10:18:51 IST" duration-ms="3612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="FailLogin()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:18:51 IST" name="FailLogin" finished-at="2023-05-11T10:19:03 IST" duration-ms="12528" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FailLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:19:03 IST" name="tearDown" finished-at="2023-05-11T10:19:03 IST" duration-ms="336" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:19:03 IST" name="SetUp" finished-at="2023-05-11T10:19:08 IST" duration-ms="4880" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="Invaild_Login()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:19:08 IST" name="Invaild_Login" finished-at="2023-05-11T10:21:18 IST" duration-ms="129538" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Invaild_Login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:21:18 IST" name="tearDown" finished-at="2023-05-11T10:21:18 IST" duration-ms="363" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:21:18 IST" name="SetUp" finished-at="2023-05-11T10:21:23 IST" duration-ms="4712" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="LoginOperation()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:21:23 IST" name="LoginOperation" finished-at="2023-05-11T10:21:35 IST" duration-ms="12483" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginOperation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.Loginpage@48f5bde6]" started-at="2023-05-11T10:21:35 IST" name="tearDown" finished-at="2023-05-11T10:21:36 IST" duration-ms="336" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Testcases.Loginpage -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -22,12 +22,10 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
+		LoginPagePOM Pl= new LoginPagePOM(driver);
+
+		Pl.LoginOperation();
 		DashBordPOM dh= new DashBordPOM(driver);
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(Username1,Password1);
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
 		MyinfoPOM mi= new MyinfoPOM(driver);
@@ -55,12 +53,10 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo1() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
+		LoginPagePOM Pl= new LoginPagePOM(driver);
+
 		DashBordPOM dh= new DashBordPOM(driver);
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(Username1,Password1);
+		Pl.LoginOperation();
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
 		MyinfoPOM mi= new MyinfoPOM(driver);
@@ -68,7 +64,7 @@ public class class3  extends Baseclass{
 
 		Robot r= new Robot();
 		r.delay(2000);
-		// copy file to clipbord
+		// copy file to Clipbord
 		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\Screenshot_20221222_111736.png");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		// control + v action perform 
@@ -87,12 +83,10 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo2() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
+		LoginPagePOM Pl= new LoginPagePOM(driver);
+
 		DashBordPOM dh= new DashBordPOM(driver);
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(Username1,Password1);
+		Pl.LoginOperation();
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
 		MyinfoPOM mi= new MyinfoPOM(driver);
@@ -120,12 +114,10 @@ public class class3  extends Baseclass{
 	@Test(enabled = true)
 	public void add_photo4() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
+		LoginPagePOM Pl= new LoginPagePOM(driver);
+
 		DashBordPOM dh= new DashBordPOM(driver);
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(Username1,Password1);
+		Pl.LoginOperation();
 		log.info("user login sucessfull");
 		dh.MyInfoclick();
 		MyinfoPOM mi= new MyinfoPOM(driver);
@@ -150,34 +142,31 @@ public class class3  extends Baseclass{
 	}
 	@Test(enabled = true)
 	public void add_photo5() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
-	{
-		DashBordPOM dh= new DashBordPOM(driver);
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		Loginpage l= new Loginpage();
-		String Username1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Password1 = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(Username1,Password1);
-		log.info("user login sucessfull");
-		dh.MyInfoclick();
-		MyinfoPOM mi= new MyinfoPOM(driver);
-		mi.add_photoclick();
-		Robot r= new Robot();
-		r.delay(2000);
-		// copy file to Clipborad
-		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\pan.jpg");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		// control + v action Perform 
+	{	LoginPagePOM Pl= new LoginPagePOM(driver);
 
-		r.keyPress(KeyEvent.VK_CONTROL);
-		r.keyPress(KeyEvent.VK_V);
+	DashBordPOM dh= new DashBordPOM(driver);
+	Pl.LoginOperation();
+	log.info("user login sucessfull");
+	dh.MyInfoclick();
+	MyinfoPOM mi= new MyinfoPOM(driver);
+	mi.add_photoclick();
+	Robot r= new Robot();
+	r.delay(2000);
+	// copy file to Clipborad
+	StringSelection ss= new StringSelection("C:\\Users\\mbkol\\OneDrive\\Pictures\\Screenshots\\A.png");
+	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+	// control + v action Perform 
 
-		r.keyRelease(KeyEvent.VK_CONTROL);
-		r.keyRelease(KeyEvent.VK_V);
-		r.keyPress(KeyEvent.VK_ENTER);
+	r.keyPress(KeyEvent.VK_CONTROL);
+	r.keyPress(KeyEvent.VK_V);
 
-		log.info("add photo sucess full");
-		Thread.sleep(2000);
-		mi.savebtn.click();
+	r.keyRelease(KeyEvent.VK_CONTROL);
+	r.keyRelease(KeyEvent.VK_V);
+	r.keyPress(KeyEvent.VK_ENTER);
+
+	log.info("add photo sucess full");
+	Thread.sleep(2000);
+	mi.savebtn.click();
 
 	}
 

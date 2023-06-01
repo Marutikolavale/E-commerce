@@ -16,13 +16,12 @@ public class PIMPage extends Baseclass{
 	@Test
 	public void  Add_Employee1() throws EncryptedDocumentException, IOException, InterruptedException
 	{
-		LoginPagePOM  lp= new LoginPagePOM(driver);
-		String User = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,0);
-		String Pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
-		lp.Loginoperation(User,Pass);
+		LoginPagePOM lp=new LoginPagePOM(driver);
+		lp.LoginOperation();
+		log.info("login Sucessfull");
 		DashBordPOM db= new  DashBordPOM(driver);
 		db.PIMclick();
-
+		log.info("clickedPIM");
 		int rc = Rc.GetRowCount(EXCEL_PATH,"UserImfromations");
 		for(int i=1;i<=rc;i++)
 		{

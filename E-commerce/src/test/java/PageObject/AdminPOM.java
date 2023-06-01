@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AdminPOM  extends User_Management implements AdminJobPOM {
+public class AdminPOM {
 
 	 public AdminPOM(WebDriver driver)
 	 {
