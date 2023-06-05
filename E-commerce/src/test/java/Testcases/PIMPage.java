@@ -32,7 +32,7 @@ public class PIMPage extends Baseclass{
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,0);
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,1);
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,2);
-			//String Employee_id = Rc.readExcelData(EXCEL_PATH,"UserImfromations",i,3);
+			//String Employee_id = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,3);
 			pp.FirstName.clear();
 			pp.FirstName.sendKeys(Firstname);
 			pp.MiddleName.clear();
@@ -40,6 +40,7 @@ public class PIMPage extends Baseclass{
 			pp.LastName.clear();
 			pp.LastName.sendKeys(lastname);
 			pp.Employee_Id.clear();
+			Thread.sleep(2000);
 			//pp.Employee_Id.sendKeys(Employee_id);
 			Thread.sleep(2000);
 			pp.SaveBtn.click();

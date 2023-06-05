@@ -15,7 +15,7 @@ import PageObject.LoginPagePOM;
 import PageObject.MyinfoPOM;
 import Utilities.ReadConfig;
 
-public class class3  extends Baseclass{
+public class class3 extends Baseclass{
 
 	ReadConfig Rc= new ReadConfig();
 	// add photo for jpg format
@@ -23,7 +23,6 @@ public class class3  extends Baseclass{
 	public void add_photo() throws EncryptedDocumentException, IOException, AWTException, InterruptedException
 	{
 		LoginPagePOM Pl= new LoginPagePOM(driver);
-
 		Pl.LoginOperation();
 		DashBordPOM dh= new DashBordPOM(driver);
 		log.info("user login sucessfull");

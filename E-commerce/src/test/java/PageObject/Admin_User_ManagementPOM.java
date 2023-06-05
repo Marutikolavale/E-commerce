@@ -9,15 +9,15 @@ import org.openqa.selenium.support.PageFactory;
 
 import Testcases.Baseclass;
 
-public class ADMIN_User_ManagementPOM  extends Baseclass {
+public class Admin_User_ManagementPOM  extends Baseclass {
 
-	public ADMIN_User_ManagementPOM(WebDriver driver)
+	public Admin_User_ManagementPOM(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath ="(//input[@class='oxd-input oxd-input--active'])[2]") public  WebElement User_ManagementUsername;
-	@FindBy(xpath="//input[@placeholder='Type for hints...']") public WebElement  User_Management_Employee_Name;
+	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]") public WebElement  User_Management_Employee_Name;
 	@FindBy(xpath ="//button[@type='button' and @class='oxd-button oxd-button--medium oxd-button--ghost']") public WebElement User_Management_ResetBtn;
 	@FindBy(xpath ="//button[@type='submit' and @class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']") public WebElement User_Management_SearchBtn;
 
@@ -43,12 +43,13 @@ public class ADMIN_User_ManagementPOM  extends Baseclass {
 			}
 		}
 	}
-	public void Statusclick(String Statusset)
+	public void Statusclick(String Statusset) throws InterruptedException
 	{
 		for(WebElement c:User_Management_Status)
 		{
 			if(c.getText().equals(Statusset))
 			{
+				Thread.sleep(2000);
 				c.click();
 			}
 		}
