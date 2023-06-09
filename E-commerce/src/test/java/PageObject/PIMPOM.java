@@ -15,7 +15,6 @@ public class PIMPOM {
 	@FindBy(linkText ="Employee List") public WebElement EmployeeList;
 	@FindBy(linkText ="Add Employee") public WebElement AddEmployee;
 	@FindBy(linkText ="Reports") public WebElement Reports;
-
 	// Add Employee imfromation
 	@FindBy(xpath ="//input[@name='firstName']") public WebElement FirstName;
 	@FindBy(xpath ="//input[@name='middleName']") public WebElement MiddleName;
@@ -30,7 +29,7 @@ public class PIMPOM {
 	@FindBy(xpath="//a[text()='Data Import']") public WebElement  Data_Import;
 	@FindBy(xpath="//a[text()='Reporting Methods']") public WebElement  Reporting_Methods;
 	@FindBy(xpath="//a[text()='Termination Reasons']") public WebElement  Termination_Reasons;
-@FindBy(xpath="//button[@type='button' and @class='oxd-icon-button oxd-main-menu-button']")  public WebElement employeeList_Add;
+	@FindBy(xpath="//button[@type='button' and @class='oxd-icon-button oxd-main-menu-button']")  public WebElement employeeList_Add;
 
 	////div[@class='oxd-input-group oxd-input-field-bottom-space']//d
 	public void  clickConfiguration()
