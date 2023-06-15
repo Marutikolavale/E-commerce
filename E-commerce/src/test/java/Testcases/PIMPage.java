@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.formula.functions.PPMT;
+import org.openqa.selenium.chrome.AddHasCasting;
 import org.testng.annotations.*;
 
 import PageObject.DashBordPOM;
@@ -32,7 +33,7 @@ public class PIMPage extends Baseclass{
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,0);
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,1);
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,2);
-			//String Employee_id = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,3);
+			String Employee_id = String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,3));
 			pp.FirstName.clear();
 			pp.FirstName.sendKeys(Firstname);
 			pp.MiddleName.clear();
@@ -41,7 +42,7 @@ public class PIMPage extends Baseclass{
 			pp.LastName.sendKeys(lastname);
 			pp.Employee_Id.clear();
 			Thread.sleep(2000);
-			//pp.Employee_Id.sendKeys(Employee_id);
+			pp.Employee_Id.sendKeys(Employee_id);
 			Thread.sleep(2000);
 			pp.SaveBtn.click();
 			Thread.sleep(2000);

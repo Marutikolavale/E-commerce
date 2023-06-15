@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="10" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="Utilities.ExtentReport"/>
   </listeners>
-  <test thread-count="10" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
-      <class name="Testcases.Loginpage">
+      <class name="Testcases.class3">
+        <methods>
+          <include name="add_photo5"/>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+          <include name="add_photo"/>
+          <include name="add_photo4"/>
+          <include name="add_photo1"/>
+          <include name="add_photo2"/>
+        </methods>
+      </class> <!-- Testcases.class3 -->
+      <class name="Testcases.PIMPage">
         <methods>
           <include name="tearDown"/>
           <include name="SetUp"/>
-          <include name="Invaild_Login"/>
-          <include name="LoginOperation"/>
-          <include name="FailLogin"/>
+          <include name="Add_Employee1"/>
         </methods>
-      </class> <!-- Testcases.Loginpage -->
+      </class> <!-- Testcases.PIMPage -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

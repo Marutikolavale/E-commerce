@@ -25,15 +25,18 @@ public class ReadConfig implements IAutoConstant {
 	}
 	//read the Data from excel
 
-	public String ReadExcelData(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
+	public String ReadExcelData(String ExcelPath,String SheetName,int RowCount,int CellCount) throws EncryptedDocumentException, IOException
 	{
-		FileInputStream fis =new FileInputStream(excelPath);
+		FileInputStream fis =new FileInputStream(ExcelPath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet sh = wb.getSheet(sheetName);
-		Row row = sh.getRow(rowCount);
-		Cell cell = row.getCell(cellCount);
-		String data = cell.getStringCellValue();
+		XSSFSheet sh = wb.getSheet(SheetName);
+		Row row = sh.getRow(RowCount);
+		Cell cell = row.getCell(CellCount);
+		String data =cell.getStringCellValue();
 		return data;
+		
+		
+		
 	}
 	//how get Row count
 
@@ -70,17 +73,17 @@ public class ReadConfig implements IAutoConstant {
 		wb.write(fos);
 	}
 	// data provider method in testNG
-	public  String[][]Daataprovider() throws EncryptedDocumentException, IOException
+	public  String[][]Dataprovider() throws EncryptedDocumentException, IOException
 	{
-		String pathName = System.getProperty("user.dir")+"\\Testdata\\demo.xlsx";
-		int TotalRow = GetRowCount(pathName,"pathName");
-		int TotalCell = getcellCount(pathName,"pathName");
+		String PathName = System.getProperty("user.dir")+"\\Testdata\\demo.xlsx";
+		int TotalRow = GetRowCount(PathName,"pathName");
+		int TotalCell = getcellCount(PathName,"pathName");
 		String data[][]= new String[TotalRow-1][TotalCell];
 		{
 			for(int i=1;i<=TotalRow;i++)
 			{
 				for (int j=0;j<=TotalCell;j++) {
-					data[1-1][j]=ReadExcelData(pathName, "path", i, j);
+					data[1-1][j]=ReadExcelData(PathName, "path", i, j);
 				}
 			}
 		}
