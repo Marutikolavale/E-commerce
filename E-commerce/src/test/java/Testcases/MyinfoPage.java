@@ -35,8 +35,12 @@ public class MyinfoPage extends Baseclass {
 			String Drivers_license_number=String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"My_info",i,6));
 			String	SSN_number=String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"My_info",i,7));
 			String SIN_number =String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"My_info",i,8));
+			//String data=mi.PrintNationality();
+			//Rc.writeExcelData(EXCEL_PATH,"My_info",i,10, data);
+			String Nationality=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,10);
 			String Gander=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,13);
-			String BloodType= Rc.ReadExcelData(EXCEL_PATH,"My_info",i,15);
+			String Military_Service=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,14);
+			String BloodTypeList= Rc.ReadExcelData(EXCEL_PATH,"My_info",i,15);
 			a.moveToElement(mi.FirstName).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Firstname).perform();
 			a.moveToElement(mi.Middle_Name).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Middlename).perform();
 			a.moveToElement(mi.Last_Name).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(lastname).perform();
@@ -46,18 +50,13 @@ public class MyinfoPage extends Baseclass {
 			a.moveToElement(mi.Drivers_License_Number).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Drivers_license_number).perform();;
 			a.moveToElement(mi.SSN_Number).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(SSN_number).perform();		
 			a.moveToElement(mi.SIN_Number).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(SIN_number).perform();
-			System.out.println("llllllllll");
 
-			//mi.Blood_Type.click();
-			//a.moveToElement((WebElement) mi.Blood_Type).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(SIN_number).perform();
-			Thread.sleep(5000);
-			mi.select_Gender(Gander);
-			Thread.sleep(5000);
+			mi.Blood_Type.click();
+			mi.select_Blood_Type(BloodTypeList);
 
-			//mi.Military_Service.sendKeys(""); Thread.sleep(2000); mi.Nationality.click();
+			a.moveToElement(mi.Military_Service).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Military_Service).perform();
 			//Thread.sleep(2000);
-
-			//mi.Select_Nationality("Indonesian");
+			mi.Select_Nationality(Nationality);
 			Thread.sleep(2000);
 			mi.SmokerChekBox.click();
 			mi.savebtn.click();

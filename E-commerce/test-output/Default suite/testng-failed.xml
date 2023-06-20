@@ -6,8 +6,8 @@
       <class name="Testcases.MyinfoPage">
         <methods>
           <include name="addMyinfoPage"/>
-          <include name="SetUp"/>
           <include name="tearDown"/>
+          <include name="SetUp"/>
         </methods>
       </class> <!-- Testcases.MyinfoPage -->
     </classes>

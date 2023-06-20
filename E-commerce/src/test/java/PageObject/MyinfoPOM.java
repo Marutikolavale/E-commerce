@@ -40,7 +40,7 @@ public class MyinfoPOM extends Baseclass {
 	@FindBy(xpath ="(//div[@class='oxd-select-text-input'])[1]") public WebElement Nationality;
 	@FindBy(xpath ="(//label[@class='oxd-label'])[8]/../ following-sibling :: div//div[@class='oxd-select-text-input']")public List <WebElement> Nationalitylist;
 	@FindBy(xpath ="(//div[@class='oxd-select-text-input'])[2]") public WebElement Marital_Status;
-	@FindBy(xpath ="") public WebElement Blood_Type; 
+	@FindBy(xpath ="//*[text()='Blood Type']/../following-sibling::div/div") public WebElement Blood_Type; 
 	@FindBy(xpath ="//*[text()='Blood Type']/../following-sibling::div//*[@class='oxd-select-text-input']") public  List <WebElement> Blood_TypeList;
 	@FindBy(xpath ="//input[@type='radio']") public List <WebElement> Genders;
 
@@ -93,16 +93,24 @@ public class MyinfoPOM extends Baseclass {
 			}
 		}
 	}
-	public void select_Blood_Type(String select_Blood_Type)
+	public void select_Blood_Type(String select_Blood_Type) throws InterruptedException
 	{
 		for(WebElement a:Blood_TypeList)
 		{
 			if(a.equals(select_Blood_Type))
 			{
+				Thread.sleep(2000);
 				a.click();
 			}
 		}
 	}
+	public String PrintNationality() throws InterruptedException
+	{
+		for(WebElement a: Nationalitylist)
+		{
+	String data=a.getText();
+	return data;
 
-
+	}
+	}
 }
