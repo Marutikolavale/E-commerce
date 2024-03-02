@@ -28,7 +28,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Baseclass implements IAutoConstant{
 //dff
-	//ddd
+
 	public WebDriver driver;
 	public Logger log=LogManager.getLogger("E-commers");
 	ReadConfig Rc= new ReadConfig();
