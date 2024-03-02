@@ -32,7 +32,7 @@ public class Baseclass implements IAutoConstant{
 	public Logger log=LogManager.getLogger("E-commers");
 	ReadConfig Rc= new ReadConfig();
 
-
+//eerr
 	@BeforeMethod
 	public void SetUp() throws IOException 
 	{
