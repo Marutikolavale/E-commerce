@@ -27,13 +27,13 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Baseclass implements IAutoConstant{
-//dff
+
 
 	public WebDriver driver;
 	public Logger log=LogManager.getLogger("E-commers");
 	ReadConfig Rc= new ReadConfig();
 
-//eerr
+
 	@BeforeMethod
 	public void SetUp() throws IOException 
 	{
