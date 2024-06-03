@@ -2,25 +2,22 @@ package Testcases;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import PageObject.AdminPOM;
 import PageObject.LoginPagePOM;
 import Utilities.ReadConfig;
-import groovyjarjarantlr4.v4.codegen.model.LL1AltBlock;
 
 public class Loginpage extends Baseclass {
 	ReadConfig Rc= new ReadConfig();
 
-	@Test(enabled =true)
+	@Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException
 	{	
 		log.info("loginoperation test start");
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
-		Thread.sleep(10000);
+	
 		if(lp.loginLogo.isDisplayed())
 		{
 			log.info("LoginOperation test case is pass");
@@ -31,7 +28,7 @@ public class Loginpage extends Baseclass {
 			log.info("LoginOperation test case is Fail");
 		}
 	}
-	@Test(enabled =true)
+	@Test(enabled =true,priority=2)
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		log.info("check Diff way Enter Password login  Operantion");
@@ -47,9 +44,11 @@ public class Loginpage extends Baseclass {
 			lp.multipelLogin(invalidUser,invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
-			Thread.sleep(10000);
-
-			if(lp.logo.isDisplayed())
+			Thread.sleep(1000);
+		
+			/*sa.assertFalse(lp.Error_message.isDisplayed()," test cae are Fail");
+			l.captureScreenShot(driver,"FailLogin");*/
+			if(lp.Error_message.isDisplayed())
 			{
 				log.info("Invaild_Login test case is pass");
 			}

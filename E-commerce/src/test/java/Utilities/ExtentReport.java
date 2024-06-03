@@ -25,12 +25,12 @@ public class ExtentReport implements  ITestListener{
 	public void config()
 	{	
 		String Timestamp =new SimpleDateFormat(" yyyy . mm . dd . hh . mm . ss ").format(new Date());
-		String ReportName="E-commersTestReport"+ Timestamp + ".html";
+		String ReportName="E-commers Test Report" + Timestamp +".html";
 		html =new ExtentSparkReporter(System.getProperty("user.dir") + "//Reports//"+ ReportName);
 		rop = new ExtentReports();
 		rop.attachReporter(html);
-		html.config().setDocumentTitle("Grpical_Test_Report");
-		html.config().setReportName("E-commers_App_TestCase_Report");
+		html.config().setDocumentTitle("Grpical Test Report");
+		html.config().setReportName("E-commers App TestCase Report");
 		html.config().setTheme(Theme.DARK);
 		rop.setSystemInfo("Operting System","Window 11");
 		rop.setSystemInfo("Browser","Chrome");
@@ -42,18 +42,20 @@ public class ExtentReport implements  ITestListener{
 
 	public void onTestSuccess(ITestResult result) {
 		test =rop.createTest(result.getName());
-		test.log(Status.PASS, MarkupHelper.createLabel("name of Succes test case is : " +result.getName(),ExtentColor.GREEN));
+		test.log(Status.PASS, MarkupHelper.createLabel("name of pass test case is : " +result.getName(),ExtentColor.GREEN));
+		test.pass(result.getThrowable());
 	}
 
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
 		test.log(Status.FAIL, MarkupHelper.createLabel("name of fail test case is : " +result.getName(),ExtentColor.RED));
 		test.fail(result.getThrowable());
-		String ScreenShotPath= System.getProperty("user.dir") + "\\ScreenShot\\" + result.getName()+".png";
-		File Sh= new File(ScreenShotPath);
+		
+		String ScreenShotPath= System.getProperty("user.dir")+"\\ScreenShot\\"+ result.getName()+".png";
+		File Sh = new File(ScreenShotPath);
 		if(Sh.exists())
 		{
-			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(ScreenShotPath));
+			test.fail( "capctured screenShot is below"+test.addScreenCaptureFromPath(ScreenShotPath));
 		}
 	}
 

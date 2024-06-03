@@ -1,4 +1,4 @@
- package PageObject;
+package PageObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +23,7 @@ public class DashBordPOM {
 	@FindBy(linkText = "Directory") public  WebElement Directory;
 
 	@FindBy(linkText = "Maintenance") public  WebElement Maintenance;
-
+	@FindBy(linkText ="Claim") public WebElement Claim;
 	@FindBy(linkText = "Buzz") public  WebElement Buzz;
 
 	public void   Searchclick()

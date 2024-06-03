@@ -38,7 +38,7 @@ public class MyinfoPage extends Baseclass {
 			//String data=mi.PrintNationality();
 			//Rc.writeExcelData(EXCEL_PATH,"My_info",i,10, data);
 			String Nationality=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,10);
-			String Gander=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,13);
+			String Gander =Rc.ReadExcelData(EXCEL_PATH,"My_info",i,13);
 			String Military_Service=Rc.ReadExcelData(EXCEL_PATH,"My_info",i,14);
 			String BloodTypeList= Rc.ReadExcelData(EXCEL_PATH,"My_info",i,15);
 			a.moveToElement(mi.FirstName).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Firstname).perform();

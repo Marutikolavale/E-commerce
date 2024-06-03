@@ -21,9 +21,11 @@ public class PIMPage extends Baseclass{
 		lp.LoginOperation();
 		log.info("login Sucessfull");
 		DashBordPOM db= new  DashBordPOM(driver);
+		Thread.sleep(5000);
 		db.PIMclick();
 		log.info("clickedPIM");
-		int rc = Rc.GetRowCount(EXCEL_PATH,"UserImfromations");
+		
+		/*int rc = Rc.GetRowCount(EXCEL_PATH,"UserImfromations");
 		for(int i=1;i<=rc;i++)
 		{
 			PIMPOM pp= new PIMPOM(driver);
@@ -31,9 +33,13 @@ public class PIMPage extends Baseclass{
 
 			Thread.sleep(2000);
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,0);
+			System.out.println(Firstname);
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,1);
+			System.out.println(Middlename);
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,2);
+			System.out.println(lastname);
 			String Employee_id = String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"UserImfromations",i,3));
+			System.out.println(Employee_id);
 			pp.FirstName.clear();
 			pp.FirstName.sendKeys(Firstname);
 			pp.MiddleName.clear();
@@ -45,7 +51,7 @@ public class PIMPage extends Baseclass{
 			pp.Employee_Id.sendKeys(Employee_id);
 			Thread.sleep(2000);
 			pp.SaveBtn.click();
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 		}
 	}
-}
+

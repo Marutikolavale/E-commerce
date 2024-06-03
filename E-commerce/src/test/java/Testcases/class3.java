@@ -32,7 +32,7 @@ public class class3 extends Baseclass{
 		Robot r= new Robot();
 		r.delay(2000);
 		// copy file to clipbord
-		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\Testing\\Maruti\\Photo -11.jpg");
+		StringSelection ss= new StringSelection("C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\upload data\\2.png");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		// control + v action perform 
 
@@ -64,7 +64,7 @@ public class class3 extends Baseclass{
 		Robot r= new Robot();
 		r.delay(2000);
 		// copy file to Clipbord
-		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\Screenshot_20221222_111736.png");
+		StringSelection ss= new StringSelection("C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\upload data\\a.doc");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		// control + v action perform 
 
@@ -93,7 +93,7 @@ public class class3 extends Baseclass{
 		Robot r= new Robot();
 		r.delay(2000);
 		// copy file to clipbord
-		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\2.png");
+		StringSelection ss= new StringSelection("C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\upload data\\Pan.jpg");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		// control + v action perform 
 
@@ -124,7 +124,7 @@ public class class3 extends Baseclass{
 		Robot r= new Robot();
 		r.delay(2000);
 		// copy file to clipbord
-		StringSelection ss= new StringSelection("\\Users\\mbkol\\OneDrive\\Desktop\\upload data\\a.doc");
+		StringSelection ss= new StringSelection("C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\upload data\\S.png");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		// control + v action perform 
 
@@ -152,7 +152,7 @@ public class class3 extends Baseclass{
 	Robot r= new Robot();
 	r.delay(2000);
 	// copy file to Clipborad
-	StringSelection ss= new StringSelection("C:\\Users\\mbkol\\OneDrive\\Pictures\\Screenshots\\A.png");
+	StringSelection ss= new StringSelection("C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\upload data\\Pan.jpg");
 	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 	// control + v action Perform 
 
