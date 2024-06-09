@@ -14,9 +14,7 @@ public class BuzzPOM {
 	//
 	@FindBy(xpath ="//button[@type='submit']") public WebElement postButton;
 	@FindBy(xpath ="//button[text()=' Share Photos']") public  WebElement sharePhoto;
-	@FindBy(xpath = "");
+	@FindBy(xpath = "") public WebElement a ;
 	
 	
-	
-}
 }
