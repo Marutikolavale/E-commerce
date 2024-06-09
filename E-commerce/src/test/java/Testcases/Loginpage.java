@@ -40,12 +40,11 @@ public class Loginpage extends Baseclass {
 			String invalidUser= Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",i,0);
 			String invalidPass = Rc.ReadExcelData(EXCEL_PATH,"Invalidcreads",i,1);
 			//Perform invalid login
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			lp.multipelLogin(invalidUser,invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
 			Thread.sleep(1000);
-		
 			/*sa.assertFalse(lp.Error_message.isDisplayed()," test cae are Fail");
 			l.captureScreenShot(driver,"FailLogin");*/
 			if(lp.Error_message.isDisplayed())
@@ -56,10 +55,7 @@ public class Loginpage extends Baseclass {
 			{
 				l.captureScreenShot(driver,"FailLogin");
 				log.info("FailLogin test case is Fail");
-
 			}
-
 		}
-
 	}
 }
