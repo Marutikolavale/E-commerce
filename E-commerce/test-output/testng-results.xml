@@ -1,73 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-09T17:06:48 IST" name="Default suite" finished-at="2024-06-09T17:08:48 IST" duration-ms="119352">
+  <suite started-at="2024-06-10T23:58:59 IST" name="Default suite" finished-at="2024-06-10T23:59:13 IST" duration-ms="13667">
     <groups>
     </groups>
-    <test started-at="2024-06-09T17:06:48 IST" name="Default test" finished-at="2024-06-09T17:08:48 IST" duration-ms="119352">
-      <class name="Testcases.class3">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:06:48 IST" name="SetUp" finished-at="2024-06-09T17:06:58 IST" duration-ms="9602" status="PASS">
+    <test started-at="2024-06-10T23:58:59 IST" name="Default test" finished-at="2024-06-10T23:59:13 IST" duration-ms="13667">
+      <class name="Testcases.BuzzPage">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.BuzzPage@4c36250e]" started-at="2024-06-10T23:58:59 IST" name="SetUp" finished-at="2024-06-10T23:59:05 IST" duration-ms="5813" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="add_photo()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:06:58 IST" name="add_photo" finished-at="2024-06-09T17:07:13 IST" duration-ms="15033" status="PASS">
+        <test-method signature="Shearpost()[pri:0, instance:Testcases.BuzzPage@4c36250e]" started-at="2024-06-10T23:59:05 IST" name="Shearpost" finished-at="2024-06-10T23:59:13 IST" duration-ms="7519" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add_photo -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:13 IST" name="tearDown" finished-at="2024-06-09T17:07:15 IST" duration-ms="1723" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:15 IST" name="SetUp" finished-at="2024-06-09T17:07:22 IST" duration-ms="7512" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo1()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:22 IST" name="add_photo1" finished-at="2024-06-09T17:07:37 IST" duration-ms="14371" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:37 IST" name="tearDown" finished-at="2024-06-09T17:07:38 IST" duration-ms="1783" status="PASS">
+        </test-method> <!-- Shearpost -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.BuzzPage@4c36250e]" started-at="2024-06-10T23:59:13 IST" name="tearDown" finished-at="2024-06-10T23:59:13 IST" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:38 IST" name="SetUp" finished-at="2024-06-09T17:07:46 IST" duration-ms="7258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo2()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:07:46 IST" name="add_photo2" finished-at="2024-06-09T17:08:01 IST" duration-ms="14963" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:01 IST" name="tearDown" finished-at="2024-06-09T17:08:01 IST" duration-ms="266" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:01 IST" name="SetUp" finished-at="2024-06-09T17:08:08 IST" duration-ms="6980" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo4()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:08 IST" name="add_photo4" finished-at="2024-06-09T17:08:22 IST" duration-ms="13906" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:22 IST" name="tearDown" finished-at="2024-06-09T17:08:23 IST" duration-ms="1769" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:23 IST" name="SetUp" finished-at="2024-06-09T17:08:31 IST" duration-ms="7120" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetUp -->
-        <test-method signature="add_photo5()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:31 IST" name="add_photo5" finished-at="2024-06-09T17:08:46 IST" duration-ms="15224" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_photo5 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.class3@f5c79a6]" started-at="2024-06-09T17:08:46 IST" name="tearDown" finished-at="2024-06-09T17:08:48 IST" duration-ms="1765" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Testcases.class3 -->
+      </class> <!-- Testcases.BuzzPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

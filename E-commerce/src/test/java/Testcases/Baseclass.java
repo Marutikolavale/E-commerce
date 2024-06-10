@@ -43,6 +43,7 @@ public class Baseclass implements IAutoConstant{
 		ReadConfig R= new ReadConfig();
 		String BrowserValue = R.ReadPropertyFile(PROP_PATH,"Browser");
 		String Url = R.ReadPropertyFile(PROP_PATH,"url");
+		   
 		if(BrowserValue.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions op= new ChromeOptions();
