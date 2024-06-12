@@ -19,6 +19,5 @@ public class BuzzPOM {
 	@FindBy(xpath = "//button[text()=' Most Recent Posts ']") public WebElement mostRecentPostBtn;
 	@FindBy(xpath = "//button[text()=' Most Liked Posts ']") public WebElement mostLikedPostBtn;
 	@FindBy(xpath = "//button[text()=' Most Commented Posts ']") public WebElement mostCommentedBtn;
-
 	@FindBy(xpath ="//i[@class='oxd-icon bi-x oxd-sidepanel-header-close']") public WebElement ActionBTN;
 }
