@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\swara\AppData\Local\Temp\testng-eclipse--1372635790\testng-customsuite.xml</span>
+                    <span>C:\Users\swara\AppData\Local\Temp\testng-eclipse-524961731\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Testcases.BuzzPage" class="method navigator-link" hash-for-method="Shearpost">Shearpost</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Testcases.BuzzPage" class="method navigator-link" hash-for-method="View_Most_Liked_Post">View_Most_Liked_Post</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -131,12 +136,19 @@
                   <span class="method-name">Shearpost</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="View_Most_Liked_Post">
+                  </a> <!-- View_Most_Liked_Post -->
+                  <span class="method-name">View_Most_Liked_Post</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\swara\AppData\Local\Temp\testng-eclipse--1372635790\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\swara\AppData\Local\Temp\testng-eclipse-524961731\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,16 +197,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Shearpost')
 data.setCell(0, 2, 'Testcases.BuzzPage')
-data.setCell(0, 3, 7519);
+data.setCell(0, 3, 15899);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'View_Most_Liked_Post')
+data.setCell(1, 2, 'Testcases.BuzzPage')
+data.setCell(1, 3, 11686);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -227,11 +243,23 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Shearpost</span>
-                <span class="method-start">5815 ms</span>
+                <span class="method-start">4552 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">13337 ms</span>
+                <span class="method-start">20456 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUp</span>
+                <span class="method-start">20750 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">View_Most_Liked_Post</span>
+                <span class="method-start">24246 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">35934 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -70,7 +70,7 @@ public class DashBordPOM {
 	{
 		Maintenance.click();
 	}
-	public void   click()
+	public void  Buzzclick()
 	{
 		Buzz.click();
 	}

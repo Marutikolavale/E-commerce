@@ -14,7 +14,7 @@ public class BuzzPOM {
 	//
 	@FindBy(xpath ="//button[@type='submit']") public WebElement postButton;
 	@FindBy(xpath ="//button[text()=' Share Photos']") public  WebElement sharePhoto;
-	@FindBy(xpath = "") public WebElement a ;
+	@FindBy(xpath = "//textarea[@class='oxd-buzz-post-input']") public WebElement textbox ;
 	@FindBy(xpath = "//button[text()=' Share Video']") public WebElement shareVideoBtn;
 	@FindBy(xpath = "//button[text()=' Most Recent Posts ']") public WebElement mostRecentPostBtn;
 	@FindBy(xpath = "//button[text()=' Most Liked Posts ']") public WebElement mostLikedPostBtn;
