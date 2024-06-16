@@ -17,6 +17,7 @@ public class Loginpage extends Baseclass {
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
+		System.out.println("Login page");
 	
 		if(lp.loginLogo.isDisplayed())
 		{
