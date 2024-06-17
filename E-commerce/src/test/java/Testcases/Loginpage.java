@@ -56,6 +56,7 @@ public class Loginpage extends Baseclass {
 			{
 				l.captureScreenShot(driver,"FailLogin");
 				log.info("FailLogin test case is Fail");
+				
 			}
 		}
 	}

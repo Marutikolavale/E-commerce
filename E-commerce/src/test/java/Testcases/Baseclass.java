@@ -40,10 +40,11 @@ public class Baseclass implements IAutoConstant{
 	@BeforeMethod
 	public void SetUp() throws IOException 
 	{
-		ReadConfig R= new ReadConfig();
-		String BrowserValue = R.ReadPropertyFile(PROP_PATH,"Browser");
-		String Url = R.ReadPropertyFile(PROP_PATH,"url");
-		   
+
+		ReadConfig R= new ReadConfig(); 
+		String BrowserValue =R.ReadPropertyFile(PROP_PATH,"Browser");
+		String Url =R.ReadPropertyFile(PROP_PATH,"url");
+
 		if(BrowserValue.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions op= new ChromeOptions();
@@ -62,7 +63,7 @@ public class Baseclass implements IAutoConstant{
 		{
 			//WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
-	        options.setBinary("/usr/lib/firefox/firefox");
+			options.setBinary("/usr/lib/firefox/firefox");
 			System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
 			driver = new FirefoxDriver(options);
 
