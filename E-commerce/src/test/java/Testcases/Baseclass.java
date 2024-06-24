@@ -57,15 +57,14 @@ public class Baseclass implements IAutoConstant{
 		else if(BrowserValue.equalsIgnoreCase("Edge"))
 		{ 
 			//WebDriverManager.edgedriver().setup();
+			System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
 		else if(BrowserValue.equalsIgnoreCase("Firefox"))
 		{
-			//WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options = new FirefoxOptions();
-			options.setBinary("/usr/lib/firefox/firefox");
-			System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
-			driver = new FirefoxDriver(options);
+			//WebDriverManager.firefoxdriver().setup()
+			System.setProperty("webdriver.gecko.driver","C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\Drivers\\geckodriver.exe");
+			driver = new FirefoxDriver();
 
 		}
 		else
