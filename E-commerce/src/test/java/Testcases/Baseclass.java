@@ -62,8 +62,8 @@ public class Baseclass implements IAutoConstant{
 		}
 		else if(BrowserValue.equalsIgnoreCase("Firefox"))
 		{
-			//WebDriverManager.firefoxdriver().setup()
-			System.setProperty("webdriver.gecko.driver","C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\Drivers\\geckodriver.exe");
+			//WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 
 		}

@@ -1,127 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-24T13:26:33 IST" name="Default suite" finished-at="2024-06-24T13:26:33 IST" duration-ms="488">
+  <suite started-at="2024-07-10T21:25:27 IST" name="Default suite" finished-at="2024-07-10T21:26:26 IST" duration-ms="59059">
     <groups>
     </groups>
-    <test started-at="2024-06-24T13:26:33 IST" name="Default test" finished-at="2024-06-24T13:26:33 IST" duration-ms="488">
-      <class name="Testcases.Loginpage">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="SetUp" finished-at="2024-06-24T13:26:33 IST" duration-ms="399" status="FAIL">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:155)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:132)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:127)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:112)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:102)
-at Testcases.Baseclass.SetUp(Baseclass.java:67)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.UncheckedIOException: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:194)
-at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:207)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:117)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-... 39 more
-Caused by: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:192)
-... 42 more
-Caused by: java.io.IOException: CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessImpl.create(Native Method)
-at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
-at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-... 44 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+    <test started-at="2024-07-10T21:25:27 IST" name="Default test" finished-at="2024-07-10T21:26:26 IST" duration-ms="59059">
+      <class name="Testcases.PIMPage">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:25:27 IST" name="SetUp" finished-at="2024-07-10T21:25:36 IST" duration-ms="9204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="LoginOperation()[pri:1, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="LoginOperation" finished-at="2024-06-24T13:26:33 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+        <test-method signature="Add_Employee1()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:25:36 IST" name="Add_Employee1" finished-at="2024-07-10T21:25:54 IST" duration-ms="17531" status="FAIL">
+          <exception class="java.lang.IllegalStateException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]]]>
+              <![CDATA[Cannot get a STRING value from a NUMERIC cell]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:155)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:132)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:127)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:112)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:102)
-at Testcases.Baseclass.SetUp(Baseclass.java:67)
+              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
+at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:984)
+at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:311)
+at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
+at Utilities.ReadConfig.ReadExcelData(ReadConfig.java:35)
+at Testcases.PIMPage.Add_Employee1(PIMPage.java:40)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
@@ -144,122 +49,29 @@ at org.testng.TestNG.run(TestNG.java:1079)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.UncheckedIOException: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:194)
-at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:207)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:117)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-... 39 more
-Caused by: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:192)
-... 42 more
-Caused by: java.io.IOException: CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessImpl.create(Native Method)
-at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
-at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-... 44 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- java.lang.IllegalStateException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginOperation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="tearDown" finished-at="2024-06-24T13:26:33 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- Add_Employee1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:25:54 IST" name="tearDown" finished-at="2024-07-10T21:25:54 IST" duration-ms="213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="SetUp" finished-at="2024-06-24T13:26:33 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:25:54 IST" name="SetUp" finished-at="2024-07-10T21:26:00 IST" duration-ms="6037" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="Invaild_Login()[pri:2, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="Invaild_Login" finished-at="2024-06-24T13:26:33 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
-            <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
-Host info: host: 'LAPTOP-3UOIG6JH', ip: '192.168.218.247'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}]}]
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:536)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:161)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:155)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:132)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:127)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:112)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:102)
-at Testcases.Baseclass.SetUp(Baseclass.java:67)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.io.UncheckedIOException: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:194)
-at org.openqa.selenium.remote.service.DriverService.start(DriverService.java:207)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:117)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-... 39 more
-Caused by: java.io.IOException: Cannot run program "C:\Users\mbkol\git\E-commerce\E-commerce\Drivers\geckodriver.exe": CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-at org.openqa.selenium.os.ExternalProcess$Builder.start(ExternalProcess.java:192)
-... 42 more
-Caused by: java.io.IOException: CreateProcess error=216, This version of %1 is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher
-at java.base/java.lang.ProcessImpl.create(Native Method)
-at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:500)
-at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
-at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-... 44 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+        <test-method signature="Search_Employee1()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:26:00 IST" name="Search_Employee1" finished-at="2024-07-10T21:26:26 IST" duration-ms="25782" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Invaild_Login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.Loginpage@16afbd92]" started-at="2024-06-24T13:26:33 IST" name="tearDown" finished-at="2024-06-24T13:26:33 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- Search_Employee1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Testcases.PIMPage@16afbd92]" started-at="2024-07-10T21:26:26 IST" name="tearDown" finished-at="2024-07-10T21:26:26 IST" duration-ms="237" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Testcases.Loginpage -->
+      </class> <!-- Testcases.PIMPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

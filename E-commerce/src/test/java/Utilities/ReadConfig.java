@@ -40,11 +40,11 @@ public class ReadConfig implements IAutoConstant {
 	}
 	//how get Row count
 
-	public int GetRowCount(String execlPath,String sheetName) throws EncryptedDocumentException, IOException
+	public int GetRowCount(String ExcelPath,String SheetName) throws EncryptedDocumentException, IOException
 	{
-		FileInputStream fis=new FileInputStream(execlPath);
+		FileInputStream fis=new FileInputStream(ExcelPath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet sh = wb.getSheet(sheetName);
+		XSSFSheet sh = wb.getSheet(SheetName);
 		int getrowvalues = sh.getLastRowNum();
 		return getrowvalues;
 
