@@ -25,7 +25,7 @@ public class Loginpage extends Baseclass {
 		}
 		else
 		{
-			l.captureScreenShot(driver,"LoginOperation");
+			//l.captureScreenShot(driver,"LoginOperation");
 			log.info("LoginOperation test case is Fail");
 		}
 	}
@@ -54,7 +54,7 @@ public class Loginpage extends Baseclass {
 			}
 			else
 			{
-				l.captureScreenShot(driver,"FailLogin");
+				//l.captureScreenShot(driver,"FailLogin");
 				log.info("FailLogin test case is Fail");
 				
 			}
