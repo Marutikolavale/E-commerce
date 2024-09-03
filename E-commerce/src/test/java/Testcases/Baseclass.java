@@ -28,7 +28,7 @@ public class Baseclass implements IAutoConstant {
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
 
-	//@BeforeMethod
+	@BeforeMethod
 	public void SetUp() throws IOException {
 
 		ReadConfig R = new ReadConfig();
@@ -64,7 +64,7 @@ public class Baseclass implements IAutoConstant {
 		log.info("url opened");
 	}
 
-	//@AfterMethod
+	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		driver.quit();
 		log.info("closed browser");
