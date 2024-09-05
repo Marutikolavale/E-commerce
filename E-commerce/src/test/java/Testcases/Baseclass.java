@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.python.antlr.PythonParser.test_return;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -76,15 +77,16 @@ public class Baseclass implements IAutoConstant {
 	public void captureScreenShot(WebDriver driver, String TestName) throws IOException { // step 1: convert webDriver
 		// in to TakeScrrenshot
 		// interface
-		String path = getreportfilename();
+		//String path = getreportfilename();
+
 		TakesScreenshot ScreenShot = ((TakesScreenshot) driver);
 
 		// step 2:call getScreenshota method to create image file
 		File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
 
 		// step 3 :copy Imp file to destination
-		File Dest = new File(path);
-		// Step 4: perform operation using FileUtils methods
+		File Dest = new File(System.getProperty("user.dir") +"//ScreenShot//" + ".png");
+		// Step 4: perform operation using FileUtils methodsen
 		FileUtils.copyFile(Scr, Dest);
 
 		// *other way get full page screen shot* //
@@ -94,8 +96,8 @@ public class Baseclass implements IAutoConstant {
 		 * myScreenshot = new
 		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).
 		 * takeScreenshot(driver); //ImageIO.write(myScreenshot.getImage(),"PNG",new
-		 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));
-		 */}
+		 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));*/
+	}
 
 	public static String getreportfilename() {
 		String Basepathet = System.getProperty("user.dir") +"/Reports";
