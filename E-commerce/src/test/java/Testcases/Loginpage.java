@@ -18,18 +18,19 @@ public class Loginpage extends Baseclass {
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
 		System.out.println("Login page");
-	
+
 		if(lp.loginLogo.isDisplayed())
 		{
 			log.info("LoginOperation test case is pass");
+			l.captureScreenShot(driver,"LoginOperation");
 		}
 		else
 		{
-			//l.captureScreenShot(driver,"LoginOperation");
 			log.info("LoginOperation test case is Fail");
+
 		}
 	}
-	@Test(enabled =true,priority=2)
+	//@Test(enabled =true,priority=2)
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		log.info("check Diff way Enter Password login  Operantion");
@@ -46,17 +47,14 @@ public class Loginpage extends Baseclass {
 			lp.username.clear();
 			lp.passwored.clear();
 			Thread.sleep(1000);
-			/*sa.assertFalse(lp.Error_message.isDisplayed()," test cae are Fail");
-			l.captureScreenShot(driver,"FailLogin");*/
 			if(lp.Error_message.isDisplayed())
 			{
 				log.info("Invaild_Login test case is pass");
+				l.captureScreenShot(driver,"FailLogin");
 			}
 			else
 			{
-				//l.captureScreenShot(driver,"FailLogin");
 				log.info("FailLogin test case is Fail");
-				
 			}
 		}
 	}

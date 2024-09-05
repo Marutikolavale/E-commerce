@@ -6,8 +6,11 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -38,19 +41,18 @@ public class Baseclass implements IAutoConstant {
 		if (BrowserValue.equalsIgnoreCase("chrome")) {
 			ChromeOptions op = new ChromeOptions();
 			op.addArguments("--remote-allow-origins=*");
-			// WebDriverManager.chromedriver().setup();
-			// driver = new ChromeDriver(op);*/
+
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver = new ChromeDriver(op);
 		} else if (BrowserValue.equalsIgnoreCase("Edge")) {
-			// WebDriverManager.edgedriver().setup();
+
 			System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
 			driver = new EdgeDriver();
 		} else if (BrowserValue.equalsIgnoreCase("Firefox")) {
-			// WebDriverManager.firefoxdriver().setup();
+
 			System.setProperty("webdriver.gecko.driver",
 					"C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\Drivers\\geckodriver.exe");
-			// FirefoxOptions fO= new FirefoxOptions();
+
 			driver = new FirefoxDriver();
 
 		} else {
@@ -71,36 +73,37 @@ public class Baseclass implements IAutoConstant {
 	}
 
 	// Take Screenshot method
-	/*
-	 * public void captureScreenShot(WebDriver driver ,String TestName) throws
-	 * IOException { // step 1: convert webDriver in to TakeScrrenshot interface
-	 * 
-	 * TakesScreenshot ScreenShot =((TakesScreenshot)driver);
-	 * 
-	 * // step 2:call getScreenshota method to create image file File Scr
-	 * =ScreenShot.getScreenshotAs(OutputType.FILE);
-	 * 
-	 * // step 3 :copy Img file to destination File Dest= new
-	 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png");
-	 * 
-	 * // Step 4: perform operation using FileUtils methods FileUtils.copyFile(Scr,
-	 * Dest);
-	 * 
-	 * // *other way get full page screen shot* //
-	 * 
-	 * //Screenshot myScreenshot = new
-	 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).
-	 * takeScreenshot(driver); //ImageIO.write(myScreenshot.getImage(),"PNG",new
-	 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png")); }
-	 */
-	@Test
-	public static void getreportfilename() {
-		String Basepathet = System.getProperty("user.dir") + "/Reports";
+	public void captureScreenShot(WebDriver driver, String TestName) throws IOException { // step 1: convert webDriver
+		// in to TakeScrrenshot
+		// interface
+		String path = getreportfilename();
+		TakesScreenshot ScreenShot = ((TakesScreenshot) driver);
+
+		// step 2:call getScreenshota method to create image file
+		File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
+
+		// step 3 :copy Imp file to destination
+		File Dest = new File(path);
+		// Step 4: perform operation using FileUtils methods
+		FileUtils.copyFile(Scr, Dest);
+
+		// *other way get full page screen shot* //
+
+		// Screenshot
+		/*
+		 * myScreenshot = new
+		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).
+		 * takeScreenshot(driver); //ImageIO.write(myScreenshot.getImage(),"PNG",new
+		 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));
+		 */}
+
+	public static String getreportfilename() {
+		String Basepathet = System.getProperty("user.dir") +"/Reports";
 		Calendar cal = Calendar.getInstance();
 		File Dir = new File(Basepathet);
 		Dir.mkdir();
 		int year = cal.get(Calendar.YEAR);
-		Dir = new File (Basepathet + "/" + year);
+		Dir = new File(Basepathet + "/" + year);
 		Dir.mkdir();
 		int month = cal.get(Calendar.MONTH);
 		Dir = new File(Basepathet + "/" + year + "/" + (month + 1));
@@ -108,13 +111,14 @@ public class Baseclass implements IAutoConstant {
 		int day = cal.get(Calendar.DATE);
 		Dir = new File(Basepathet + "/" + year + "/" + (month + 1) + "/" + day);
 		Dir.mkdir();
-		Dir = new File(Basepathet + "/" + year +"/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
+		Dir = new File(Basepathet + "/" + year + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
 		Dir.mkdir();
 		Date sDate = new Date();
 		Dir = new File(Basepathet + "/" + year + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name")
-				+ "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" + sDate.getSeconds());
+		+ "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" + sDate.getSeconds());
 		Dir.mkdir();
 		String ReportPath = Dir.getAbsolutePath();
+		return ReportPath;
 	}
 
 }
