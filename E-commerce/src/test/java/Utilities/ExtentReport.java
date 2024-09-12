@@ -25,7 +25,7 @@ public class ExtentReport implements  ITestListener{
 	public void config()
 	{	
 		String Timestamp =new SimpleDateFormat(" yyyy . mm . dd . hh . mm . ss ").format(new Date());
-		String ReportName="E-commers Test Report" + Timestamp +".html";
+		String ReportName="E-commerces Test Report" + Timestamp +".html";
 		html =new ExtentSparkReporter(System.getProperty("user.dir") + "//Reports//"+ ReportName);
 		rop = new ExtentReports();
 		rop.attachReporter(html);
@@ -51,7 +51,7 @@ public class ExtentReport implements  ITestListener{
 		test.log(Status.FAIL, MarkupHelper.createLabel("name of fail test case is : " +result.getName(),ExtentColor.RED));
 		test.fail(result.getThrowable());
 		
-		String ScreenShotPath= System.getProperty("user.dir")+"\\ScreenShot\\"+ result.getName()+".png";
+		String ScreenShotPath= System.getProperty("user.dir")+"//ScreenShot//"+ result.getName()+".png";
 		File Sh = new File(ScreenShotPath);
 		if(Sh.exists())
 		{

@@ -16,7 +16,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.python.antlr.PythonParser.test_return;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -28,7 +27,7 @@ import Utilities.ReadConfig;
 public class Baseclass implements IAutoConstant {
 
 	public WebDriver driver;
-	public Logger log = LogManager.getLogger("E-commers");
+	public Logger log = LogManager.getLogger("E-commerce");
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
 
@@ -45,14 +44,15 @@ public class Baseclass implements IAutoConstant {
 
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver = new ChromeDriver(op);
-		} else if (BrowserValue.equalsIgnoreCase("Edge")) {
+		} 
+		else if (BrowserValue.equalsIgnoreCase("Edge")) {
 
 			System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
 			driver = new EdgeDriver();
-		} else if (BrowserValue.equalsIgnoreCase("Firefox")) {
+		} 
+		else if (BrowserValue.equalsIgnoreCase("Firefox")) {
 
-			System.setProperty("webdriver.gecko.driver",
-					"C:\\Users\\mbkol\\git\\E-commerce\\E-commerce\\Drivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
 
 			driver = new FirefoxDriver();
 
@@ -74,9 +74,8 @@ public class Baseclass implements IAutoConstant {
 	}
 
 	// Take Screenshot method
-	public void captureScreenShot(WebDriver driver, String TestName) throws IOException { // step 1: convert webDriver
-		// in to TakeScrrenshot
-		// interface
+	public void captureScreenShot(WebDriver driver, String TestName) throws IOException {
+		// step 1: convert webDriver in to TakeScrrenshot interface
 		//String path = getreportfilename();
 
 		TakesScreenshot ScreenShot = ((TakesScreenshot) driver);
@@ -85,21 +84,20 @@ public class Baseclass implements IAutoConstant {
 		File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
 
 		// step 3 :copy Imp file to destination
-		File Dest = new File(System.getProperty("user.dir") +"//ScreenShot//" + ".png");
-		// Step 4: perform operation using FileUtils methodsen
-		FileUtils.copyFile(Scr, Dest);
+		File Dest = new File(System.getProperty("user.dir")+"//ScreenShot//" + ".jpag");
+		// Step 4: perform operation using FileUtils method
+		FileUtils.copyFile(Scr,Dest);
 
 		// *other way get full page screen shot* //
 
 		// Screenshot
-		/*
-		 * myScreenshot = new
-		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).
-		 * takeScreenshot(driver); //ImageIO.write(myScreenshot.getImage(),"PNG",new
-		 * File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));*/
+		
+		/*myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(driver);
+		  ImageIO.write(myScreenshot.getImage(),"PNG",new
+		  File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));*/
 	}
 
-	public static String getreportfilename() {
+	/*public static String getreportfilename() {
 		String Basepathet = System.getProperty("user.dir") +"/Reports";
 		Calendar cal = Calendar.getInstance();
 		File Dir = new File(Basepathet);
@@ -121,6 +119,6 @@ public class Baseclass implements IAutoConstant {
 		Dir.mkdir();
 		String ReportPath = Dir.getAbsolutePath();
 		return ReportPath;
-	}
+	}*/
 
 }

@@ -19,6 +19,7 @@ public class Loginpage extends Baseclass {
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
+		l.captureScreenShot(driver,"LoginOperation");
 		if(lp.loginLogo.isDisplayed())
 		{
 			Thread.sleep(1000);
