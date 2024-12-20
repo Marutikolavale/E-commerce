@@ -2,7 +2,7 @@ package Testcases;
 
 import org.testng.annotations.Test;
 
-public class MyinfoPageTest {
+public class MyinfoPageTest  extends Baseclass{
 
   @Test
   public void addMyinfoPageTest() {

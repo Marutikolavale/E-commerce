@@ -19,16 +19,18 @@ public class Loginpage extends Baseclass {
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
+		
 		l.captureScreenShot(driver,"LoginOperation");
 		if(lp.loginLogo.isDisplayed())
 		{
 			Thread.sleep(1000);
-			l.captureScreenShot(driver,"LoginOperation");
 			log.info("LoginOperation test case is pass");
+			l.captureScreenShot(driver,"LoginOperation");
 		}
 		else
 		{
 			log.info("LoginOperation test case is Fail");
+	
 		}
 	}
 
@@ -53,12 +55,13 @@ public class Loginpage extends Baseclass {
 			Thread.sleep(1000);
 			if(lp.Error_message.isDisplayed())
 			{
-				log.info("Invaild_Login test case is pass");
 				l.captureScreenShot(driver,"FailLogin");
 			}
 			else
 			{
 				log.info("FailLogin test case is Fail");
+				log.info("Invaild_Login test case is pass");
+
 			}
 		}
 	}

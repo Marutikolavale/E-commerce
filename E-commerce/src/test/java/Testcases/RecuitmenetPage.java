@@ -1,5 +1,5 @@
 package Testcases;
 
-public class RecuitmenetPage {
+public class RecuitmenetPage  extends Baseclass{
 
 }

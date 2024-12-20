@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jun 27 21:30:37 IST 2024</td>
+<td>Started on:</td><td>Wed Dec 18 11:28:21 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>146 seconds (146150 ms)</td>
+<tr><td>Total time:</td><td>19 seconds (19924 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,203 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Testcases.MyinfoPage.addMyinfoPage()'><b>addMyinfoPage</b><br>Test class: Testcases.MyinfoPage</td>
-<td><div><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [749acd527fd85f62cefe46240e6f96f9, actions {actions=[org.openqa.selenium.interactions.Sequence@7626fd91, org.openqa.selenium.interactions.Sequence@442d44fe]}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 127.0.2651.8, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62504}, msedge: {msedgedriverVersion: 126.0.2592.68 (30e1b6cc72a8..., userDataDir: C:\Users\mbkol\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62504/devtoo..., se:cdpVersion: 127.0.2651.8, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 749acd527fd85f62cefe46240e6f96f9
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:194)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:556)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:546)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:611)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:733)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:245)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:111)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:178)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:603)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:568)
-	at Testcases.MyinfoPage.addMyinfoPage(MyinfoPage.java:51)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 27 more
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 48 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;SSN Number&apos;)]/parent::div/following-sibling::div/input&quot;}
-  (Session info: MicrosoftEdge=127.0.2651.8)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [749acd527fd85f62cefe46240e6f96f9, findElement {value=//*[contains(text(),&apos;SSN Number&apos;)]/parent::div/following-sibling::div/input, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 127.0.2651.8, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62504}, msedge: {msedgedriverVersion: 126.0.2592.68 (30e1b6cc72a8..., userDataDir: C:\Users\mbkol\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62504/devtoo..., se:cdpVersion: 127.0.2651.8, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 749acd527fd85f62cefe46240e6f96f9
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy31.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:259)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:208)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
-	... 50 more
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1978117407", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1978117407'><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [749acd527fd85f62cefe46240e6f96f9, actions {actions=[org.openqa.selenium.interactions.Sequence@7626fd91, org.openqa.selenium.interactions.Sequence@442d44fe]}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 127.0.2651.8, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62504}, msedge: {msedgedriverVersion: 126.0.2592.68 (30e1b6cc72a8..., userDataDir: C:\Users\mbkol\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62504/devtoo..., se:cdpVersion: 127.0.2651.8, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 749acd527fd85f62cefe46240e6f96f9
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:204)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:194)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:556)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:546)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:611)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:204)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:222)
-	at java.base/java.util.Map.forEach(Map.java:733)
-	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:217)
-	at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
-	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:400)
-	at org.openqa.selenium.json.Json.toJson(Json.java:133)
-	at org.openqa.selenium.json.Json.toJson(Json.java:119)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:245)
-	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:111)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:178)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:603)
-	at org.openqa.selenium.interactions.Actions.perform(Actions.java:568)
-	at Testcases.MyinfoPage.addMyinfoPage(MyinfoPage.java:51)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:431)
-		at org.openqa.selenium.json.Json.toJson(Json.java:131)
-		... 27 more
-Caused by: java.lang.reflect.InvocationTargetException
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
-	... 48 more
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;SSN Number&apos;)]/parent::div/following-sibling::div/input&quot;}
-  (Session info: MicrosoftEdge=127.0.2651.8)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.1&apos;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [749acd527fd85f62cefe46240e6f96f9, findElement {value=//*[contains(text(),&apos;SSN Number&apos;)]/parent::div/following-sibling::div/input, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 127.0.2651.8, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62504}, msedge: {msedgedriverVersion: 126.0.2592.68 (30e1b6cc72a8..., userDataDir: C:\Users\mbkol\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62504/devtoo..., se:cdpVersion: 127.0.2651.8, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 749acd527fd85f62cefe46240e6f96f9
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy31.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:259)
-	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:208)
-	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
-	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	... 50 more
-</pre></div></td>
-<td>31</td>
-<td>Testcases.MyinfoPage@5a4bef8</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -275,18 +78,8 @@ Session ID: 749acd527fd85f62cefe46240e6f96f9
 <tr>
 <td title='Testcases.Loginpage.LoginOperation()'><b>LoginOperation</b><br>Test class: Testcases.Loginpage</td>
 <td></td>
-<td>8</td>
-<td>Testcases.Loginpage@74f7d1d2</td></tr>
-<tr>
-<td title='Testcases.Loginpage.Invaild_Login()'><b>Invaild_Login</b><br>Test class: Testcases.Loginpage</td>
-<td></td>
-<td>112</td>
-<td>Testcases.Loginpage@74f7d1d2</td></tr>
-<tr>
-<td title='Testcases.PIMPage.Search_Employee1()'><b>Search_Employee1</b><br>Test class: Testcases.PIMPage</td>
-<td></td>
-<td>26</td>
-<td>Testcases.PIMPage@3b1bb3ab</td></tr>
+<td>13</td>
+<td>Testcases.Loginpage@64df9a61</td></tr>
 </table><p>
 </body>
 </html>

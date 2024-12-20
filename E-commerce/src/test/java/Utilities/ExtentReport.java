@@ -1,9 +1,14 @@
 package Utilities;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,12 +21,14 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReport implements  ITestListener{
+import Testcases.Baseclass;
 
+public class ExtentReport implements  ITestListener{
+	public WebDriver driver;
 	ExtentSparkReporter  html;
 	ExtentReports rop;
 	ExtentTest test;
-
+	Baseclass BC;
 	public void config()
 	{	
 		String Timestamp =new SimpleDateFormat(" yyyy . mm . dd . hh . mm . ss ").format(new Date());
@@ -50,12 +57,14 @@ public class ExtentReport implements  ITestListener{
 		test =rop.createTest(result.getName());//create Entry in HTML reports
 		test.log(Status.FAIL, MarkupHelper.createLabel("name of fail test case is : " +result.getName(),ExtentColor.RED));
 		test.fail(result.getThrowable());
-		
-		String ScreenShotPath= System.getProperty("user.dir")+"//ScreenShot//"+ result.getName()+".png";
+
+		String ScreenShotPath = System.getProperty("user.dir") +"//ScreenShot//"+ result.getName()+".png";
 		File Sh = new File(ScreenShotPath);
+		
 		if(Sh.exists())
 		{
-			test.fail( "capctured screenShot is below"+test.addScreenCaptureFromPath(ScreenShotPath));
+			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(ScreenShotPath));
+			test.addScreenCaptureFromBase64String(ScreenShotPath);
 		}
 	}
 

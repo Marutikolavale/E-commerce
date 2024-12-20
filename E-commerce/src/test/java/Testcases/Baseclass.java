@@ -6,6 +6,8 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.imageio.ImageIO;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +20,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Baseclass implements IAutoConstant {
 
@@ -78,23 +82,23 @@ public class Baseclass implements IAutoConstant {
 		// step 1: convert webDriver in to TakeScrrenshot interface
 		//String path = getreportfilename();
 
-		TakesScreenshot ScreenShot = ((TakesScreenshot) driver);
+		//TakesScreenshot ScreenShot = ((TakesScreenshot) driver);
 
 		// step 2:call getScreenshota method to create image file
-		File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
+		//File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
 
 		// step 3 :copy Imp file to destination
-		File Dest = new File(System.getProperty("user.dir")+"//ScreenShot//" + ".jpag");
+		//File Dest = new File(System.getProperty("user.dir")+"//ScreenShot//"+".PNG");
 		// Step 4: perform operation using FileUtils method
-		FileUtils.copyFile(Scr,Dest);
+		//FileUtils.copyFile(Scr,Dest);
 
 		// *other way get full page screen shot* //
 
 		// Screenshot
 		
-		/*myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(driver);
-		  ImageIO.write(myScreenshot.getImage(),"PNG",new
-		  File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));*/
+		Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500)).takeScreenshot(driver);
+		  ImageIO.write(((Screenshot) myScreenshot).getImage(),"PNG",new
+		  File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));
 	}
 
 	/*public static String getreportfilename() {
