@@ -2,7 +2,6 @@ package Testcases;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.python.modules.thread.thread;
 import org.testng.annotations.Test;
 
 import PageObject.LoginPagePOM;
