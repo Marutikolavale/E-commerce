@@ -5,8 +5,8 @@
     <classes>
       <class name="Testcases.Loginpage">
         <methods>
-          <include name="SetUp"/>
           <include name="tearDown"/>
+          <include name="SetUp"/>
           <include name="LoginOperation"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
