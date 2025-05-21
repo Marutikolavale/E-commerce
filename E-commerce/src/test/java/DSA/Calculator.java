@@ -17,7 +17,7 @@ public class Calculator {
 			int a =sc.nextInt();
 			System.out.println("Enter 2st Number");
 			int b =sc.nextInt();
-			System.out.println("Enter Action you cholce(+,-,*,%");
+			System.out.println("Enter Action you cholce(+,-,*,%)");
 			String action= sc.next();
 			int res;
 			switch (action) {

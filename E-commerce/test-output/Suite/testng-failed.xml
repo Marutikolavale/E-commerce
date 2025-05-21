@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="Utilities.ExtentReport"/>
   </listeners>
-  <test thread-count="10" parallel="classes" name="Test(failed)">
+  <test thread-count="10" parallel="classes" name="Test1(failed)">
     <classes>
       <class name="Testcases.Loginpage">
         <methods>
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- Testcases.Loginpage -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

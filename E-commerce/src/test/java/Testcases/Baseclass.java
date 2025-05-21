@@ -1,18 +1,12 @@
-package Testcases;
+ package Testcases;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Calendar;
-import java.util.Date;
-
 import javax.imageio.ImageIO;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +14,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import Utilities.IAutoConstant;
@@ -34,7 +29,7 @@ public class Baseclass implements IAutoConstant {
 	public Logger log = LogManager.getLogger("E-commerce");
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
-
+   
 	@BeforeMethod
 	public void SetUp() throws IOException {
 
@@ -96,12 +91,12 @@ public class Baseclass implements IAutoConstant {
 
 		// Screenshot
 		
-		Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500)).takeScreenshot(driver);
+		Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
 		  ImageIO.write(((Screenshot) myScreenshot).getImage(),"PNG",new
 		  File(System.getProperty("user.dir")+"\\ScreenShot\\"+TestName+".png"));
 	}
-
-	/*public static String getreportfilename() {
+/*@Test
+	public static String getreportfilename() {
 		String Basepathet = System.getProperty("user.dir") +"/Reports";
 		Calendar cal = Calendar.getInstance();
 		File Dir = new File(Basepathet);

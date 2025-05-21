@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="Utilities.ExtentReport"></listener>
 	</listeners>
-  <test thread-count="10" name="Test">
+  <test thread-count="10" name="Test1">
     <classes>
           <class name="Testcases.Loginpage"></class>
               </classes>
