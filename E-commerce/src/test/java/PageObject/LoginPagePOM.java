@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import Testcases.Loginpage;
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
 
@@ -26,9 +25,7 @@ public class LoginPagePOM implements  IAutoConstant{
 	@FindBy(xpath ="//input[@name='password']") public WebElement passwored;
 	@FindBy(xpath ="//button[@type='submit']") public WebElement loginbutton;
 	@FindBy(linkText ="Forgot your password?")  public WebElement forgotpasswordElement;
-	@FindBy(xpath ="//*[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
-	public WebElement  dashboard;
-	@FindBy(xpath ="//img[@alt='profile picture' and  @class='oxd-userdropdown-img']") public  WebElement loginLogo;
+	@FindBy(xpath ="//h6[text()='Dashboard']")public WebElement  dashboard_logo;
 	@FindBy(xpath="//p[text()='Invalid credentials']")public WebElement Error_message;
 
 	public void clickForgotyourpassword()

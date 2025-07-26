@@ -14,7 +14,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import Utilities.IAutoConstant;
@@ -41,28 +40,28 @@ public class Baseclass implements IAutoConstant {
 			ChromeOptions op = new ChromeOptions();
 			op.addArguments("--remote-allow-origins=*");
 
-			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver = new ChromeDriver(op);
 		} 
 		else if (BrowserValue.equalsIgnoreCase("Edge")) {
 
-			System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
+			//System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
 			driver = new EdgeDriver();
 		} 
-		else if (BrowserValue.equalsIgnoreCase("Firefox")) {
+		else if(BrowserValue.equalsIgnoreCase("Firefox")) {
 
-			System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
-
+			//System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 
-		} else {
+		}
+		else
+		{
 			System.out.println("Enter correct Browser");
 		}
 		// Implicitly wait of 30 Second
 		driver.get(Url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
 		log.info("url opened");
 	}
 

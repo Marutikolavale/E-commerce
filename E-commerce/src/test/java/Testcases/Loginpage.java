@@ -1,16 +1,12 @@
 package Testcases;
 import java.io.IOException;
-
 import org.apache.poi.EncryptedDocumentException;
 import org.testng.annotations.Test;
-
 import PageObject.LoginPagePOM;
 import Utilities.ReadConfig;
 
 public class Loginpage extends Baseclass {
 	ReadConfig Rc= new ReadConfig();
-
-
 	@Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException
 	{	
@@ -18,9 +14,9 @@ public class Loginpage extends Baseclass {
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
-		
+
 		l.captureScreenShot(driver,"LoginOperation");
-		if(lp.loginLogo.isDisplayed())
+		if(lp.dashboard_logo.isDisplayed())
 		{
 			Thread.sleep(1000);
 			log.info("LoginOperation test case is pass");
@@ -29,12 +25,8 @@ public class Loginpage extends Baseclass {
 		else
 		{
 			log.info("LoginOperation test case is Fail");
-	
 		}
 	}
-
-
-
 	@Test(enabled =true,priority=2)
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException
 	{
@@ -60,7 +52,6 @@ public class Loginpage extends Baseclass {
 			{
 				log.info("FailLogin test case is Fail");
 				log.info("Invaild_Login test case is pass");
-
 			}
 		}
 	}

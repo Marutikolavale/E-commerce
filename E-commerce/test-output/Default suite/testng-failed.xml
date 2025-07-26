@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="SetUp"/>
-          <include name="LoginOperation"/>
+          <include name="Invaild_Login"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
     </classes>

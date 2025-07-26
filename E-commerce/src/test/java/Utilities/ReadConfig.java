@@ -5,8 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import javax.swing.plaf.basic.BasicArrowButton;
-
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -34,8 +32,6 @@ public class ReadConfig implements IAutoConstant {
 		Cell cell = row.getCell(CellCount);
 		String data =cell.getStringCellValue();
 		return data;
-		
-		
 		
 	}
 	//how get Row count
