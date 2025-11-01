@@ -14,8 +14,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.beust.jcommander.Parameter;
+
+import PageObject.LoginPagePOM;
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
 import ru.yandex.qatools.ashot.AShot;
@@ -28,10 +33,10 @@ public class Baseclass implements IAutoConstant {
 	public Logger log = LogManager.getLogger("E-commerce");
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
-   
+  // @Parameters("Browser")
 	@BeforeMethod
 	public void SetUp() throws IOException {
-
+	   
 		ReadConfig R = new ReadConfig();
 		String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
 		String Url = R.ReadPropertyFile(PROP_PATH, "url");
@@ -118,5 +123,25 @@ public class Baseclass implements IAutoConstant {
 		String ReportPath = Dir.getAbsolutePath();
 		return ReportPath;
 	}*/
+	@Test(enabled =true,priority=1)
+	public void LoginOperation() throws IOException, InterruptedException
+	{	
+		log.info("loginoperation test start");
+		LoginPagePOM  lp= new LoginPagePOM(driver);
+		Loginpage l= new Loginpage();
+		lp.LoginOperation();
+
+		l.captureScreenShot(driver,"LoginOperation");
+		if(lp.dashboard_logo.isDisplayed())
+		{
+			Thread.sleep(1000);
+			log.info("LoginOperation test case is pass");
+			l.captureScreenShot(driver,"LoginOperation");
+		}
+		else
+		{
+			log.info("LoginOperation test case is Fail");
+		}
+	}
 
 }
