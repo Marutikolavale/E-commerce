@@ -4,7 +4,7 @@ public class A {
 		A a= new A();
 		a.largettwonumber();
 	}
-	public  AMINvoid largettwonumber()
+	public void largettwonumber()
 	{
 		int a=30,b=20;
 		if(a>b)

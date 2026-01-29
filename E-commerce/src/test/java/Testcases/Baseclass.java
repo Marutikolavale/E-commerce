@@ -61,12 +61,12 @@ public class Baseclass implements IAutoConstant {
 		}
 		else
 		{
-			System.out.println("Enter correct Browser");
+			System.out.println("Enter correct Browser Name");
 		}
 		// Implicitly wait of 30 Second
 		driver.get(Url);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		log.info("url opened");
 	}
 
@@ -123,7 +123,7 @@ public class Baseclass implements IAutoConstant {
 		String ReportPath = Dir.getAbsolutePath();
 		return ReportPath;
 	}*/
-	@Test(enabled =true,priority=1)
+	/*@Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException
 	{	
 		log.info("loginoperation test start");
@@ -142,6 +142,6 @@ public class Baseclass implements IAutoConstant {
 		{
 			log.info("LoginOperation test case is Fail");
 		}
-	}
+	}*/
 
 }

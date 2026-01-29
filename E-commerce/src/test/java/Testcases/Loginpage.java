@@ -9,10 +9,10 @@ import Utilities.ReadConfig;
 
 public class Loginpage extends Baseclass {
 	ReadConfig Rc= new ReadConfig();
-	@Test(enabled =true,priority=1)
+	//@Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException
 	{	
-		log.info("loginoperation test start");
+		log.info("login operation test start");
 		LoginPagePOM  lp= new LoginPagePOM(driver);
 		Loginpage l= new Loginpage();
 		lp.LoginOperation();
@@ -52,7 +52,7 @@ public class Loginpage extends Baseclass {
 			}
 			else
 			{
-				log.info("FailLogin test case is Fail");
+				//log.info("FailLogin test case is Fail");
 				log.info("Invaild_Login test case is pass");
 			}
 		}

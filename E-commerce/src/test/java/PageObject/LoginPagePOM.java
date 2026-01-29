@@ -39,7 +39,7 @@ public class LoginPagePOM implements  IAutoConstant{
 		String pass = Rc.ReadExcelData(EXCEL_PATH,"Validcreads",1,1);
 		username. sendKeys(user);
 		passwored.sendKeys(pass);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		loginbutton.click();
 		//log.info("user login sucessfull");
 	}
