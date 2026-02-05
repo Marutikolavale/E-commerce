@@ -5,7 +5,6 @@
     <classes>
       <class name="Testcases.Loginpage">
         <methods>
-          <include name="tearDown"/>
           <include name="SetUp"/>
           <include name="Invaild_Login"/>
         </methods>
