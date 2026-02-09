@@ -11,7 +11,7 @@ import Utilities.ReadConfig;
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-	// @Test(enabled =true,priority=1)
+	 @Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);

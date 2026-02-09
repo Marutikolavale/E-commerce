@@ -3,6 +3,8 @@ package Testcases;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.imageio.ImageIO;
 
@@ -14,16 +16,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Baseclass implements IAutoConstant {
-
+	
 	public WebDriver driver;
 	public Logger log = LogManager.getLogger("E-commerce");
 	ReadConfig Rc = new ReadConfig();
@@ -39,12 +43,15 @@ public class Baseclass implements IAutoConstant {
 
 		switch (BrowserValue.toLowerCase()) {
 		case "chrome":
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
 		case "edge":
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			break;
-		case "fire":
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
 
@@ -53,24 +60,23 @@ public class Baseclass implements IAutoConstant {
 			break;
 		}
 
-		/*if (BrowserValue.equalsIgnoreCase("chrome")) {
-			ChromeOptions op = new ChromeOptions();
-			op.addArguments("--remote-allow-origins=*");
-
-			// System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-			driver = new ChromeDriver(op);
-		} else if (BrowserValue.equalsIgnoreCase("Edge")) {
-
-			// System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
-			driver = new EdgeDriver();
-		} else if (BrowserValue.equalsIgnoreCase("Firefox")) {
-
-			// System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
-			driver = new FirefoxDriver();
-
-		} else {
-			System.out.println("Enter correct Browser Name");
-		}*/
+		/*
+		 * if (BrowserValue.equalsIgnoreCase("chrome")) { ChromeOptions op = new
+		 * ChromeOptions(); op.addArguments("--remote-allow-origins=*");
+		 * 
+		 * // System.setProperty("webdriver.chrome.driver",
+		 * "./Drivers/chromedriver.exe"); driver = new ChromeDriver(op); } else if
+		 * (BrowserValue.equalsIgnoreCase("Edge")) {
+		 * 
+		 * // System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
+		 * driver = new EdgeDriver(); } else if
+		 * (BrowserValue.equalsIgnoreCase("Firefox")) {
+		 * 
+		 * // System.setProperty("webdriver.gecko.driver","./Drivers/geckodriver.exe");
+		 * driver = new FirefoxDriver();
+		 * 
+		 * } else { System.out.println("Enter correct Browser Name"); }
+		 */
 		// Implicitly wait of 30 Second
 		driver.get(Url);
 		driver.manage().window().maximize();
@@ -108,22 +114,28 @@ public class Baseclass implements IAutoConstant {
 		ImageIO.write(((Screenshot) myScreenshot).getImage(), "PNG",
 				new File(System.getProperty("user.dir") + "\\ScreenShot\\" + TestName + ".png"));
 	}
-	/*
-	 * @Test public static String getreportfilename() { String Basepathet =
-	 * System.getProperty("user.dir") +"/Reports"; Calendar cal =
-	 * Calendar.getInstance(); File Dir = new File(Basepathet); Dir.mkdir(); int
-	 * year = cal.get(Calendar.YEAR); Dir = new File(Basepathet + "/" + year);
-	 * Dir.mkdir(); int month = cal.get(Calendar.MONTH); Dir = new File(Basepathet +
-	 * "/" + year + "/" + (month + 1)); Dir.mkdir(); int day =
-	 * cal.get(Calendar.DATE); Dir = new File(Basepathet + "/" + year + "/" + (month
-	 * + 1) + "/" + day); Dir.mkdir(); Dir = new File(Basepathet + "/" + year + "/"
-	 * + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
-	 * Dir.mkdir(); Date sDate = new Date(); Dir = new File(Basepathet + "/" + year
-	 * + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name") +
-	 * "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" +
-	 * sDate.getSeconds()); Dir.mkdir(); String ReportPath = Dir.getAbsolutePath();
-	 * return ReportPath; }
-	 */
+
+	
+
+	/*@Test 
+	public static String getreportfilename() { 
+		String Basepathet =
+	 System.getProperty("user.dir") +"/Reports"; Calendar cal =Calendar.getInstance();
+	 File Dir = new File(Basepathet); Dir.mkdir(); 
+	int year = cal.get(Calendar.YEAR); Dir = new File(Basepathet + "/" + year);
+	  Dir.mkdir(); int month = cal.get(Calendar.MONTH); Dir = new File(Basepathet +
+	  "/" + year + "/" + (month + 1)); Dir.mkdir(); int day =
+	  cal.get(Calendar.DATE); Dir = new File(Basepathet + "/" + year + "/" + (month
+	  + 1) + "/" + day); Dir.mkdir(); Dir = new File(Basepathet + "/" + year + "/"
+	  + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
+	  Dir.mkdir(); Date sDate = new Date(); Dir = new File(Basepathet + "/" + year
+	 + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name") +
+	  "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" +
+	 sDate.getSeconds()); Dir.mkdir(); String ReportPath = Dir.getAbsolutePath();
+	 
+	 return ReportPath; 
+	 }*/
+
 	/*
 	 * @Test(enabled =true,priority=1) public void LoginOperation() throws
 	 * IOException, InterruptedException { log.info("loginoperation test start");
@@ -136,5 +148,18 @@ public class Baseclass implements IAutoConstant {
 	 * l.captureScreenShot(driver,"LoginOperation"); } else {
 	 * log.info("LoginOperation test case is Fail"); } }
 	 */
+	/*@Test
+		public static String getReportFileName() {
+			String basePath = System.getProperty("user.dir") + File.separator + "Reports";
+
+			LocalDateTime now = LocalDateTime.now();
+
+			String reportPath = basePath + File.separator + now.getYear() + File.separator + now.getMonthValue()
+					+ File.separator + now.getDayOfMonth() + File.separator + System.getProperty("user.name")
+					+ File.separator + "Testrun_" + now.format(DateTimeFormatter.ofPattern("HH_mm_ss"));
+
+			new File(reportPath).mkdirs();
+			return reportPath;
+		}*/
 
 }
