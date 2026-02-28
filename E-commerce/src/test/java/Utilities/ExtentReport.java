@@ -28,7 +28,8 @@ public class ExtentReport implements  ITestListener{
 	ExtentSparkReporter  html;
 	ExtentReports rop;
 	ExtentTest test;
-	Baseclass BC;
+	Baseclass b;
+
 	public void config()
 	{	
 		String Timestamp =new SimpleDateFormat(" yyyy . mm . dd . hh . mm . ss ").format(new Date());
@@ -37,10 +38,10 @@ public class ExtentReport implements  ITestListener{
 		rop = new ExtentReports();
 		rop.attachReporter(html);
 		html.config().setDocumentTitle("Grpical Test Report");
-		html.config().setReportName("E-commers App TestCase Report");
+		html.config().setReportName("orangehrm App TestCase Report");
 		html.config().setTheme(Theme.DARK);
 		rop.setSystemInfo("Operting System","Window 11");
-		rop.setSystemInfo("Browser","Chrome");
+		rop.setSystemInfo("Browser","chrome");
 		rop.setSystemInfo("System","Local Machine");
 	}
 

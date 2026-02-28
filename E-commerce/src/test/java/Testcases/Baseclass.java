@@ -2,6 +2,8 @@ package Testcases;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,11 +13,14 @@ import javax.imageio.ImageIO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -27,18 +32,18 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class Baseclass implements IAutoConstant {
-	
+
 	public WebDriver driver;
 	public Logger log = LogManager.getLogger("E-commerce");
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
 
-	// @Parameters("Browser")
+	@Parameters("Browser")
 	@BeforeMethod
-	public void SetUp() throws IOException {
+	public void SetUp(String BrowserValue) throws IOException {
 
 		ReadConfig R = new ReadConfig();
-		String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
+		//String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
 		String Url = R.ReadPropertyFile(PROP_PATH, "url");
 
 		switch (BrowserValue.toLowerCase()) {
@@ -47,10 +52,11 @@ public class Baseclass implements IAutoConstant {
 			driver = new ChromeDriver();
 			break;
 		case "edge":
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			break;
 		case "firefox":
+			System.setProperty("webdriver.chrome.driver","./msedgedriver.exe");
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
@@ -84,7 +90,7 @@ public class Baseclass implements IAutoConstant {
 		log.info("url opened");
 	}
 
-	// @AfterMethod
+	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		driver.quit();
 		log.info("closed browser");
@@ -115,26 +121,23 @@ public class Baseclass implements IAutoConstant {
 				new File(System.getProperty("user.dir") + "\\ScreenShot\\" + TestName + ".png"));
 	}
 
-	
-
-	/*@Test 
-	public static String getreportfilename() { 
-		String Basepathet =
-	 System.getProperty("user.dir") +"/Reports"; Calendar cal =Calendar.getInstance();
-	 File Dir = new File(Basepathet); Dir.mkdir(); 
-	int year = cal.get(Calendar.YEAR); Dir = new File(Basepathet + "/" + year);
-	  Dir.mkdir(); int month = cal.get(Calendar.MONTH); Dir = new File(Basepathet +
-	  "/" + year + "/" + (month + 1)); Dir.mkdir(); int day =
-	  cal.get(Calendar.DATE); Dir = new File(Basepathet + "/" + year + "/" + (month
-	  + 1) + "/" + day); Dir.mkdir(); Dir = new File(Basepathet + "/" + year + "/"
-	  + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
-	  Dir.mkdir(); Date sDate = new Date(); Dir = new File(Basepathet + "/" + year
-	 + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name") +
-	  "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" +
-	 sDate.getSeconds()); Dir.mkdir(); String ReportPath = Dir.getAbsolutePath();
-	 
-	 return ReportPath; 
-	 }*/
+	/*
+	 * @Test public static String getreportfilename() { String Basepathet =
+	 * System.getProperty("user.dir") +"/Reports"; Calendar cal
+	 * =Calendar.getInstance(); File Dir = new File(Basepathet); Dir.mkdir(); int
+	 * year = cal.get(Calendar.YEAR); Dir = new File(Basepathet + "/" + year);
+	 * Dir.mkdir(); int month = cal.get(Calendar.MONTH); Dir = new File(Basepathet +
+	 * "/" + year + "/" + (month + 1)); Dir.mkdir(); int day =
+	 * cal.get(Calendar.DATE); Dir = new File(Basepathet + "/" + year + "/" + (month
+	 * + 1) + "/" + day); Dir.mkdir(); Dir = new File(Basepathet + "/" + year + "/"
+	 * + (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
+	 * Dir.mkdir(); Date sDate = new Date(); Dir = new File(Basepathet + "/" + year
+	 * + "/" + (month + 1) + "/" + day + "/" + System.getProperty("user.name") +
+	 * "/Testrun_" + sDate.getHours() + "_" + sDate.getMinutes() + "_" +
+	 * sDate.getSeconds()); Dir.mkdir(); String ReportPath = Dir.getAbsolutePath();
+	 * 
+	 * return ReportPath; }
+	 */
 
 	/*
 	 * @Test(enabled =true,priority=1) public void LoginOperation() throws
@@ -148,18 +151,36 @@ public class Baseclass implements IAutoConstant {
 	 * l.captureScreenShot(driver,"LoginOperation"); } else {
 	 * log.info("LoginOperation test case is Fail"); } }
 	 */
-	/*@Test
-		public static String getReportFileName() {
-			String basePath = System.getProperty("user.dir") + File.separator + "Reports";
+	/*
+	 * @Test public static String getReportFileName() { String basePath =
+	 * System.getProperty("user.dir") + File.separator + "Reports";
+	 * 
+	 * LocalDateTime now = LocalDateTime.now();
+	 * 
+	 * String reportPath = basePath + File.separator + now.getYear() +
+	 * File.separator + now.getMonthValue() + File.separator + now.getDayOfMonth() +
+	 * File.separator + System.getProperty("user.name") + File.separator +
+	 * "Testrun_" + now.format(DateTimeFormatter.ofPattern("HH_mm_ss"));
+	 * 
+	 * new File(reportPath).mkdirs(); return reportPath; }
+	 */
+	/*for (WebElement element : linklist) {
+		
+		 * String url = element.getAttribute("href");
+		 * 
+		 * URL uRLlink = new URL(url);
+		 * 
+		 * HttpURLConnection t = (HttpURLConnection) uRLlink.openConnection();
+		 * t.setRequestMethod("HEAD"); t.connect(); responsecode = t.getResponseCode();
+		 * if (responsecode >= 400) { System.out.println("link is broken = " + url);
+		 * count++;
+		 
+		}
 
-			LocalDateTime now = LocalDateTime.now();
-
-			String reportPath = basePath + File.separator + now.getYear() + File.separator + now.getMonthValue()
-					+ File.separator + now.getDayOfMonth() + File.separator + System.getProperty("user.name")
-					+ File.separator + "Testrun_" + now.format(DateTimeFormatter.ofPattern("HH_mm_ss"));
-
-			new File(reportPath).mkdirs();
-			return reportPath;
-		}*/
-
+	}
+	System.out.println(" count of  broken link = " + count);
+} finally {
+	driver.close();*/
 }
+
+

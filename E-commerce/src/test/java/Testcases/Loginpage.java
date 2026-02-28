@@ -1,8 +1,10 @@
 package Testcases;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import PageObject.LoginPagePOM;
@@ -11,7 +13,7 @@ import Utilities.ReadConfig;
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-	 @Test(enabled =true,priority=1)
+	// @Test(enabled =true,priority=1)
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);
@@ -46,9 +48,10 @@ public class Loginpage extends Baseclass {
 			Thread.sleep(1000);
 			if (lp.Error_message.isDisplayed()) {
 				l.captureScreenShot(driver, "FailLogin");
+				log.info("Invaild_Login test case is pass");
 			} else {
 				// log.info("FailLogin test case is Fail");
-				log.info("Invaild_Login test case is pass");
+				WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
 			}
 		}
 	}

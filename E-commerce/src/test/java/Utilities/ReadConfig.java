@@ -41,8 +41,8 @@ public class ReadConfig implements IAutoConstant {
 		FileInputStream fis=new FileInputStream(ExcelPath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sh = wb.getSheet(SheetName);
-		int getrowvalues = sh.getLastRowNum();
-		return getrowvalues;
+		int getlastrow= sh.getLastRowNum();
+		return getlastrow;
 
 	}
 	public int getcellCount(String execlPath,String sheetName) throws EncryptedDocumentException, IOException
