@@ -26,6 +26,7 @@ class Bank {
 	}
 
 	void display() {
+		System.out.println("retet");
 		System.out.println("Customer name  :" + name);
 		System.out.println("Account number :" + Acno);
 		System.out.println("Account   bal  :" + bal);
