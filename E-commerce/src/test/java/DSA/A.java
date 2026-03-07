@@ -15,4 +15,15 @@ public class A {
 			System.out.println("b is big ="+ b);
 		}
 	}
+		public void largettwonumbereettr()
+		{
+			int a=30,b=20;
+			if(a>b)
+			{
+				System.out.println("a is big = "+ a);
+			}
+			else {
+				System.out.println("b is big ="+ b);
+			}
+	}
 }
