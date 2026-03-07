@@ -9,6 +9,8 @@ public class bankdriver {
 		b1.display();
 		b1.withdrow(8000.0);
 		b1.display();
+		int d=0;
+		String namendd="";
 	}
 }
 
