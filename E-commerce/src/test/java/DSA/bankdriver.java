@@ -32,6 +32,10 @@ class Bank {
 		System.out.println("Account   bal  :" + bal);
 		System.out.println("==============================");
 		System.out.print("defefef");
+		System.out.print("defefef");
+		System.out.print("defefef");
+		System.out.print("defefef");
+		
 	}
 
 	void withdrow(Double amount) {
