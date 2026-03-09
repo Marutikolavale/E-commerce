@@ -26,5 +26,7 @@ public class A {
 				System.out.println("b is big ="+ b);
 			}  
 			System.out.println("Maruti");
+			
+			System.out.println("Maruti");
 	}
 }
