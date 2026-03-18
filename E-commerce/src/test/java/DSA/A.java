@@ -27,6 +27,7 @@ public class A {
 			}  
 			System.out.println("Maruti");
 			
-			System.out.println("Maruti");
+			System.out.println("Pravin");
+			
 	}
 }
