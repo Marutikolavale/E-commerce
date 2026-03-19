@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -21,18 +20,16 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import Testcases.Baseclass;
-
 public class ExtentReport implements  ITestListener{
 	public WebDriver driver;
 	ExtentSparkReporter  html;
 	ExtentReports rop;
 	ExtentTest test;
-	Baseclass b;
+	
 
 	public void config()
 	{	
-		String Timestamp =new SimpleDateFormat(" yyyy . mm . dd . hh . mm . ss ").format(new Date());
+		String Timestamp =new SimpleDateFormat(" yyyy . MM . dd . HH . mm . ss ").format(new Date());
 		String ReportName="E-commerces Test Report" + Timestamp +".html";
 		html =new ExtentSparkReporter(System.getProperty("user.dir") + "//Reports//"+ ReportName);
 		rop = new ExtentReports();
@@ -62,10 +59,12 @@ public class ExtentReport implements  ITestListener{
 		String ScreenShotPath = System.getProperty("user.dir") +"//ScreenShot//"+ result.getName()+".png";
 		File Sh = new File(ScreenShotPath);
 		
+		
 		if(Sh.exists())
 		{
 			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(ScreenShotPath));
 			test.addScreenCaptureFromBase64String(ScreenShotPath);
+			
 		}
 	}
 
@@ -82,7 +81,6 @@ public class ExtentReport implements  ITestListener{
 	public void onTestFailedWithTimeout(ITestResult result) {
 
 	}
-
 	public void onStart(ITestContext context) {
 		config();
 	}
@@ -90,4 +88,24 @@ public class ExtentReport implements  ITestListener{
 	public void onFinish(ITestContext context) {
 		rop.flush();
 	}
+	
+	 // ✅ Screenshot Method
+    public String captureScreenshot(WebDriver driver, String testName) {
+        String fileName = testName + ".png";
+        String screenshotDir = System.getProperty("user.dir") + "/ScreenShot";
+        String fullPath = screenshotDir + "/" + fileName;       
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(src, new File(fullPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+       return fullPath;
+    }
+
+//	@BeforeSuite
+//	public void setupReport() {
+//	  config();
+//	}
 }

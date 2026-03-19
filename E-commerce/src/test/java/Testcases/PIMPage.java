@@ -1,10 +1,16 @@
 package Testcases;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.python.modules.thread.thread;
-import org.testng.annotations.*;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
@@ -23,7 +29,7 @@ public class PIMPage extends Baseclass{
 		Thread.sleep(5000);
 		db.PIMclick();
 		log.info("clickedPIM");
-
+		
 		int rc = Rc.GetRowCount(EXCEL_PATH,"UserInfromation");
 		for(int i=1;i<=rc;i++)
 		{
@@ -32,24 +38,29 @@ public class PIMPage extends Baseclass{
 
 			Thread.sleep(2000);
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,0);
-			System.out.println(Firstname);
+			
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,1);
-			System.out.println(Middlename);
+			
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
-			System.out.println(lastname);
-			String Employee_id = String.valueOf(Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,3));
-			System.out.println(Employee_id);
+			
 			pp.FirstName.clear();
 			pp.FirstName.sendKeys(Firstname);
 			pp.MiddleName.clear();
 			pp.MiddleName.sendKeys(Middlename);
 			pp.LastName.clear();
 			pp.LastName.sendKeys(lastname);
-			pp.Employee_Id.clear();
-			Thread.sleep(2000);
-			pp.Employee_Id.sendKeys(Employee_id);
-			Thread.sleep(2000);
 			pp.SaveBtn.click();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement msg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+			        By.xpath("//div[@id='oxd-toaster_1']")));
+
+			String actaul=msg.getText();
+			String expcted="Success";
+			Assert.assertTrue(actaul.contains("Successfully"), 
+			        "Popup verification failed: " + actaul);
+			
+			
+			
 			Thread.sleep(2000);
 		}
 
@@ -65,10 +76,23 @@ public class PIMPage extends Baseclass{
 		db.PIMclick();
 		log.info("clickedPIM");
 		PIMPOM pm = new PIMPOM(driver);
-		pm.EmployeeList.click();
-		pm.Employee_Name.sendKeys("Sandeep");
+		int rc = Rc.GetRowCount(EXCEL_PATH,"UserInfromation");
+		for(int i=1;i<=rc;i++)
+		{
+			PIMPOM pp= new PIMPOM(driver);
+			pp.clickEmployeeList();
+			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
+		}
+		
 		pm.SearchBtn.click();
+	 String actual=	pm.RecordFound.get(0).getText();
+	   String expected="Records Found";
+	
+		Assert.assertTrue(actual.contains(expected) );
 		Thread.sleep(10000);
+		
+		
+		//https://youtu.be/Fmm2vOEj5wA?si=U6g3DSyL8h4460FF
 		
 	}
 }

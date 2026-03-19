@@ -24,7 +24,7 @@ public class PIMPOM {
 	@FindBy(xpath ="//input[@name='lastName']") public WebElement LastName;
 	@FindBy(xpath ="//input[@class='oxd-input oxd-input--active' and @placeholder='Search']") public WebElement Employee_Id1;
 	@FindBy(xpath ="//button[@type='submit']") public WebElement  SaveBtn;
-	@FindBy(xpath="//input[@placeholder='Type for hints...']") public WebElement employeeReport;
+	@FindBy(xpath ="//input[@placeholder='Type for hints...']") public WebElement employeeReport;
 	@FindBy(xpath ="//button[@class='oxd-button oxd-button--medium oxd-button--ghost' ]") public WebElement reportReset;
 	@FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']") public WebElement ReprotSearch;
 	@FindBy(xpath="//a[text()='Optional Fields']") public WebElement  Optional_Fields;
@@ -35,7 +35,8 @@ public class PIMPOM {
 	@FindBy(xpath="//button[@type='button' and @class='oxd-icon-button oxd-main-menu-button']")  public WebElement employeeList_Add;
 	@FindBy(xpath ="(//input[@placeholder='Type for hints...'])[1]") public  WebElement Employee_Name;
 	@FindBy(xpath ="(//div[@class='oxd-select-text-input'])[1]") public  WebElement Employment_Status;
-	@FindBy(xpath ="//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']") public WebElement RecordFound;
+	@FindBy(xpath ="//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']") public List <WebElement> RecordFound;
+	
 	@FindBy(xpath ="(//input[@class='oxd-input oxd-input--active'])[2]") public WebElement Employee_Id;
 	@FindBy(xpath ="(//div[@class='oxd-autocomplete-text-input oxd-autocomplete-text-input--active']/child :: input)[2]") public WebElement Supervisor_Name;
 	@FindBy(xpath ="(//div[@class='oxd-select-text-input'])[2]") public WebElement Include;
@@ -49,6 +50,11 @@ public class PIMPOM {
 	@FindBy(xpath ="//button[@type='reset']") public WebElement resetBtn;
 	@FindBy(xpath ="//button[@type='button' and @class='oxd-button oxd-button--medium oxd-button--secondary']") public WebElement AddBtn;
 	@FindBy(xpath ="//div[@id='oxd-toaster_1']") public WebElement messagePopUp;
+	@FindBy(xpath ="//h6[text()='Personal Details']") public WebElement Personal_Details;
+	
+	
+	//
+
 	public  void Select_Job_Titlevalues(String value1) throws InterruptedException
 
 	{

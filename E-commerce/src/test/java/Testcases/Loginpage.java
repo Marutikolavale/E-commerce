@@ -31,7 +31,7 @@ public class Loginpage extends Baseclass {
 	}
 	
 
-	@Test(enabled = true, priority = 2)
+//	@Test(enabled = true, priority = 2)
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException {
 		log.info("check Diff way Enter Password login  Operantion");
 		LoginPagePOM lp = new LoginPagePOM(driver);

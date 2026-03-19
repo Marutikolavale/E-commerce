@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -30,7 +31,9 @@ public class ReadConfig implements IAutoConstant {
 		XSSFSheet sh = wb.getSheet(SheetName);
 		Row row = sh.getRow(RowCount);
 		Cell cell = row.getCell(CellCount);
-		String data =cell.getStringCellValue();
+		DataFormatter formatter = new DataFormatter();
+		String data =formatter.formatCellValue(cell);
+		wb.close();
 		return data;
 		
 	}
