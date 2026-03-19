@@ -28,7 +28,8 @@ public class DEMO extends Baseclass{
 		AdminPOM ad= new AdminPOM(driver);
 		Thread.sleep(2000);
 		
-		
+		AdminPOM addd= new AdminPOM(driver);
+		Thread.sleep(2000);
 	}
 	@Test(enabled = true)
 	public void test1() throws EncryptedDocumentException, InterruptedException, IOException
