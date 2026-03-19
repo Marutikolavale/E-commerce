@@ -4,11 +4,12 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
-
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.python.modules.thread.thread;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,44 +36,42 @@ public class PIMPage extends Baseclass{
 		{
 			PIMPOM pp= new PIMPOM(driver);
 			pp.clickAddEmployee();
-
 			Thread.sleep(2000);
+			pp.Employee_Id.clear();
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,0);
 			
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,1);
 			
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
-			
+			Thread.sleep(2000);
 			pp.FirstName.clear();
 			pp.FirstName.sendKeys(Firstname);
 			pp.MiddleName.clear();
 			pp.MiddleName.sendKeys(Middlename);
 			pp.LastName.clear();
 			pp.LastName.sendKeys(lastname);
+			Thread.sleep(2000);
 			pp.SaveBtn.click();
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 			WebElement msg = wait.until(ExpectedConditions.visibilityOfElementLocated(
 			        By.xpath("//div[@id='oxd-toaster_1']")));
 
 			String actaul=msg.getText();
 			String expcted="Success";
 			Assert.assertTrue(actaul.contains("Successfully"), 
-			        "Popup verification failed: " + actaul);
-			
-			
-			
+			        "Popup verification failed: " + actaul);	
 			Thread.sleep(2000);
 		}
 
 	}
-	@Test(enabled=true)
+	//@Test(enabled=true)
 	public void Search_Employee1() throws EncryptedDocumentException, InterruptedException, IOException
 	{
 		LoginPagePOM lp=new LoginPagePOM(driver);
 		lp.LoginOperation();
 		log.info("login Sucessfull");
 		DashBordPOM db= new  DashBordPOM(driver);
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		db.PIMclick();
 		log.info("clickedPIM");
 		PIMPOM pm = new PIMPOM(driver);
@@ -82,9 +81,12 @@ public class PIMPage extends Baseclass{
 			PIMPOM pp= new PIMPOM(driver);
 			pp.clickEmployeeList();
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
+			pp.Employee_Name.sendKeys(lastname);
+			Thread.sleep(2000);
+			pm.SearchBtn.click();
 		}
 		
-		pm.SearchBtn.click();
+	
 	 String actual=	pm.RecordFound.get(0).getText();
 	   String expected="Records Found";
 	

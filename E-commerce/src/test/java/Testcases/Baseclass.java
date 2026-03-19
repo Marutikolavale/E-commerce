@@ -37,12 +37,12 @@ public class Baseclass implements IAutoConstant {
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
 
-	//@Parameters("Browser")
+	@Parameters("Browser")
 	@BeforeMethod
-	public void SetUp() throws IOException {
+	public void SetUp(String BrowserValue) throws IOException {
 
 		ReadConfig R = new ReadConfig();
-		String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
+		//String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
 		String Url = R.ReadPropertyFile(PROP_PATH, "url");
 
 		switch (BrowserValue.toLowerCase()) {
