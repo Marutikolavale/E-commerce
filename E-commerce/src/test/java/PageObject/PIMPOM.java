@@ -68,44 +68,9 @@ public class PIMPOM {
 			}
 		}
 	}
-	@Test
-	public  void Select_SubUnit_values(String value2) throws InterruptedException
-	{
-		for(WebElement a:Sub_Unit_dropdwonvalues)
-		{
-			if(a.equals(value2))
-			{
-				System.out.println(value2);
-				Thread.sleep(2000);
-
-				a.click();
-			}
-		}
-	}
-	public  void select_Includevalues(String value3) throws InterruptedException
-	{
-		for(WebElement a:Sub_Unit_dropdwonvalues)
-		{
-			if(a.equals(value3))
-			{
-				System.out.println(value3);
-				Thread.sleep(2000);
-				a.click();
-			}
-		}
-	}
-	public  void Select_Employment_Statusvalues(String value4) throws InterruptedException
-
-	{
-		for(WebElement b:Employment_Statusdrop)
-		{
-			if(b.equals(value4))
-			{
-				Thread.sleep(2000);
-				b.click();
-			}
-		}
-	}
+	
+	
+	
 	////div[@class='oxd-input-group oxd-input-field-bottom-space']//d
 	public void  clickConfiguration()
 	{
