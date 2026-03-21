@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -49,11 +50,9 @@ public class Baseclass implements IAutoConstant {
 		case "chrome":
 			//System.setProperty("webdriver.Chrome.driver","./Drivers/chromedriver.exe");
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			//System.out.println(BrowserValue);
+			driver = new ChromeDriver();	
 			break;
 		case "edge":
-			//System.setProperty("webdriver.Edge.driver","./msedgedriver.exe");
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			System.out.println();
@@ -62,16 +61,15 @@ public class Baseclass implements IAutoConstant {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
-
 		default:
 			System.out.println("Enter correct Browser");
 			break;
 		}
 		
-		// Implicitly wait of 30 Second
-		driver.get(Url);
-		driver.manage().window().maximize();
+		// Implicitly wait of 30 Second		
+		driver.manage().window().maximize();		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get(Url);
 		log.info("url opened");
 	}
 
@@ -82,7 +80,7 @@ public class Baseclass implements IAutoConstant {
 	}
 
 	// Take Screenshot method
-	public void captureScreenShot(WebDriver driver, String TestName) throws IOException {
+	public String captureScreenShot(WebDriver driver, String TestName) throws IOException {
 		// step 1: convert webDriver in to TakeScrrenshot interface
 		// String path = getreportfilename();
 
@@ -99,11 +97,36 @@ public class Baseclass implements IAutoConstant {
 		// *other way get full page screen shot* //
 
 		// Screenshot
+		/*
+		 * Screenshot myScreenshot = new
+		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+		 * .takeScreenshot(driver); ImageIO.write(((Screenshot)
+		 * myScreenshot).getImage(), "PNG", new File(System.getProperty("user.dir") +
+		 * File.separator+ "ScreenShot" +File.separator +TestName + ".png"));
+		 */
+		
+		// 1️⃣ Take full-page screenshot using AShot
+        Screenshot myScreenshot = new AShot()
+                .shootingStrategy(ShootingStrategies.viewportPasting(1000))
+                .takeScreenshot(driver);
 
-		Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
-				.takeScreenshot(driver);
-		ImageIO.write(((Screenshot) myScreenshot).getImage(), "PNG",
-				new File(System.getProperty("user.dir") + File.separator+ "ScreenShot" +File.separator+TestName + ".png"));
+        // 2️⃣ Screenshot folder path
+        String screenshotDir = System.getProperty("user.dir") + File.separator + "ScreenShot";
+        File dir = new File(screenshotDir);
+        if (!dir.exists()) {
+            dir.mkdirs(); // create folder if it doesn't exist
+        }
+
+        // 3️⃣ Full path for screenshot file
+        String filePath = screenshotDir + File.separator + TestName + ".png";
+
+        // 4️⃣ Save the screenshot
+        ImageIO.write(myScreenshot.getImage(), "PNG", new File(filePath));
+
+        System.out.println("Screenshot saved at: " + filePath);
+
+        // 5️⃣ Return path for test fail message or report
+        return filePath;
 	}
 
 	

@@ -4,16 +4,16 @@
   <listeners>
     <listener class-name="Utilities.ExtentReport"/>
   </listeners>
-  <test thread-count="2" parallel="tests" name="Test1(failed)">
-    <parameter name="Browser" value="Firefox"/>
+  <test thread-count="2" parallel="tests" name="Test(failed)">
+    <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="Testcases.PIMPage">
+      <class name="Testcases.Loginpage">
         <methods>
-          <include name="SetUp"/>
           <include name="tearDown"/>
-          <include name="Add_Employee1"/>
+          <include name="SetUp"/>
+          <include name="Invaild_Login"/>
         </methods>
-      </class> <!-- Testcases.PIMPage -->
+      </class> <!-- Testcases.Loginpage -->
     </classes>
-  </test> <!-- Test1(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

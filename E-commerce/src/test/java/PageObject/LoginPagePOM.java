@@ -28,8 +28,6 @@ public class LoginPagePOM implements IAutoConstant {
 	public WebElement loginbutton;
 	@FindBy(linkText = "Forgot your password?")
 	public WebElement forgotpasswordElement;
-	@FindBy(xpath = "//h6[text()='Dashboard']")
-	public WebElement dashboard_logo;
 	@FindBy(xpath = "//p[text()='Invalid credentials']")
 	public WebElement Error_message;
 

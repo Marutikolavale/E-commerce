@@ -7,6 +7,7 @@
         <methods>
           <include name="SetUp"/>
           <include name="tearDown"/>
+          <include name="Search_Employee1"/>
           <include name="Add_Employee1"/>
         </methods>
       </class> <!-- Testcases.PIMPage -->

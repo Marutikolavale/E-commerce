@@ -25,7 +25,8 @@ public class DashBordPOM {
 	@FindBy(linkText = "Maintenance") public  WebElement Maintenance;
 	@FindBy(linkText ="Claim") public WebElement Claim;
 	@FindBy(linkText = "Buzz") public  WebElement Buzz;
-
+	@FindBy(xpath = "//h6[text()='Dashboard']")
+	public WebElement Dashboard_logo;
 	public void   Searchclick()
 	{
 		Search.click();
@@ -73,5 +74,9 @@ public class DashBordPOM {
 	public void  Buzzclick()
 	{
 		Buzz.click();
+	}
+	public Boolean  dashboard_logo_Displayed()
+	{
+		return Dashboard_logo.isDisplayed();
 	}
 }

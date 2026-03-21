@@ -5,36 +5,35 @@ import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
 import Utilities.ReadConfig;
 
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-	@Test(enabled =true,priority=1)
+	//@Test(enabled =true,priority=1,description = "LoginOperation")
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		Loginpage l = new Loginpage();
 		lp.LoginOperation();
-
-		l.captureScreenShot(driver, "LoginOperation");
-		if (lp.dashboard_logo.isDisplayed()) {
-			Thread.sleep(1000);
-			log.info("LoginOperation test case is pass");
-			l.captureScreenShot(driver, "LoginOperation");
-		} else {
-			log.info("LoginOperation test case is Fail");
-		}
+		/*
+		 * if (lp.dashboard_logo.isDisplayed()) { Thread.sleep(1000);
+		 * log.info("LoginOperation test case is pass");
+		 * 
+		 * } else { log.info("LoginOperation test case is Fail"); }
+		 */
 	}
 	
-
-//	@Test(enabled = true, priority = 2)
+	@Test(enabled = true, priority = 2,description ="Invaild_Login")
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException {
 		log.info("check Diff way Enter Password login  Operantion");
 		LoginPagePOM lp = new LoginPagePOM(driver);
+		DashBordPOM db=new DashBordPOM(driver);
 		Loginpage l = new Loginpage();
 		int rc = Rc.GetRowCount(EXCEL_PATH, "Invalidcreads");
 		for (int i = 1; i <= rc; i++) {
@@ -46,12 +45,10 @@ public class Loginpage extends Baseclass {
 			lp.username.clear();
 			lp.passwored.clear();
 			Thread.sleep(1000);
-			if (lp.Error_message.isDisplayed()) {
-				l.captureScreenShot(driver, "FailLogin");
-				log.info("Invaild_Login test case is pass");
-			} else {
-				// log.info("FailLogin test case is Fail");
-				WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+		Boolean	logoDisplayed =db.dashboard_logo_Displayed();
+			if (!logoDisplayed) {
+			    String screenshotPath = l.captureScreenShot(driver, "LoginOperation");
+			    Assert.fail("Dashboard logo is not displayed! Screenshot: " + screenshotPath);
 			}
 		}
 	}
