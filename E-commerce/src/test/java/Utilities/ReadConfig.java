@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadConfig implements IAutoConstant {
 	//generic reusable method to read the property file
-	public String ReadPropertyFile(String propPath,String key) throws IOException
+	public String readPropertyFile(String propPath,String key) throws IOException
 	{
 		FileInputStream fis=new FileInputStream(propPath);
 		Properties prop = new Properties();

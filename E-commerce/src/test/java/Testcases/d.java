@@ -29,8 +29,8 @@ public class d {
 		public void SetUp() throws IOException {
 
 			ReadConfig R = new ReadConfig();
-			String BrowserValue = R.ReadPropertyFile(PROP_PATH, "Browser");
-			String Url = R.ReadPropertyFile(PROP_PATH, "url");
+			String BrowserValue = R.readPropertyFile(PROP_PATH, "Browser");
+			String Url = R.readPropertyFile(PROP_PATH, "url");
 
 			if (BrowserValue.equalsIgnoreCase("chrome")) {
 				ChromeOptions op = new ChromeOptions();

@@ -5,13 +5,13 @@
     <listener class-name="Utilities.ExtentReport"/>
   </listeners>
   <test thread-count="2" parallel="tests" name="Test(failed)">
-    <parameter name="Browser" value="chrome"/>
     <classes>
       <class name="Testcases.Loginpage">
         <methods>
-          <include name="tearDown"/>
           <include name="SetUp"/>
+          <include name="tearDown"/>
           <include name="Invaild_Login"/>
+          <include name="LoginOperation"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
     </classes>

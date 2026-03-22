@@ -15,20 +15,14 @@ import Utilities.ReadConfig;
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-	//@Test(enabled =true,priority=1,description = "LoginOperation")
+@Test(enabled =true,priority=1,description = "LoginOperation test is pass")
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		Loginpage l = new Loginpage();
-		lp.LoginOperation();
-		/*
-		 * if (lp.dashboard_logo.isDisplayed()) { Thread.sleep(1000);
-		 * log.info("LoginOperation test case is pass");
-		 * 
-		 * } else { log.info("LoginOperation test case is Fail"); }
-		 */
+		lp.LoginOperation();	
 	}
-	
+
 	@Test(enabled = true, priority = 2,description ="Invaild_Login")
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException {
 		log.info("check Diff way Enter Password login  Operantion");
@@ -44,12 +38,13 @@ public class Loginpage extends Baseclass {
 			lp.multipelLogin(invalidUser, invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
-			Thread.sleep(1000);
-		Boolean	logoDisplayed =db.dashboard_logo_Displayed();
-			if (!logoDisplayed) {
-			    String screenshotPath = l.captureScreenShot(driver, "LoginOperation");
-			    Assert.fail("Dashboard logo is not displayed! Screenshot: " + screenshotPath);
-			}
+			Thread.sleep(1000);			
 		}
+	
+		// Assertion – if dashboard logo is displayed, test should fail
+	    boolean isDashboardVisible = db.Dashboard_logo.isDisplayed();
+	    
+	    // This assertion will trigger onTestFailure() if false
+	    Assert.assertFalse(isDashboardVisible, "Dashboard logo should NOT be visible for invalid login!");
 	}
 }

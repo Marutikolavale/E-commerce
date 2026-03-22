@@ -5,9 +5,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -21,26 +18,31 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReport implements  ITestListener{
+import Testcases.Baseclass;
+
+public class ExtentReport  implements ITestListener,IAutoConstant {
 	public WebDriver driver;
 	ExtentSparkReporter  html;
 	ExtentReports rop;
 	ExtentTest test;
-
-
-	public void config()
+	ExtentReport extentReport;
+	ReadConfig readConfig ;
+	public void config() throws IOException
 	{	
-		String Timestamp =new SimpleDateFormat(" yyyy . MM . dd . HH . mm . ss ").format(new Date());
-		String ReportName="E-commerces Test Report" + Timestamp +".html";
-		html =new ExtentSparkReporter(System.getProperty("user.dir") + "//Reports//"+ ReportName);
+		ReadConfig R = new ReadConfig();
+		String values=R.readPropertyFile(PROP_PATH,"Browser");
+		String Timestamp =new SimpleDateFormat(" yyyy.MM.dd.HH.mm.ss ").format(new Date());
+		String ReportName="E-commerces Testcases Report" + Timestamp +".html";
+		html =new ExtentSparkReporter(System.getProperty("user.dir") +File.separator+ "Reports"+File.separator+ ReportName);
 		rop = new ExtentReports();
 		rop.attachReporter(html);
 		html.config().setDocumentTitle("Grpical Test Report");
-		html.config().setReportName("orangehrm App TestCase Report");
+		html.config().setReportName("Orangehrm App TestCase Report");
 		html.config().setTheme(Theme.DARK);
 		rop.setSystemInfo("Operting System","Window 11");
-		rop.setSystemInfo("Browser","chrome");
+		rop.setSystemInfo("Browser",values);
 		rop.setSystemInfo("System","Local Machine");
+		rop.setSystemInfo("Enveriment","QA");
 	}
 
 	public void onTestStart(ITestResult result) {
@@ -48,30 +50,39 @@ public class ExtentReport implements  ITestListener{
 
 	public void onTestSuccess(ITestResult result) {
 		test =rop.createTest(result.getName());
-		test.log(Status.PASS, MarkupHelper.createLabel("name of pass test case is : " +result.getName(),ExtentColor.GREEN));
-		test.pass(result.getThrowable());
+		test.log(Status.PASS, MarkupHelper.createLabel("Name of Pass test case is : " +result.getName(),ExtentColor.GREEN));
+		test.pass(result.getThrowable().getMessage());
 	}
 
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
-		test.log(Status.FAIL, MarkupHelper.createLabel("name of fail test case is : " +result.getName(),ExtentColor.RED));
+		test.log(Status.FAIL, MarkupHelper.createLabel("Name of Fail test case is : " +result.getName(),ExtentColor.RED));
 		test.fail(result.getThrowable());
-
-		String ScreenShotPath = System.getProperty("user.dir") +File.separator+"//ScreenShot//"+File.separator+ result.getName()+".png";
-		File Sh = new File(ScreenShotPath);
-
-
-		if(Sh.exists())
-		{
-			test.fail( "capctured screenShot is below"+ test.addScreenCaptureFromPath(ScreenShotPath));
-			test.addScreenCaptureFromPath(ScreenShotPath);
-
+		
+		try {
+		String	TargetFilepath = new Baseclass().captureScreenShot(driver,result.getName());
+			test.addScreenCaptureFromPath(TargetFilepath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+	
+		
+		/*
+		 * String ScreenShotPath = System.getProperty("user.dir")+File.separator+
+		 * "ScreenShot"+File.separator +result.getName()+".png"; File Sh = new
+		 * File(ScreenShotPath);
+		 * 
+		 * if(Sh.exists()) { //test.fail("capctured screenShot is below"
+		 * +test.addScreenCaptureFromPath(ScreenShotPath));
+		 * test.fail("Captured Screenshot:").addScreenCaptureFromPath(ScreenShotPath);
+		 * //test.addScreenCaptureFromPath(ScreenShotPath); }
+		 */
 	}
 
 	public void onTestSkipped(ITestResult result) {
 		test =rop.createTest(result.getName());
-		test.log(Status.SKIP, MarkupHelper.createLabel("name of Skipped test case is : " +result.getName(),ExtentColor.YELLOW));
+		test.log(Status.SKIP, MarkupHelper.createLabel("Name of Skipped test case is : " +result.getName(),ExtentColor.YELLOW));
 		test.skip(result.getThrowable());
 	}
 
@@ -83,7 +94,12 @@ public class ExtentReport implements  ITestListener{
 
 	}
 	public void onStart(ITestContext context) {
-		config();
+		try {
+			config();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void onFinish(ITestContext context) {
@@ -91,19 +107,16 @@ public class ExtentReport implements  ITestListener{
 	}
 
 	// ✅ Screenshot Method
-	public String captureScreenshot(WebDriver driver, String testName) {
-		String fileName = testName + ".png";
-		String screenshotDir = System.getProperty("user.dir") + "/ScreenShot";
-		String fullPath = screenshotDir + "/" + fileName;       
-		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(src, new File(fullPath));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return fullPath;
-	}
+	/*
+	 * public String captureScreenshot(WebDriver driver, String testName) { String
+	 * fileName = testName + ".png"; String screenshotDir =
+	 * System.getProperty("user.dir") + "/ScreenShot"; String fullPath =
+	 * screenshotDir + "/" + fileName; File src = ((TakesScreenshot)
+	 * driver).getScreenshotAs(OutputType.FILE); try { FileUtils.copyFile(src, new
+	 * File(fullPath)); } catch (IOException e) { e.printStackTrace(); }
+	 * 
+	 * return fullPath; }
+	 */
 
 	//	@BeforeSuite
 	//	public void setupReport() {

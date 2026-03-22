@@ -4,11 +4,9 @@
 <listeners> 
   <listener class-name="Utilities.ExtentReport"></listener>
   </listeners>
-  <test  name="Test">
-  <parameter name="Browser" value="chrome"></parameter>
+  <test  name="Test1">
     <classes>   
         <class name="Testcases.Loginpage"/>  
-  
     </classes>
   </test> <!-- Test -->
   
