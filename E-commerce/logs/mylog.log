@@ -1,10 +1,6 @@
-[INFO ] 2026-03-22 18:25:06.164 [TestNG-tests-1] E-commerce - url opened
-[INFO ] 2026-03-22 18:25:06.186 [TestNG-tests-1] E-commerce - login operation test start
-[INFO ] 2026-03-22 18:27:27.415 [TestNG-tests-1] E-commerce - url opened
-[INFO ] 2026-03-22 18:27:27.439 [TestNG-tests-1] E-commerce - login operation test start
-[INFO ] 2026-03-22 18:28:59.467 [TestNG-tests-1] E-commerce - url opened
-[INFO ] 2026-03-22 18:28:59.502 [TestNG-tests-1] E-commerce - login operation test start
-[INFO ] 2026-03-22 18:34:21.164 [TestNG-tests-1] E-commerce - url opened
-[INFO ] 2026-03-22 18:34:21.195 [TestNG-tests-1] E-commerce - login operation test start
-[INFO ] 2026-03-22 18:36:51.148 [TestNG-tests-1] E-commerce - url opened
-[INFO ] 2026-03-22 18:36:51.180 [TestNG-tests-1] E-commerce - login operation test start
+[INFO ] 2026-03-24 22:21:55.080 [main] E-commerce - url opened
+[INFO ] 2026-03-24 22:21:55.113 [main] E-commerce - check Diff way Enter Password login  Operantion
+[INFO ] 2026-03-24 22:22:52.304 [main] E-commerce - closed browser
+[INFO ] 2026-03-24 22:25:32.783 [main] E-commerce - url opened
+[INFO ] 2026-03-24 22:25:32.827 [main] E-commerce - check Diff way Enter Password login  Operantion
+[INFO ] 2026-03-24 22:26:03.409 [main] E-commerce - closed browser

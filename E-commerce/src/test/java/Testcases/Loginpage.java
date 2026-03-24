@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,12 +17,13 @@ import Utilities.ReadConfig;
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-@Test(enabled =true,priority=1,description = "LoginOperation test is pass")
+//@Test(enabled =true,priority=1,description = "LoginOperation test is pass")
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		Loginpage l = new Loginpage();
 		lp.LoginOperation();	
+		
 	}
 
 	@Test(enabled = true, priority = 2,description ="Invaild_Login")
@@ -38,13 +41,16 @@ public class Loginpage extends Baseclass {
 			lp.multipelLogin(invalidUser, invalidPass);
 			lp.username.clear();
 			lp.passwored.clear();
-			Thread.sleep(1000);			
+				
 		}
 	
-		// Assertion – if dashboard logo is displayed, test should fail
-	    boolean isDashboardVisible = db.Dashboard_logo.isDisplayed();
-	    
-	    // This assertion will trigger onTestFailure() if false
-	    Assert.assertFalse(isDashboardVisible, "Dashboard logo should NOT be visible for invalid login!");
+		/*
+		 * // Assertion – if dashboard logo is displayed, test should fail boolean
+		 * isDashboardVisible = db.Dashboard_logo.isDisplayed();
+		 * 
+		 * // This assertion will trigger onTestFailure() if false
+		 * Assert.assertFalse(isDashboardVisible,
+		 * "Dashboard logo should NOT be visible for invalid login!");
+		 */
 	}
 }

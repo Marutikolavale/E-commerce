@@ -40,7 +40,6 @@ public class LoginPagePOM implements IAutoConstant {
 		String pass = Rc.ReadExcelData(EXCEL_PATH, "Validcreads", 1, 1);
 		username.sendKeys(user);
 		passwored.sendKeys(pass);
-		Thread.sleep(2000);
 		loginbutton.click();
 		// log.info("user login sucessfull");
 	}
@@ -49,7 +48,6 @@ public class LoginPagePOM implements IAutoConstant {
 	public void multipelLogin(String Username, String password) throws InterruptedException {
 		username.sendKeys(Username);
 		passwored.sendKeys(password);
-		Thread.sleep(10000);
 		loginbutton.click();
 	}
 }

@@ -1,15 +1,10 @@
 package Testcases;
 
-
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -18,12 +13,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-
 import org.testng.asserts.SoftAssert;
 
+import com.ibm.icu.text.SimpleDateFormat;
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -65,9 +60,9 @@ public class Baseclass implements IAutoConstant {
 
 		// Implicitly wait of 30 Second
 		//driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(Url);
+		driver.manage().window().maximize();
 		log.info("url opened");
 	}
 	@AfterMethod
@@ -76,29 +71,47 @@ public class Baseclass implements IAutoConstant {
 		log.info("closed browser");
 	}
 
-	// Take Screenshot method
-	public String captureScreenShot(WebDriver driver, String TestName) throws IOException {
-		String timestamp = new SimpleDateFormat("_yyyy.MM.dd.hh.mm.ss").format(new Date());
-		  // step 1: convert webDriver in to TakeScrrenshot interface // String path =
-		//  getreportfilename();
-		  
-		  TakesScreenshot ScreenShot = ((TakesScreenshot)driver);
-		  
-		  // step 2:call getScreenshota method to create image file //
-		  File Scr = ScreenShot.getScreenshotAs(OutputType.FILE);
-		  
-		  // step 3 :copy Imp file to destination //
-		String  TargetFilepath = (System.getProperty("user.dir")+File.separator +"ScreenShot"+ File.separator + TestName + timestamp+".PNG");
-		File path= new File(TargetFilepath);
-		Scr.renameTo(path);
-		// Step 4:perform operation using FileUtils method 
-		   //FileUtils.copyFile(Scr,Dest);
-		   return TargetFilepath;
-		  
-		
-		   
+	/*
+	 * // Take Screenshot method public String captureScreenShot(WebDriver driver,
+	 * String TestName) throws IOException { String timestamp = new
+	 * SimpleDateFormat("_yyyy.MM.dd.hh.mm.ss").format(new Date()); // step 1:
+	 * convert webDriver in to TakeScrrenshot interface // String path = //
+	 * getreportfilename();
+	 * 
+	 * TakesScreenshot ScreenShot = ((TakesScreenshot)driver);
+	 * 
+	 * // step 2:call getScreenshota method to create image file // File Scr =
+	 * ScreenShot.getScreenshotAs(OutputType.FILE);
+	 * 
+	 * // step 3 :copy Imp file to destination // String TargetFilepath =
+	 * (System.getProperty("user.dir")+File.separator +"ScreenShot"+ File.separator
+	 * + TestName + timestamp+".PNG"); File path= new File(TargetFilepath);
+	 * Scr.renameTo(path); // Step 4:perform operation using FileUtils method
+	 * //FileUtils.copyFile(Scr,Dest); return TargetFilepath; }
+	 */
+	//user method to capture screen shot
+	public String captureScreenShot(WebDriver driver, String testName) throws IOException {
+
+	    if (driver == null) {
+	        throw new RuntimeException("Driver is NULL! Screenshot not possible");
+	    }
+
+	    // timestamp
+	    String timestamp = new SimpleDateFormat("_yyyy.MM.dd.HH.mm.ss").format(new Date());
+
+	    // convert to screenshot
+	    TakesScreenshot screenshot = (TakesScreenshot) driver;
+	    File src = screenshot.getScreenshotAs(OutputType.FILE);
+
+	    // folder create
+	    String folderPath = System.getProperty("user.dir") + File.separator + "Screenshots"+File.separator+testName + ".png";
+	    File folder = new File(folderPath);
+	    if (!folder.exists()) {
+	        folder.mkdirs();
+	    }
+
+		return folderPath;
 	}
-		 
 		/*// *other way get full page screen shot* //
 
 		// Screenshot
@@ -107,27 +120,10 @@ public class Baseclass implements IAutoConstant {
 		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
 		 * .takeScreenshot(driver); ImageIO.write(((Screenshot)
 		 * myScreenshot).getImage(), "PNG", new File(System.getProperty("user.dir") +
-		 * File.separator+ "ScreenShot" +File.separator +TestName + ".png"));
-		 
-		
-	}
+		 * File.separator+ "ScreenShot" +File.separator +TestName + ".png"));*/
 
-	/*
-	 * @Test public static String getreportfilename() { String Basepathet
-	 * =System.getProperty("user.dir") +"/Reports"; Calendar
-	 * cal=Calendar.getInstance(); File Dir = new File(Basepathet); Dir.mkdir(); int
-	 * year = cal.get(Calendar.YEAR); Dir = new File(Basepathet + "/" + year);
-	 * Dir.mkdir(); int month = cal.get(Calendar.MONTH); Dir = new File(Basepathet
-	 * +"/" + year + "/" + (month + 1)); Dir.mkdir(); int day
-	 * =cal.get(Calendar.DATE); Dir = new File(Basepathet + "/" + year + "/" +
-	 * (month + 1) + "/" + day); Dir.mkdir(); Dir = new File(Basepathet + "/" + year
-	 * + "/"+ (month + 1) + "/" + day + "/" + System.getProperty("user.name"));
-	 * Dir.mkdir(); Date sDate = new Date(day, day, day); Dir = new File(Basepathet
-	 * + "/" + year + "/" + (month + 1) + "/" + day + "/" +
-	 * System.getProperty("user.name") + "/Testrun_" + sDate.getHours() + "_" +
-	 * sDate.getMinutes() + "_" + sDate.getSeconds()); Dir.mkdir(); String
-	 * ReportPath = Dir.getAbsolutePath(); return ReportPath; }
-	 */
+	 
+WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		/*
 		 * public static String getReportFileName(){ String basePath =
@@ -140,5 +136,6 @@ public class Baseclass implements IAutoConstant {
 		 * File(reportPath).mkdirs(); return reportPath; }
 		 */
 }
+
 		 
 
