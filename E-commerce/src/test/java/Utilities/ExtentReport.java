@@ -31,8 +31,8 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 	{	
 		ReadConfig R = new ReadConfig();
 		String values=R.readPropertyFile(PROP_PATH,"Browser");
-		String Timestamp =new SimpleDateFormat(" yyyy.MM.dd.HH.mm.ss ").format(new Date());
-		String ReportName="E-commerces Testcases Report" + Timestamp +".html";
+		String Timestamp =new SimpleDateFormat(" yyyy.MMMM.dd.HH.mm.ss").format(new Date());
+		String ReportName="Report" + Timestamp +".html";
 		html =new ExtentSparkReporter(System.getProperty("user.dir") +File.separator+ "Reports"+File.separator+ ReportName);
 		rop = new ExtentReports();
 		rop.attachReporter(html);
@@ -57,7 +57,7 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
 		test.log(Status.FAIL, MarkupHelper.createLabel("Name of Fail test case is : " +result.getName(),ExtentColor.RED));
-		test.pass(result.getThrowable().getMessage());
+		//test.fail(result.getThrowable().getMessage());
 		String screenShotPath = System.getProperty("user.dir") + File.separator+ "ScreenShot"+ File.separator+ result.getName() + ".png";
 		
 		File screenShotFile = new File(screenShotPath);

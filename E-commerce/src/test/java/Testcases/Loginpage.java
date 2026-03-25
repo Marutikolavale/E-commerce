@@ -17,7 +17,7 @@ import Utilities.ReadConfig;
 public class Loginpage extends Baseclass {
 	ReadConfig Rc = new ReadConfig();
 
-//@Test(enabled =true,priority=1,description = "LoginOperation test is pass")
+@Test(enabled =true,priority=1,description = "LoginOperation test is pass")
 	public void LoginOperation() throws IOException, InterruptedException {
 		log.info("login operation test start");
 		LoginPagePOM lp = new LoginPagePOM(driver);
@@ -28,6 +28,9 @@ public class Loginpage extends Baseclass {
 
 	@Test(enabled = true, priority = 2,description ="Invaild_Login")
 	public void Invaild_Login() throws EncryptedDocumentException, IOException, InterruptedException {
+		try {
+			
+		
 		log.info("check Diff way Enter Password login  Operantion");
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		DashBordPOM db=new DashBordPOM(driver);
@@ -43,7 +46,11 @@ public class Loginpage extends Baseclass {
 			lp.passwored.clear();
 				
 		}
-	
+		} catch (Exception e) {
+			  e.printStackTrace(); // console वर दिसेल
+			  log.error("Login failed", e); // log4j2 file & console वर दिसेल
+			    throw e; // TestNG ला failure म्हणून throw करा
+		}
 		/*
 		 * // Assertion – if dashboard logo is displayed, test should fail boolean
 		 * isDashboardVisible = db.Dashboard_logo.isDisplayed();

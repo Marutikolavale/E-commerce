@@ -16,6 +16,8 @@ import PageObject.MyinfoPOM;
 public class MyinfoPage extends Baseclass {
 	@Test
 	public void addMyinfoPage() throws EncryptedDocumentException, InterruptedException, IOException {
+		try {
+			
 		Actions a = new Actions(driver);
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		DashBordPOM db = new DashBordPOM(driver);
@@ -24,7 +26,7 @@ public class MyinfoPage extends Baseclass {
 		db.MyInfo.click();
 		int rc = Rc.GetRowCount(EXCEL_PATH, "My_info");
 		for (int i = 1; i <= rc; i++) {
-			Thread.sleep(5000);
+			
 			String Firstname = String.valueOf(Rc.ReadExcelData(EXCEL_PATH, "My_info", i, 0));
 			String Middlename = String.valueOf(Rc.ReadExcelData(EXCEL_PATH, "My_info", i, 1));
 			String lastname = String.valueOf(Rc.ReadExcelData(EXCEL_PATH, "My_info", i, 2));
@@ -57,9 +59,15 @@ public class MyinfoPage extends Baseclass {
 		//	a.moveToElement(mi.Military_Service).doubleClick().sendKeys(Keys.BACK_SPACE).sendKeys(Military_Service).perform();
 			//Thread.sleep(2000);
 			mi.Select_Nationality(Nationality);
-			Thread.sleep(2000);
+			
 			//mi.SmokerChekBox.click();
 			mi.savebtn.click();
+		}
+		}
+		catch (Exception e) {
+			  e.printStackTrace(); // console वर दिसेल
+			  log.error("Login failed", e); // log4j2 file & console वर दिसेल
+			    throw e; // TestNG ला failure म्हणून throw करा
 		}
 
 	}

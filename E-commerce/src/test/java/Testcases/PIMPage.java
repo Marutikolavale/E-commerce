@@ -17,6 +17,7 @@ import PageObject.DashBordPOM;
 import PageObject.LoginPagePOM;
 import PageObject.PIMPOM;
 import Utilities.ReadConfig;
+import javassist.bytecode.stackmap.BasicBlock.Catch;
 
 public class PIMPage extends Baseclass{
 	ReadConfig Rc= new ReadConfig();
@@ -64,6 +65,7 @@ public class PIMPage extends Baseclass{
 	@Test(enabled =true,priority=1,description ="Search_Employee1")
 	public void Search_Employee1() throws EncryptedDocumentException, InterruptedException, IOException
 	{
+		try {
 		LoginPagePOM lp=new LoginPagePOM(driver);
 		lp.LoginOperation();
 		log.info("login Sucessfull");
@@ -76,16 +78,20 @@ public class PIMPage extends Baseclass{
 		{
 			PIMPOM pp= new PIMPOM(driver);
 			pp.clickEmployeeList();
-			Thread.sleep(2000);
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
 			pp.employee_Name(lastname);
-			Thread.sleep(2000);
 			pp.SearchBtnclick();
-			pp.scrollToElement();
+		//	pp.scrollToElement();
 			String actual = pp.recordFound();		
 		   String expected="Records Found";
 		Assert.assertTrue(actual.contains(expected) );
 		//https://youtu.be/Fmm2vOEj5wA?si=U6g3DSyL8h4460FF
+		}
+		}
+		catch (Exception e) {
+			  e.printStackTrace(); // console वर दिसेल
+			  log.error("Login failed", e); // log4j2 file & console वर दिसेल
+			    throw e; // TestNG ला failure म्हणून throw करा
 		}
 	}
 }

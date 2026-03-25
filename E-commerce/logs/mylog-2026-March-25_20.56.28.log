@@ -1,0 +1,20 @@
+[INFO ] 2026-03-25 20:56:36.213 [main] ClassName - url opened
+[INFO ] 2026-03-25 20:56:36.249 [main] ClassName - login operation test start
+[INFO ] 2026-03-25 20:56:39.114 [main] ClassName - closed browser
+[INFO ] 2026-03-25 20:56:45.106 [main] ClassName - url opened
+[INFO ] 2026-03-25 20:56:45.110 [main] ClassName - check Diff way Enter Password login  Operantion
+[INFO ] 2026-03-25 20:57:01.715 [main] ClassName - closed browser
+[INFO ] 2026-03-25 20:57:07.983 [main] ClassName - url opened
+[INFO ] 2026-03-25 20:57:09.082 [main] ClassName - login Sucessfull
+[INFO ] 2026-03-25 20:57:13.658 [main] ClassName - clickedPIM
+[INFO ] 2026-03-25 20:57:19.689 [main] ClassName - clickAddEmployee
+[INFO ] 2026-03-25 20:57:35.387 [main] ClassName - clickAddEmployee
+[INFO ] 2026-03-25 20:57:51.217 [main] ClassName - clickAddEmployee
+[INFO ] 2026-03-25 20:58:07.366 [main] ClassName - clickAddEmployee
+[INFO ] 2026-03-25 20:58:17.997 [main] ClassName - closed browser
+[INFO ] 2026-03-25 20:58:25.999 [main] ClassName - url opened
+[INFO ] 2026-03-25 20:58:27.538 [main] ClassName - login Sucessfull
+[INFO ] 2026-03-25 20:58:32.841 [main] ClassName - clickedPIM
+[INFO ] 2026-03-25 20:58:50.991 [main] ClassName - closed browser
+[INFO ] 2026-03-25 20:58:59.701 [main] ClassName - url opened
+[INFO ] 2026-03-25 21:01:01.594 [main] ClassName - closed browser

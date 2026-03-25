@@ -19,14 +19,20 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
 import com.ibm.icu.text.SimpleDateFormat;
+
 import Utilities.IAutoConstant;
 import Utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class Baseclass implements IAutoConstant {
 
 	public WebDriver driver;
-	public Logger log = LogManager.getLogger("E-commerce");
+//	public Logger log = LogManager.getLogger("E-commerce");
+	//public Logger log = LogManager.getLogger(this.getClass());
+	public Logger log = LogManager.getLogger(ClassName.class);
+	
+	
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
 
@@ -60,9 +66,9 @@ public class Baseclass implements IAutoConstant {
 
 		// Implicitly wait of 30 Second
 		//driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get(Url);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get(Url);	
 		log.info("url opened");
 	}
 	@AfterMethod
