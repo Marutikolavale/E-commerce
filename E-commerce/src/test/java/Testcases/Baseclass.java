@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,23 +31,22 @@ public class Baseclass implements IAutoConstant {
 	public WebDriver driver;
 //	public Logger log = LogManager.getLogger("E-commerce");
 	//public Logger log = LogManager.getLogger(this.getClass());
-	public Logger log = LogManager.getLogger(ClassName.class);
-	
-	
+	public Logger log = LogManager.getLogger(ClassName.class);	
 	ReadConfig Rc = new ReadConfig();
 	SoftAssert sa = new SoftAssert();
-
 	//@Parameters("Browser")//
 	@BeforeMethod
 	public void SetUp() throws IOException {
-		ReadConfig R = new ReadConfig();
-		
+		ReadConfig R = new ReadConfig();		
 		String BrowserValue = R.readPropertyFile(PROP_PATH, "Browser");
 		String Url = R.readPropertyFile(PROP_PATH, "url");
-
 		switch (BrowserValue.toLowerCase()) {
 		case "chrome":
 			// System.setProperty("webdriver.Chrome.driver","./Drivers/chromedriver.exe");
+			/*
+			 * ChromeOptions options= new ChromeOptions();
+			 * options.addArguments("--headless=new");
+			 */
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
@@ -63,7 +63,6 @@ public class Baseclass implements IAutoConstant {
 			System.out.println("Enter correct Browser");
 			break;
 		}
-
 		// Implicitly wait of 30 Second
 		//driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -76,7 +75,6 @@ public class Baseclass implements IAutoConstant {
 		driver.quit();
 		log.info("closed browser");
 	}
-
 	/*
 	 * // Take Screenshot method public String captureScreenShot(WebDriver driver,
 	 * String TestName) throws IOException { String timestamp = new

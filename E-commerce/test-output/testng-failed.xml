@@ -6,6 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="Testcases.MyinfoPage">
+        <methods>
+          <include name="addMyinfoPage"/>
+          <include name="tearDown"/>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- Testcases.MyinfoPage -->
       <class name="Testcases.Loginpage">
         <methods>
           <include name="tearDown"/>
@@ -13,6 +20,35 @@
           <include name="Invaild_Login"/>
         </methods>
       </class> <!-- Testcases.Loginpage -->
+      <class name="Testcases.PIMPage">
+        <methods>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+          <include name="Search_Employee1"/>
+          <include name="Add_Employee1"/>
+        </methods>
+      </class> <!-- Testcases.PIMPage -->
+      <class name="Testcases.ClaimPage">
+        <methods>
+          <include name="SetUp"/>
+          <include name="tearDown"/>
+          <include name="AddClaim"/>
+        </methods>
+      </class> <!-- Testcases.ClaimPage -->
+      <class name="Testcases.TimePage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="SetUp"/>
+          <include name="e"/>
+        </methods>
+      </class> <!-- Testcases.TimePage -->
+      <class name="Testcases.AdminPage">
+        <methods>
+          <include name="tearDown"/>
+          <include name="SetUp"/>
+          <include name="System_Users"/>
+        </methods>
+      </class> <!-- Testcases.AdminPage -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

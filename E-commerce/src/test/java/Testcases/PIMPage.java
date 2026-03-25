@@ -81,6 +81,7 @@ public class PIMPage extends Baseclass{
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
 			pp.employee_Name(lastname);
 			pp.SearchBtnclick();
+			Thread.sleep(1000);
 		//	pp.scrollToElement();
 			String actual = pp.recordFound();		
 		   String expected="Records Found";

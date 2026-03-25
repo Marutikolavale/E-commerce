@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Orangehrm App TestCase Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 25, 2026 09:05:40 pm</span></a>
+<a href="#"><span class="badge badge-primary">Mar 25, 2026 11:30:59 pm</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -82,7 +87,7 @@
           <div class="test-detail">
             <p class="name">LoginOperation</p>
             <p class="text-sm">
-              <span>9:05:53 pm</span> / <span>00:00:00:018</span>
+              <span>11:31:11 pm</span> / <span>00:00:00:025</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -91,9 +96,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">LoginOperation</h5>
-<span class='badge badge-success'>03.25.2026 9:05:53 pm</span>
-<span class='badge badge-danger'>03.25.2026 9:05:53 pm</span>
-<span class='badge badge-default'>00:00:00:018</span>
+<span class='badge badge-success'>03.25.2026 11:31:11 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:31:11 pm</span>
+<span class='badge badge-default'>00:00:00:025</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -106,16 +111,9 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:05:53 pm</td>
+        <td>11:31:11 pm</td>
         <td>
-          <span class='badge white-text green'>Name of Pass test case is : LoginOperation</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:05:53 pm</td>
-        <td>
-          
+          <span class='badge white-text green'>Name of Pass test case : LoginOperation</span>
         </td>
       </tr>
   </tbody>
@@ -123,25 +121,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="2"
+        <li class="test-item"  status="pass" test-id="2"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Invaild_Login</p>
             <p class="text-sm">
-              <span>9:06:19 pm</span> / <span>00:00:00:003</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>11:31:37 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Invaild_Login</h5>
-<span class='badge badge-success'>03.25.2026 9:06:19 pm</span>
-<span class='badge badge-danger'>03.25.2026 9:06:19 pm</span>
-<span class='badge badge-default'>00:00:00:003</span>
+<h5 class="test-status text-pass">Invaild_Login</h5>
+<span class='badge badge-success'>03.25.2026 11:31:37 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:31:37 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -153,25 +151,10 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:06:19 pm</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:31:37 pm</td>
         <td>
-          <span class='badge white-text red'>Name of Fail test case is : Invaild_Login</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>9:06:19 pm</td>
-        <td>
-          no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='username']"}
-  (Session info: chrome=146.0.7680.164)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.41.0', revision: '9fc754f'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1e5c801f54baea3c1fafc1d8a5f1fc8b, findElement {value=//input[@name='username'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.164, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\mbkol\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51776}, goog:processID: 31440, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51776/devtoo..., se:cdpVersion: 146.0.7680.164, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
+          <span class='badge white-text green'>Name of Pass test case : Invaild_Login</span>
         </td>
       </tr>
   </tbody>
@@ -186,7 +169,7 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
           <div class="test-detail">
             <p class="name">Add_Employee1</p>
             <p class="text-sm">
-              <span>9:08:16 pm</span> / <span>00:00:00:000</span>
+              <span>11:32:55 pm</span> / <span>00:00:00:000</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -195,8 +178,8 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Add_Employee1</h5>
-<span class='badge badge-success'>03.25.2026 9:08:16 pm</span>
-<span class='badge badge-danger'>03.25.2026 9:08:16 pm</span>
+<span class='badge badge-success'>03.25.2026 11:32:55 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:32:55 pm</span>
 <span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
@@ -210,16 +193,9 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:08:16 pm</td>
+        <td>11:32:55 pm</td>
         <td>
-          <span class='badge white-text green'>Name of Pass test case is : Add_Employee1</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:08:16 pm</td>
-        <td>
-          
+          <span class='badge white-text green'>Name of Pass test case : Add_Employee1</span>
         </td>
       </tr>
   </tbody>
@@ -227,25 +203,25 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="4"
+        <li class="test-item"  status="fail" test-id="4"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Search_Employee1</p>
             <p class="text-sm">
-              <span>9:09:19 pm</span> / <span>00:00:00:001</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>11:33:13 pm</span> / <span>00:00:00:000</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Search_Employee1</h5>
-<span class='badge badge-success'>03.25.2026 9:09:19 pm</span>
-<span class='badge badge-danger'>03.25.2026 9:09:19 pm</span>
-<span class='badge badge-default'>00:00:00:001</span>
+<h5 class="test-status text-fail">Search_Employee1</h5>
+<span class='badge badge-success'>03.25.2026 11:33:13 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:33:13 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -257,16 +233,51 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:09:19 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>11:33:13 pm</td>
         <td>
-          <span class='badge white-text green'>Name of Pass test case is : Search_Employee1</span>
+          <span class='badge white-text red'>Name of Fail test case: Search_Employee1</span>
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:09:19 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>11:33:13 pm</td>
         <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at Testcases.PIMPage.Search_Employee1(PIMPage.java:88)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
           
         </td>
       </tr>
@@ -282,7 +293,7 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
           <div class="test-detail">
             <p class="name">addMyinfoPage</p>
             <p class="text-sm">
-              <span>9:11:22 pm</span> / <span>00:00:00:000</span>
+              <span>11:35:23 pm</span> / <span>00:00:00:000</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -291,8 +302,8 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">addMyinfoPage</h5>
-<span class='badge badge-success'>03.25.2026 9:11:22 pm</span>
-<span class='badge badge-danger'>03.25.2026 9:11:22 pm</span>
+<span class='badge badge-success'>03.25.2026 11:35:23 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:35:23 pm</span>
 <span class='badge badge-default'>00:00:00:000</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
@@ -306,16 +317,132 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:11:22 pm</td>
+        <td>11:35:23 pm</td>
         <td>
-          <span class='badge white-text green'>Name of Pass test case is : addMyinfoPage</span>
+          <span class='badge white-text green'>Name of Pass test case : addMyinfoPage</span>
         </td>
       </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">System_Users</p>
+            <p class="text-sm">
+              <span>11:35:35 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Users</h5>
+<span class='badge badge-success'>03.25.2026 11:35:35 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:35:35 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>9:11:22 pm</td>
+        <td>11:35:35 pm</td>
         <td>
-          
+          <span class='badge white-text green'>Name of Pass test case : System_Users</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">e</p>
+            <p class="text-sm">
+              <span>11:35:48 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">e</h5>
+<span class='badge badge-success'>03.25.2026 11:35:48 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:35:48 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:35:48 pm</td>
+        <td>
+          <span class='badge white-text green'>Name of Pass test case : e</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">AddClaim</p>
+            <p class="text-sm">
+              <span>11:36:03 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">AddClaim</h5>
+<span class='badge badge-success'>03.25.2026 11:36:03 pm</span>
+<span class='badge badge-danger'>03.25.2026 11:36:03 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:36:03 pm</td>
+        <td>
+          <span class='badge white-text green'>Name of Pass test case : AddClaim</span>
         </td>
       </tr>
   </tbody>
@@ -332,24 +459,73 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:33:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>Search_Employee1</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 25, 2026 09:05:40 pm</h3>
+<h3>Mar 25, 2026 11:30:59 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 25, 2026 09:11:23 pm</h3>
+<h3>Mar 25, 2026 11:36:04 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>4</h3>
+<h3>7</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -371,12 +547,12 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='80%'>
-<b>4</b> tests passed
+<div><small data-tooltip='87%'>
+<b>7</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='20%'><b>1</b> tests failed,
+<small data-tooltip='12%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -394,9 +570,9 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='80%'><b>8</b> events passed</small></div>
+<div><small data-tooltip='77%'><b>7</b> events passed</small></div>
 <div>
-<small data-tooltip='20%'><b>2</b> events failed,
+<small data-tooltip='22%'><b>2</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -413,7 +589,7 @@ Session ID: 1e5c801f54baea3c1fafc1d8a5f1fc8b
 </div></div>
 <script>
 var timeline = {
-"LoginOperation":0.018,"Invaild_Login":0.003,"Add_Employee1":0,"Search_Employee1":0.001,"addMyinfoPage":0
+"LoginOperation":0.025,"Invaild_Login":0,"Add_Employee1":0,"Search_Employee1":0,"addMyinfoPage":0,"System_Users":0,"e":0,"AddClaim":0
 };
 </script>
 <div class="row">
@@ -429,7 +605,7 @@ var timeline = {
 </tr>
 <tr>
 <td>Browser</td>
-<td>Chrome</td>
+<td>chrome</td>
 </tr>
 <tr>
 <td>System</td>
@@ -448,7 +624,7 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 4,
+passParent: 7,
 failParent: 1,
 warningParent: 0,
 skipParent: 0,
@@ -465,7 +641,7 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 8,
+passEvents: 7,
 failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,

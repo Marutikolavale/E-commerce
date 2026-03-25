@@ -23,7 +23,9 @@ public class MyinfoPage extends Baseclass {
 		DashBordPOM db = new DashBordPOM(driver);
 		MyinfoPOM mi = new MyinfoPOM(driver);
 		lp.LoginOperation();
+		log.info("login Sucessfull");
 		db.MyInfo.click();
+		log.info("MyInfo page open");
 		int rc = Rc.GetRowCount(EXCEL_PATH, "My_info");
 		for (int i = 1; i <= rc; i++) {
 			

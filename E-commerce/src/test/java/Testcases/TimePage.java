@@ -16,6 +16,7 @@ public class TimePage extends Baseclass{
 		DashBordPOM db = new DashBordPOM(driver);
 		LoginPagePOM lP = new LoginPagePOM(driver);
 		lP.LoginOperation();
+		log.info("login Sucessfull");
 		db.Time.click();
 
 	}

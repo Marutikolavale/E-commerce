@@ -50,13 +50,14 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 
 	public void onTestSuccess(ITestResult result) {
 		test =rop.createTest(result.getName());
-		test.log(Status.PASS, MarkupHelper.createLabel("Name of Pass test case is : " +result.getName(),ExtentColor.GREEN));
-		test.pass(result.getThrowable());
+		test.log(Status.PASS, MarkupHelper.createLabel("Name of Pass test case : " +result.getName(),ExtentColor.GREEN));
+		//test.pass(result.getThrowable());
 	}
 
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
-		test.log(Status.FAIL, MarkupHelper.createLabel("Name of Fail test case is : " +result.getName(),ExtentColor.RED));
+		test.log(Status.FAIL, MarkupHelper.createLabel("Name of Fail test case: " +result.getName(),ExtentColor.RED));
+		test.fail(result.getThrowable());
 		//test.fail(result.getThrowable().getMessage());
 		String screenShotPath = System.getProperty("user.dir") + File.separator+ "ScreenShot"+ File.separator+ result.getName() + ".png";
 		
@@ -81,7 +82,7 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 
 	public void onTestSkipped(ITestResult result) {
 		test =rop.createTest(result.getName());
-		test.log(Status.SKIP, MarkupHelper.createLabel("Name of Skipped test case is : " +result.getName(),ExtentColor.YELLOW));
+		test.log(Status.SKIP, MarkupHelper.createLabel("Name of Skipped test case: " +result.getName(),ExtentColor.YELLOW));
 		test.skip(result.getThrowable());
 	}
 

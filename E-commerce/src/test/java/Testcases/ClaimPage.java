@@ -18,10 +18,11 @@ public class ClaimPage extends Baseclass{
 		LoginPagePOM lp = new LoginPagePOM(driver);
 		DashBordPOM db = new DashBordPOM(driver);
 		lp.LoginOperation();
+		log.info("login Sucessfull");
 		db.Claim.click();
 		ClaimPage p = new ClaimPage();
 		c.Submit_Claim.click();
-		Thread.sleep(3000);
+		log.info("Claim page");
 		c.Event.click();
 		c.Select_EventList("Accommodation");
 		/*Thread.sleep(3000);

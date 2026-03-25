@@ -8,7 +8,10 @@
     <classes>  
       <class name="Testcases.Loginpage"/>  
        <class name="Testcases.PIMPage"/>  
-         <class name="Testcases.MyinfoPage"/>  
+         <class name="Testcases.MyinfoPage"/> 
+         <class name="Testcases.AdminPage"/> 
+         <class name="Testcases.TimePage"/>  
+          <class name="Testcases.ClaimPage"/>       
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
