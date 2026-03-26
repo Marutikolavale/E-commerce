@@ -1,0 +1,26 @@
+[INFO ] 2026-03-26 19:18:13.359 [TestNG-test-Test-3] ClassName - url opened
+[INFO ] 2026-03-26 19:18:15.523 [TestNG-test-Test-1] ClassName - url opened
+[INFO ] 2026-03-26 19:18:20.156 [TestNG-test-Test-2] ClassName - url opened
+[INFO ] 2026-03-26 19:18:20.633 [TestNG-test-Test-5] ClassName - url opened
+[INFO ] 2026-03-26 19:18:22.443 [TestNG-test-Test-3] ClassName - login Sucessfull
+[INFO ] 2026-03-26 19:18:22.723 [TestNG-test-Test-4] ClassName - url opened
+[INFO ] 2026-03-26 19:18:23.812 [TestNG-test-Test-2] ClassName - login Sucessfull
+[INFO ] 2026-03-26 19:18:26.403 [TestNG-test-Test-5] ClassName - login Sucessfull
+[INFO ] 2026-03-26 19:18:27.771 [TestNG-test-Test-3] ClassName - MyInfo page open
+[INFO ] 2026-03-26 19:18:30.944 [TestNG-test-Test-5] ClassName - clickedPIM
+[INFO ] 2026-03-26 19:18:32.330 [TestNG-test-Test-2] ClassName - admain page
+[INFO ] 2026-03-26 19:18:33.119 [TestNG-test-Test-2] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:36.556 [TestNG-test-Test-2] ClassName - url opened
+[INFO ] 2026-03-26 19:18:36.569 [TestNG-test-Test-2] ClassName - login operation test start
+[INFO ] 2026-03-26 19:18:38.146 [TestNG-test-Test-1] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:39.004 [TestNG-test-Test-4] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:41.734 [TestNG-test-Test-2] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:44.122 [TestNG-test-Test-2] ClassName - url opened
+[INFO ] 2026-03-26 19:18:44.124 [TestNG-test-Test-2] ClassName - Invaild_Login start
+[INFO ] 2026-03-26 19:18:46.428 [TestNG-test-Test-5] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:53.334 [TestNG-test-Test-3] ClassName - closed browser
+[INFO ] 2026-03-26 19:18:53.488 [TestNG-test-Test-5] ClassName - url opened
+[INFO ] 2026-03-26 19:18:55.000 [TestNG-test-Test-5] ClassName - login Sucessfull
+[INFO ] 2026-03-26 19:18:59.861 [TestNG-test-Test-5] ClassName - clickedPIM
+[INFO ] 2026-03-26 19:19:13.410 [TestNG-test-Test-2] ClassName - closed browser
+[INFO ] 2026-03-26 19:19:16.822 [TestNG-test-Test-5] ClassName - closed browser

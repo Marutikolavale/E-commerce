@@ -29,39 +29,29 @@ public class PIMPage extends Baseclass{
 		lp.LoginOperation();
 		log.info("login Sucessfull");
 		DashBordPOM db= new  DashBordPOM(driver);
-
+		PIMPOM pp= new PIMPOM(driver);	
 		db.PIMclick();
-		log.info("clickedPIM");
-		PIMPOM pp= new PIMPOM(driver);
-		
+		log.info("clickedPIM");		
 		int rc = Rc.GetRowCount(EXCEL_PATH,"UserInfromation");
 		for(int i=1;i<=rc;i++)
 		{	
-			Thread.sleep(5000);
 			pp.clickAddEmployee();
-			log.info("clickAddEmployee");
-			Thread.sleep(5000);
-			//pp.Employee_Id1_clear();
+			log.info("clickAddEmployee");			
 			String Firstname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,0);
-
 			String Middlename = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,1);
-
 			String lastname = Rc.ReadExcelData(EXCEL_PATH,"UserInfromation",i,2);
-
 			pp.firstName(Firstname);
 			pp.middleName(Middlename);
 			pp.lastName(lastname);
 			pp.SaveBtnclick();
-			String actaul	=pp.veirfypopupmassges();						
+			String actaul	=pp.veirfypopupmassges();	
+			System.out.println(actaul);
 			String expcted="Successfully";			
 			Assert.assertTrue(actaul.contains("Successfully"),
 					"Popup verification failed: " + actaul);
-			Thread.sleep(2000);
-
-
 		}
-
 	}
+	
 	@Test(enabled =true,priority=1,description ="Search_Employee1")
 	public void Search_Employee1() throws EncryptedDocumentException, InterruptedException, IOException
 	{

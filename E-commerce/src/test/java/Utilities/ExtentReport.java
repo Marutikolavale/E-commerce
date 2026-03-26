@@ -3,6 +3,8 @@ package Utilities;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
@@ -21,6 +23,10 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import Testcases.Baseclass;
 
 public class ExtentReport  implements ITestListener,IAutoConstant {
+	static String REPORT_FOLDER_PATH;
+	static String SCREENSHOT_FOLDER_PATH;
+	static String SCREENSHOT_FILE_PATH;
+	public static String TC_ID = null;
 	public WebDriver driver;
 	ExtentSparkReporter  html;
 	ExtentReports rop;
@@ -29,6 +35,7 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 	ReadConfig readConfig ;
 	public void config() throws IOException
 	{	
+		
 		ReadConfig R = new ReadConfig();
 		String values=R.readPropertyFile(PROP_PATH,"Browser");
 		String Timestamp =new SimpleDateFormat(" yyyy.MMMM.dd.HH.mm.ss").format(new Date());
@@ -37,7 +44,7 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 		rop = new ExtentReports();
 		rop.attachReporter(html);
 		html.config().setDocumentTitle("Grpical Test Report");
-		html.config().setReportName("Orangehrm App TestCase Report");
+		html.config().setReportName("Orangehrm Report");
 		html.config().setTheme(Theme.DARK);
 		rop.setSystemInfo("Operting System","Window 11");
 		rop.setSystemInfo("Browser",values);
@@ -57,28 +64,21 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 	public void onTestFailure(ITestResult result) {
 		test =rop.createTest(result.getName());//create Entry in HTML reports
 		test.log(Status.FAIL, MarkupHelper.createLabel("Name of Fail test case: " +result.getName(),ExtentColor.RED));
-		test.fail(result.getThrowable());
-		//test.fail(result.getThrowable().getMessage());
-		String screenShotPath = System.getProperty("user.dir") + File.separator+ "ScreenShot"+ File.separator+ result.getName() + ".png";
+		//test.fail(result.getThrowable());
+		test.fail(result.getThrowable().getMessage());
 		
-		File screenShotFile = new File(screenShotPath);
-		
-		if(screenShotFile.exists())
-		{
-			test.fail("Captured Screenshot is below:" + test.addScreenCaptureFromPath(screenShotPath));
-			
-		}
-	}
 		/*
-		 * String ScreenShotPath = System.getProperty("user.dir")+File.separator+
-		 * "ScreenShot"+File.separator +result.getName()+".png"; File Sh = new
-		 * File(ScreenShotPath);
+		 * String screenShotPath = System.getProperty("user.dir") + File.separator+
+		 * "ScreenShot"+ File.separator+ result.getName() + ".png";
 		 * 
-		 * if(Sh.exists()) { //test.fail("capctured screenShot is below"
-		 * +test.addScreenCaptureFromPath(ScreenShotPath));
-		 * test.fail("Captured Screenshot:").addScreenCaptureFromPath(ScreenShotPath);
-		 * //test.addScreenCaptureFromPath(ScreenShotPath); }
+		 * File screenShotFile = new File(screenShotPath);
+		 * 
+		 * if(screenShotFile.exists()) { test.fail("Captured Screenshot is below:" +
+		 * test.addScreenCaptureFromPath(screenShotPath));
+		 * 
+		 * }
 		 */
+	}
 
 	public void onTestSkipped(ITestResult result) {
 		test =rop.createTest(result.getName());
@@ -116,10 +116,18 @@ public class ExtentReport  implements ITestListener,IAutoConstant {
 	 * File(fullPath)); } catch (IOException e) { e.printStackTrace(); }
 	 * 
 	 * return fullPath; }
-	 */
+	 */	
+	public static String getReportFileName(){ 
+		String basePath =
+				System.getProperty("user.dir") + File.separator + "Reports"; LocalDateTime
+				now = LocalDateTime.now(); String reportPath = basePath + File.separator +
+				now.getYear() + File.separator + now.getMonthValue() + File.separator +
+				now.getMonth() + File.separator + System.getProperty("user.name") +
+				File.separator + "Testrun_"
+				+now.format(DateTimeFormatter.ofPattern("HH_mm_ss")); new
+				File(reportPath).mkdirs(); 
+				return reportPath; 
+			
+				}
 
-	//	@BeforeSuite
-	//	public void setupReport() {
-	//	  config();
-	//	}
 }

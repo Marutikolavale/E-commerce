@@ -3,6 +3,8 @@ package Testcases;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,6 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.ibm.icu.text.SimpleDateFormat;
@@ -29,7 +32,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 public class Baseclass implements IAutoConstant {
 
 	public WebDriver driver;
-//	public Logger log = LogManager.getLogger("E-commerce");
+	//	public Logger log = LogManager.getLogger("E-commerce");
 	//public Logger log = LogManager.getLogger(this.getClass());
 	public Logger log = LogManager.getLogger(ClassName.class);	
 	ReadConfig Rc = new ReadConfig();
@@ -64,7 +67,7 @@ public class Baseclass implements IAutoConstant {
 			break;
 		}
 		// Implicitly wait of 30 Second
-		//driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get(Url);	
@@ -96,50 +99,51 @@ public class Baseclass implements IAutoConstant {
 	//user method to capture screen shot
 	public String captureScreenShot(WebDriver driver, String testName) throws IOException {
 
-	    if (driver == null) {
-	        throw new RuntimeException("Driver is NULL! Screenshot not possible");
-	    }
+		if (driver == null) {
+			throw new RuntimeException("Driver is NULL! Screenshot not possible");
+		}
+		// timestamp
+		String timestamp = new SimpleDateFormat("_yyyy.MM.dd.HH.mm.ss").format(new Date());
 
-	    // timestamp
-	    String timestamp = new SimpleDateFormat("_yyyy.MM.dd.HH.mm.ss").format(new Date());
-
-	    // convert to screenshot
-	    TakesScreenshot screenshot = (TakesScreenshot) driver;
-	    File src = screenshot.getScreenshotAs(OutputType.FILE);
-
-	    // folder create
-	    String folderPath = System.getProperty("user.dir") + File.separator + "Screenshots"+File.separator+testName + ".png";
-	    File folder = new File(folderPath);
-	    if (!folder.exists()) {
-	        folder.mkdirs();
-	    }
-
+		// convert to screenshot
+		TakesScreenshot screenshot = (TakesScreenshot) driver;
+		File src = screenshot.getScreenshotAs(OutputType.FILE);
+		// folder create
+		String folderPath = System.getProperty("user.dir") + File.separator + "Screenshots"+File.separator+testName + ".png";
+		File folder = new File(folderPath);
+		if (!folder.exists()) {
+			folder.mkdirs();
+		}
 		return folderPath;
 	}
-		/*// *other way get full page screen shot* //
+	/*// *other way get full page screen shot* //
 
 		// Screenshot
-		
-		 * Screenshot myScreenshot = new
-		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
-		 * .takeScreenshot(driver); ImageIO.write(((Screenshot)
-		 * myScreenshot).getImage(), "PNG", new File(System.getProperty("user.dir") +
-		 * File.separator+ "ScreenShot" +File.separator +TestName + ".png"));*/
 
-	 
-WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+	 * Screenshot myScreenshot = new
+	 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+	 * .takeScreenshot(driver); ImageIO.write(((Screenshot)
+	 * myScreenshot).getImage(), "PNG", new File(System.getProperty("user.dir") +
+	 * File.separator+ "ScreenShot" +File.separator +TestName + ".png"));*/
 
-		/*
-		 * public static String getReportFileName(){ String basePath =
-		 * System.getProperty("user.dir") + File.separator + "Reports"; LocalDateTime
-		 * now = LocalDateTime.now(); String reportPath = basePath + File.separator +
-		 * now.getYear() + File.separator + now.getMonthValue() + File.separator +
-		 * now.getMonth() + File.separator + System.getProperty("user.name") +
-		 * File.separator + "Testrun_"
-		 * +now.format(DateTimeFormatter.ofPattern("HH_mm_ss")); new
-		 * File(reportPath).mkdirs(); return reportPath; }
-		 */
+
+	WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+
+
+	public static String getReportFileName(){ 
+		String basePath =
+				System.getProperty("user.dir") + File.separator + "Reports"; LocalDateTime
+				now = LocalDateTime.now(); String reportPath = basePath + File.separator +
+				now.getYear() + File.separator + now.getMonthValue() + File.separator +
+				now.getMonth() + File.separator + System.getProperty("user.name") +
+				File.separator + "Testrun_"
+				+now.format(DateTimeFormatter.ofPattern("HH_mm_ss")); new
+				File(reportPath).mkdirs(); 
+				return reportPath; 
+			
+				}
+
 }
 
-		 
+
 

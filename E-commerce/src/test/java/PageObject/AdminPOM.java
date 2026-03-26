@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AdminPOM {
-
+	private WebDriver driver;
 	 public AdminPOM(WebDriver driver)
 	 {
 		 PageFactory.initElements(driver,this);
